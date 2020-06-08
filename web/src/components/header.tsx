@@ -4,11 +4,7 @@ import React from 'react';
 import Menu from './menu';
 import styles from './header.module.scss';
 
-interface Props {
-  siteTitle: string;
-}
-
-const Header: React.FC<Props> = ({ siteTitle }) => {
+const Header: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "life-in-hd-banner.jpg" }) {
