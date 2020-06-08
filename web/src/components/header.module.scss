@@ -1,0 +1,27 @@
+.header {
+    background: rgb(45, 42, 48);
+    color: white;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    
+
+    .logo {
+        flex-basis: 20%;
+        margin: 1rem 0 1rem 1rem;
+    }
+
+    h1 {
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        :visited {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
