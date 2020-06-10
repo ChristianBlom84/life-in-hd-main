@@ -10,7 +10,9 @@ const IndexPage: React.FC = () => (
     <SEO title="Life in HD | Home" />
     <section className={styles.hero}>
       <h1>Life in HD</h1>
-      <p className={styles.preamble}>Human Design services in Stockholm, Sweden</p>
+      <p className={styles.preamble}>
+        Human Design services in Stockholm, Sweden
+      </p>
     </section>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
