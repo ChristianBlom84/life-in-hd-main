@@ -8,7 +8,7 @@ module.exports = {
     url: `https://lifeinhd.se`,
     keywords: `Human Design, Human Design Reading, Splenic Center, Ajna Center, Head Center, G Center, Sacral Center, Root Center, Solar Plexus Center, Throat Center,
     Generator, Manifesting Generator, Projector, Reflector, Manifestor`,
-    image: `${siteUrl}/images/icons/life_in_hd_icon.jpg`,
+    image: `${siteUrl}/images/icons/life-in-hd-icon.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,7 +30,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/icons/life_in_hd_icon.jpg`, // This path is relative to the root of the site.
+        icon: `src/images/icons/life-in-hd-icon.jpg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,

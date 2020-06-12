@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Header from './header';
 import './layout.scss';
 import 'typeface-open-sans';
+import 'typeface-montserrat';
 
 const Layout: React.FC<React.ReactNode> = ({ children }) => {
   const data = useStaticQuery(graphql`
