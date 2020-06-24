@@ -1,24 +1,47 @@
 @import '../variables.scss';
 
 .hero {
-  height: 11rem;
+  height: 15rem;
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   background: $green;
+
+  @include mediumMax {
+    padding-top: 2rem;
+  }
+  
+  @include medium {
+    flex-flow: row nowrap;
+  }
+}
+
+.heroText {
+  flex: 0 1 auto;
+  
+  @include medium {
+    margin-right: 5rem;
+  }
+}
+
+.heroImage {
+  flex: 1 0 auto;
+  
+  @include medium {
+    flex: 0 1 200px;
+  }
 }
 
 .heroHeading {
-  background: white;
-  color: black;
   line-height: normal;
-  padding: 0 0 0 0.5rem;
   font-weight: normal;
 }
 
 .heroHeadingSpanLeft {
-  padding-right: 0.5rem;
+  background: white;
+  color: black;
+  padding: 0 0.5rem;
 }
 
 .heroHeadingSpanRight {
@@ -30,4 +53,5 @@
 .preamble {
   font-size: 1.2rem;
   margin-bottom: 0;
+  color: white;
 }

@@ -9,7 +9,7 @@ import styles from './index.module.scss';
 const IndexPage: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
-      bigIcon: file(relativePath: { eq: "life-in-hd-icon.jpg" }) {
+      bigIcon: file(relativePath: { eq: "BG-2-Def-Cent-on-white.png" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
@@ -25,20 +25,22 @@ const IndexPage: React.FC = () => {
     <Layout>
       <SEO title="Life in HD | Home" />
       <section className={styles.hero}>
-        <div>
+        <div className={styles.heroText}>
           <h1 className={styles.heroHeading}>
             <span className={styles.heroHeadingSpanLeft}>Welcome to</span>
             <span className={styles.heroHeadingSpanRight}>Life in HD</span>
           </h1>
           <p className={styles.preamble}>
-            Human Design services in Stockholm, Sweden
+            Human Design readings and courses
+            <br />
+            in Stockholm, Sweden
           </p>
         </div>
-        <Image fluid={fluid} />
+        <Image className={styles.heroImage} fluid={fluid} />
       </section>
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
-  )
+  );
 };
 
 export default IndexPage;
