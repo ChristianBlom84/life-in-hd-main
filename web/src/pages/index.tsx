@@ -9,7 +9,7 @@ import styles from './index.module.scss';
 const IndexPage: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
-      bigIcon: file(relativePath: { eq: "life-in-hd-icon.jpg" }) {
+      bigIcon: file(relativePath: { eq: "icons/life-in-hd-icon.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
