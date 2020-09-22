@@ -26,11 +26,11 @@ const Layout: React.FC<React.ReactNode> = ({ children }) => {
   `);
 
   return (
-    <>
+    <div id="life-in-hd-wrapper">
       <Header />
       <main>{children}</main>
       <footer>© {new Date().getFullYear()}, Life in HD</footer>
-    </>
+    </div>
   );
 };
 

@@ -38,7 +38,6 @@ const IndexPage: React.FC = () => {
         </div>
         <Image className={styles.heroImage} fluid={fluid} />
       </section>
-      <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   );
 };
