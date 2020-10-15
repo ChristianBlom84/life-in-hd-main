@@ -9,8 +9,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from './header';
-import './layout.scss';
+import Header from './Header';
+import Footer from './Footer';
+import './Layout.scss';
 import 'typeface-open-sans';
 import 'typeface-montserrat';
 
@@ -29,7 +30,7 @@ const Layout: React.FC<React.ReactNode> = ({ children }) => {
     <div id="life-in-hd-wrapper">
       <Header />
       <main>{children}</main>
-      <footer>© {new Date().getFullYear()}, Life in HD</footer>
+      <Footer />
     </div>
   );
 };

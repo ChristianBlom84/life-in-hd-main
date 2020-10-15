@@ -55,3 +55,12 @@
   margin-bottom: 0;
   color: white;
 }
+
+.content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 5rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}

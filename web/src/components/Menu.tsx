@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styles from './menu.module.scss';
+import styles from './Menu.module.scss';
 
 const Menu: React.FC = () => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.menuList}>
         <li className={styles.menuItem}>
-          <Link to="#">Services</Link>
+          <Link to="/services">Services</Link>
         </li>
         <li className={styles.menuItem}>
-          <Link to="#">About</Link>
+          <Link to="/about">About</Link>
         </li>
         <li className={styles.menuItem}>
-          <Link to="#">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </nav>

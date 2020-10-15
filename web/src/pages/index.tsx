@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Layout from '../components/Layout';
+import SEO from '../components/Seo';
 import styles from './index.module.scss';
 
 const IndexPage: React.FC = () => {
@@ -22,8 +22,8 @@ const IndexPage: React.FC = () => {
   const { fluid } = data.bigIcon.childImageSharp;
 
   return (
-    <Layout>
-      <SEO title="Life in HD | Home" />
+    <>
+      <SEO title="Home | Life in HD" />
       <section className={styles.hero}>
         <div className={styles.heroText}>
           <h1 className={styles.heroHeading}>
@@ -38,7 +38,27 @@ const IndexPage: React.FC = () => {
         </div>
         <Image className={styles.heroImage} fluid={fluid} />
       </section>
-    </Layout>
+      <section className={styles.content}>
+        <p>
+          Ex sit anim consequat cupidatat veniam duis occaecat et deserunt
+          consectetur enim commodo. Anim elit pariatur qui consectetur occaecat
+          velit consectetur pariatur elit quis est. Esse exercitation et nostrud
+          duis exercitation. Est sunt anim quis reprehenderit culpa laboris
+          Lorem amet excepteur anim id amet sint proident. Commodo mollit eu
+          labore magna elit reprehenderit amet quis laboris cillum ex proident.
+          Quis dolore Lorem Lorem cillum irure nulla sunt.
+        </p>
+        <p>
+          Ex sit anim consequat cupidatat veniam duis occaecat et deserunt
+          consectetur enim commodo. Anim elit pariatur qui consectetur occaecat
+          velit consectetur pariatur elit quis est. Esse exercitation et nostrud
+          duis exercitation. Est sunt anim quis reprehenderit culpa laboris
+          Lorem amet excepteur anim id amet sint proident. Commodo mollit eu
+          labore magna elit reprehenderit amet quis laboris cillum ex proident.
+          Quis dolore Lorem Lorem cillum irure nulla sunt.
+        </p>
+      </section>
+    </>
   );
 };
 
