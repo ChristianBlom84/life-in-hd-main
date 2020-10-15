@@ -1,5 +1,7 @@
+@import '../variables.scss';
+
 .header {
-    background: rgb(45, 42, 48);
+    background: $darkgray;
     color: white;
     display: flex;
     flex-flow: row nowrap;
