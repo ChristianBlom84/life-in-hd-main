@@ -1,8 +1,8 @@
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
-import Menu from './menu';
-import styles from './header.module.scss';
+import Menu from './Menu';
+import styles from './Header.module.scss';
 
 const Header: React.FC = () => {
   const data = useStaticQuery(graphql`
