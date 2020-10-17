@@ -1,19 +1,13 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-
-import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import styles from './index.module.scss';
 
 const IndexPage: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
-<<<<<<< HEAD
-      bigIcon: file(relativePath: { eq: "icons/life-in-hd-icon.jpg" }) {
-=======
       bigIcon: file(relativePath: { eq: "BG-2-Def-Cent-on-white.png" }) {
->>>>>>> 35268973dc7af719237b9e5a178bfd7f96d83b14
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
