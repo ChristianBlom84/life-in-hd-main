@@ -1,0 +1,84 @@
+@import '../variables.scss';
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  @include medium {
+    align-items: flex-start;
+  }
+
+  @include mediumMax {
+    h2 {
+      margin-top: 1rem;
+    }
+  }
+
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include mediumMax {
+    align-items: stretch;
+    width: 100%;
+  }
+
+  input {
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 40px;
+    padding-left: 0.5rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.20);
+    width: 100%;
+
+    @include medium {
+      width: 280px;
+    }
+
+  }
+
+  @include mediumMax {
+    label {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.button {
+  border-radius: 5px;
+  height: 40px;
+  border: 1px solid #5886e8;
+  background-color: $green;
+  color: white;
+  transition: 0.3s;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  flex-grow: 1;
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:hover {
+    background-color: $darkgreen;
+  }
+
+  @include medium {
+    width: 90px;
+    align-self: flex-start;
+  }
+
+  @include mediumMax {
+    margin-top: 2rem;
+  }
+}

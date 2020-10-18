@@ -43,13 +43,14 @@ const ContactPage: React.FC = () => {
           Use the form below to contact us and we&apos;ll get back to you as
           soon as we can.
         </p>
-        <div>
+        <div className={styles.formContainer}>
           <form
             name="contact"
             method="post"
             onSubmit={handleSubmit}
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            className={styles.form}
           >
             <div className={styles.inputGroup}>
               <label htmlFor="name">Your Name:</label>
@@ -87,7 +88,9 @@ const ContactPage: React.FC = () => {
                 }
               />
             </div>
-            <button type="submit">Submit</button>
+            <button className={styles.button} type="submit">
+              Submit
+            </button>
             <input type="hidden" name="form-name" value="contact" />
           </form>
         </div>
