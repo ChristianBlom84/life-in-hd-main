@@ -3,6 +3,7 @@ import SEO from '../components/Seo';
 import styles from './contact.module.scss';
 
 interface FormData {
+  [key: string]: string;
   'form-name': string;
   name: string;
   email: string;
@@ -16,15 +17,12 @@ const ContactPage: React.FC = () => {
 
   const encodeForm = (data: FormData): string => {
     return Object.keys(data)
-
       .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-
       .join('&');
   };
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
-
     try {
       await fetch('/', {
         method: 'POST',
