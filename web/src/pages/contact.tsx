@@ -37,12 +37,14 @@ const ContactPage: React.FC = () => {
   return (
     <>
       <SEO title="Contact us | Life in HD" />
-      <section>
-        <h1>Contact us</h1>
-        <p>
-          Use the form below to contact us and we&apos;ll get back to you as
-          soon as we can.
-        </p>
+      <section className={styles.section}>
+        <div className={styles.hero}>
+          <h1 className={styles.h1}>Contact us</h1>
+          <p>
+            Use the form below to contact us and we&apos;ll get back to you as
+            soon as we can.
+          </p>
+        </div>
         <div className={styles.formContainer}>
           <form
             name="contact"

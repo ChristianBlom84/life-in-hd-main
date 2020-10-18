@@ -623,4 +623,8 @@ main {
 
 section {
   padding: 1rem;
+
+  @include medium {
+    padding: 1rem 10rem;
+  }
 }
