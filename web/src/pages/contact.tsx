@@ -2,13 +2,38 @@ import React, { useState } from 'react';
 import SEO from '../components/Seo';
 import styles from './contact.module.scss';
 
+interface FormData {
+  'form-name': string;
+  name: string;
+  email: string;
+  message: string;
+}
+
 const ContactPage: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent): void => {
+  const encodeForm = (data: FormData): string => {
+    return Object.keys(data)
+
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+
+      .join('&');
+  };
+
+  const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeForm({ 'form-name': 'contact', name, email, message }),
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
