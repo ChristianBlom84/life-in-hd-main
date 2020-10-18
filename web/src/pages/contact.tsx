@@ -7,6 +7,10 @@ const ContactPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+  const handleSubmit = (e: React.FormEvent): void => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <SEO title="Contact us | Life in HD" />
@@ -20,6 +24,7 @@ const ContactPage: React.FC = () => {
           <form
             name="contact"
             method="post"
+            onSubmit={handleSubmit}
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
@@ -59,6 +64,7 @@ const ContactPage: React.FC = () => {
                 }
               />
             </div>
+            <button type="submit">Submit</button>
             <input type="hidden" name="form-name" value="contact" />
           </form>
         </div>
