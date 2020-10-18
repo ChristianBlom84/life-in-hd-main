@@ -38,8 +38,8 @@ const ContactPage: React.FC = () => {
     <>
       <SEO title="Contact us | Life in HD" />
       <section className={styles.section}>
-        <div className={styles.hero}>
-          <h1 className={styles.h1}>Contact us</h1>
+        <div className="hero">
+          <h1>Contact us</h1>
           <p>
             Use the form below to contact us and we&apos;ll get back to you as
             soon as we can.
@@ -80,12 +80,12 @@ const ContactPage: React.FC = () => {
             </div>
             <div className={styles.inputGroup}>
               <label htmlFor="email">Message:</label>
-              <input
-                type="text"
+              <textarea
                 name="message"
                 id="message"
                 value={message}
-                onChange={(e: React.FormEvent<HTMLInputElement>): void =>
+                rows={10}
+                onChange={(e: React.FormEvent<HTMLTextAreaElement>): void =>
                   setMessage(e.currentTarget.value)
                 }
               />
