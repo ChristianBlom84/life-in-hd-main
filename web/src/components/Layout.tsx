@@ -1,11 +1,4 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -16,6 +9,7 @@ import 'typeface-open-sans';
 import 'typeface-montserrat';
 
 const Layout: React.FC<React.ReactNode> = ({ children }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,7 +22,7 @@ const Layout: React.FC<React.ReactNode> = ({ children }) => {
 
   return (
     <div id="life-in-hd-wrapper">
-      <Header />
+      <Header setMenuOpen />
       <main>{children}</main>
       <Footer />
     </div>

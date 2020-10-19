@@ -7,10 +7,18 @@
     flex-flow: row nowrap;
     align-items: center;
     height: 100px;
+    padding: 0 1rem;
+
+    @include mediumMax {
+      justify-content: space-between;
+    }
 
     .logo {
         flex: 0 0 200px;
-        margin-right: -200px;
+
+        @include xlarge {
+          margin-right: -200px;
+        }
     }
 
     h1 {
@@ -26,4 +34,14 @@
             color: white;
         }
     }
+
+    button {
+      background: none;
+      color: white;
+      border: none;
+    }
+}
+
+.menuIcon {
+  font-size: 2rem;
 }
