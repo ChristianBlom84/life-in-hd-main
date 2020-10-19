@@ -623,10 +623,6 @@ main {
 
 section {
   padding: 1rem;
-
-  @include medium {
-    padding: 1rem 10rem;
-  }
 }
 
 .hero {
@@ -636,7 +632,11 @@ section {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
+  padding: 0.5rem;
+
+  @include small {
+    padding: 1rem;
+  }
 
   h1 {
     background:black;

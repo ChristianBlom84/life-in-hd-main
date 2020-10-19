@@ -25,10 +25,11 @@
 
   @include mediumMax {
     width: 100%;
+    padding: 0 1rem;
   }
 
   @include medium {
-    width: 600px;
+    width: 500px;
   }
 
   input, textarea {

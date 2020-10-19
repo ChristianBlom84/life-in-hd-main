@@ -11,7 +11,7 @@
   @include mediumMax {
     padding-top: 2rem;
   }
-  
+
   @include medium {
     flex-flow: row nowrap;
   }
@@ -19,7 +19,7 @@
 
 .heroText {
   flex: 0 1 auto;
-  
+
   @include medium {
     margin-right: 5rem;
   }
@@ -27,7 +27,7 @@
 
 .heroImage {
   flex: 1 0 auto;
-  
+
   @include medium {
     flex: 0 1 200px;
   }
@@ -36,6 +36,13 @@
 .heroHeading {
   line-height: normal;
   font-weight: normal;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  @include xlarge {
+    flex-direction: row;
+  }
 }
 
 .heroHeadingSpanLeft {
