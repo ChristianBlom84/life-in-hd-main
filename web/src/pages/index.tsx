@@ -14,10 +14,18 @@ const IndexPage: React.FC = () => {
           }
         }
       }
+      staticIcon: file(relativePath: { eq: "BG-2-Def-Cent-on-white.png" }) {
+        childImageSharp {
+          fixed(width: 150) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `);
 
   const { fluid } = data.bigIcon.childImageSharp;
+  const { fixed } = data.staticIcon.childImageSharp;
 
   return (
     <>
@@ -29,7 +37,7 @@ const IndexPage: React.FC = () => {
             <span className={styles.heroHeadingSpanRight}>Life in HD</span>
           </h1>
           <p className={styles.preamble}>
-            Human Design readings and courses
+            Human Design readings and courses online and
             <br />
             in Stockholm, Sweden
           </p>
@@ -37,14 +45,17 @@ const IndexPage: React.FC = () => {
         <Image className={styles.heroImage} fluid={fluid} />
       </section>
       <section className={styles.content}>
-        <p>
-          Human Design is an intricate, amazing system for self-discovery and
-          integrity. The core principle of Human Design is that your mind is an
-          amazing tool - but it is not meant to make decisions for you in your
-          life. Human Design shows you how you as a unique individual are made
-          to make correct decisions and gives you the tools to find out the
-          truth for yourself.
-        </p>
+        <div>
+          <Image className={styles.mandalaImage} fixed={fixed} />
+          <p>
+            Human Design is an intricate, amazing system for self-discovery and
+            integrity. The core principle of Human Design is that your mind is
+            an amazing tool - but it is not meant to make decisions for you in
+            your life. Human Design shows you how you as a unique individual are
+            made to make correct decisions and gives you the tools to find out
+            the truth for yourself.
+          </p>
+        </div>
         <p>
           Human Design is not a religion and there is no dogma. There is only a
           mapping of the mechanical aspects that lie beneath and drive life as

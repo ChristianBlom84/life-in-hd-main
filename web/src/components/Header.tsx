@@ -32,7 +32,7 @@ const Header: React.FC = () => {
       window.addEventListener('resize', handleResize);
       handleResize();
     }
-  }, [window]);
+  }, [window ? window : null]);
 
   const data = useStaticQuery(graphql`
     query {
