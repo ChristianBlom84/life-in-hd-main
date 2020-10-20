@@ -14,18 +14,10 @@ const IndexPage: React.FC = () => {
           }
         }
       }
-      staticIcon: file(relativePath: { eq: "BG-2-Def-Cent-on-white.png" }) {
-        childImageSharp {
-          fixed(width: 150) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
     }
   `);
 
-  const { fluid } = data.bigIcon.childImageSharp;
-  const { fixed } = data.staticIcon.childImageSharp;
+  const bigIcon = data.bigIcon.childImageSharp.fluid;
 
   return (
     <>
@@ -42,20 +34,18 @@ const IndexPage: React.FC = () => {
             in Stockholm, Sweden
           </p>
         </div>
-        <Image className={styles.heroImage} fluid={fluid} />
+        <Image className={styles.heroImage} fluid={bigIcon} />
       </section>
       <section className={styles.content}>
-        <div>
-          <Image className={styles.mandalaImage} fixed={fixed} />
-          <p>
-            Human Design is an intricate, amazing system for self-discovery and
-            integrity. The core principle of Human Design is that your mind is
-            an amazing tool - but it is not meant to make decisions for you in
-            your life. Human Design shows you how you as a unique individual are
-            made to make correct decisions and gives you the tools to find out
-            the truth for yourself.
-          </p>
-        </div>
+        <h2>What is Human Design?</h2>
+        <p>
+          Human Design is an intricate, amazing system for self-discovery and
+          integrity. The core principle of Human Design is that your mind is an
+          amazing tool - but it is not meant to make decisions for you in your
+          life. Human Design shows you how you as a unique individual are made
+          to make correct decisions and gives you the tools to find out the
+          truth for yourself.
+        </p>
         <p>
           Human Design is not a religion and there is no dogma. There is only a
           mapping of the mechanical aspects that lie beneath and drive life as
@@ -63,7 +53,8 @@ const IndexPage: React.FC = () => {
           experimentation with your own correct decision making.
         </p>
         <p>
-          Here at Life in HD we offer readings, sessions and classes to help you
+          Here at Life in HD we offer{' '}
+          <Link to="services">readings, sessions and classes</Link> to help you
           get started on your own, personal journey of living correctly as
           yourself. Often we need information, support or sharing coming from
           outside ourselves in order to trigger a change in our direction. Is
