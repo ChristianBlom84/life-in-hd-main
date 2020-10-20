@@ -9,7 +9,6 @@ import 'typeface-open-sans';
 import 'typeface-montserrat';
 
 const Layout: React.FC<React.ReactNode> = ({ children }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -22,7 +21,7 @@ const Layout: React.FC<React.ReactNode> = ({ children }) => {
 
   return (
     <div id="life-in-hd-wrapper">
-      <Header setMenuOpen />
+      <Header />
       <main>{children}</main>
       <Footer />
     </div>

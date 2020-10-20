@@ -1,30 +1,38 @@
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Menu from './Menu';
-import useWindowSize from '../../utils/useWindowSize';
+import SideMenu from './SideMenu';
 import styles from './Header.module.scss';
 
-interface Props {
-  setMenuOpen: () => void;
-}
-
-const Header: React.FC<Props> = ({ setMenuOpen }) => {
+const Header: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuClosing, setMenuClosing] = useState(false);
   const [width, setWidth] = useState(768);
 
   const handleResize = (): void => {
     setWidth(window.innerWidth);
   };
 
+  const handleClose = (): void => {
+    if (menuOpen) {
+      setMenuClosing(true);
+      setTimeout(() => {
+        setMenuOpen(false);
+        setMenuClosing(false);
+      }, 200);
+    } else {
+      setMenuOpen(true);
+    }
+  };
+
   useEffect(() => {
     if (typeof window !== undefined) {
       window.addEventListener('resize', handleResize);
       handleResize();
-    } else {
-      window.removeEventListener('resize', handleResize);
     }
-  });
+  }, [window]);
 
   const data = useStaticQuery(graphql`
     query {
@@ -51,6 +59,14 @@ const Header: React.FC<Props> = ({ setMenuOpen }) => {
         <button onClick={(): void => setMenuOpen(!menuOpen)} type="button">
           <GiHamburgerMenu className={styles.menuIcon} />
         </button>
+      )}
+      {menuOpen && (
+        <SideMenu
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+          menuClosing={menuClosing}
+          handleClose={handleClose}
+        />
       )}
     </header>
   );
