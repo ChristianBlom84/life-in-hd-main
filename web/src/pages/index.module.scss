@@ -60,6 +60,15 @@
   padding: 1rem;
   max-width: 900px;
   margin: auto;
+  background: $darkgray;
+  color: white;
+
+  a {
+    color: white;
+    :visited {
+      color: $lightgreen;
+    }
+  }
 
   p:last-child {
     margin-bottom: 0;

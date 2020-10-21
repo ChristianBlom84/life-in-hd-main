@@ -1,5 +1,25 @@
 @import '../variables.scss';
 
-.section {
-  padding: 0 0 5rem 0;
+.heading {
+  margin-bottom: 0;
+}
+
+.content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.imageParagraph {
+  display: flex;
+  flex-flow: row nowrap;
+
+  @include mediumMax {
+    flex-flow: column nowrap;
+  }
+}
+
+.planetImage {
+  flex: 1 0 250px;
+  margin-right: 1rem;
+  border-radius: 50%;
 }

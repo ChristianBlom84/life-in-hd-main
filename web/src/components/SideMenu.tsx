@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
+import { BiX } from 'react-icons/bi';
 import styles from './SideMenu.module.scss';
 
 interface Props {
@@ -46,6 +47,13 @@ const Menu: React.FC<Props> = ({
           delayedOpen && menuOpen && !menuClosing && styles.open
         }`}
       >
+        <button
+          className={styles.closeButton}
+          type="button"
+          onClick={handleClose}
+        >
+          <BiX />
+        </button>
         <ul className={styles.menuList}>
           <li className={styles.menuItem}>
             <Link to="/services" onClick={handleClose}>

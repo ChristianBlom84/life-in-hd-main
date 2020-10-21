@@ -27,10 +27,22 @@
   background: $darkgray;
   transition: all 0.3s;
   z-index: 2;
+  padding: 2rem 1rem;
 }
 
 .open {
   transform: translateX(0);
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .menuList {
@@ -39,6 +51,7 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  align-items: center;
   margin: 0;
 }
 
