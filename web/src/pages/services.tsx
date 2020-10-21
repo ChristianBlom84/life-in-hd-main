@@ -19,7 +19,7 @@ const ServicesPage: React.FC = () => (
     </section>
     <section className={styles.content}>
       <h2>Readings and sessions</h2>
-      <h3>Manifestor session</h3>
+      <h3>Manifestor session with Milla</h3>
       <p>
         Do you have a Manifestor in your life? Are you struggling with
         communication and wondering how to best deal with this person? I’m
