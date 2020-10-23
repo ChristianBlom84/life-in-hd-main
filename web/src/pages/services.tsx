@@ -19,6 +19,13 @@ const ServicesPage: React.FC = () => (
     </section>
     <section className={styles.content}>
       <h2>Readings and sessions</h2>
+      <h3>Foundation reading with Christian</h3>
+      <p>
+        A foundation reading is the natural place to start your Human Design
+        experiment. You will learn the elemental aspects and challenges of your
+        particular design and become familiar with the core concepts of Type,
+        Strategy and Inner Authority.
+      </p>
       <h3>Manifestor session with Milla</h3>
       <p>
         Do you have a Manifestor in your life? Are you struggling with

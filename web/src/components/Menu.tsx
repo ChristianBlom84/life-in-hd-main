@@ -7,6 +7,9 @@ const Menu: React.FC = () => {
     <nav className={styles.nav}>
       <ul className={styles.menuList}>
         <li className={styles.menuItem}>
+          <Link to="/human-design">Human Design</Link>
+        </li>
+        <li className={styles.menuItem}>
           <Link to="/services">Services</Link>
         </li>
         <li className={styles.menuItem}>

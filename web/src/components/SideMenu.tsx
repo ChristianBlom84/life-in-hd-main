@@ -56,6 +56,11 @@ const Menu: React.FC<Props> = ({
         </button>
         <ul className={styles.menuList}>
           <li className={styles.menuItem}>
+            <Link to="/human-design" onClick={handleClose}>
+              Human Design
+            </Link>
+          </li>
+          <li className={styles.menuItem}>
             <Link to="/services" onClick={handleClose}>
               Services
             </Link>
