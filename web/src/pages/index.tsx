@@ -14,6 +14,20 @@ const IndexPage: React.FC = () => {
           }
         }
       }
+      hexagramOne: file(relativePath: { eq: "hexagram1.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      hexagramTwo: file(relativePath: { eq: "hexagram2.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
