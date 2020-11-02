@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import SEO from '../components/Seo';
@@ -7,7 +7,7 @@ import styles from './about.module.scss';
 const AboutPage: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "bodygraphs-planet.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "millachristian.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid_noBase64
@@ -27,14 +27,20 @@ const AboutPage: React.FC = () => {
       </section>
       <section className={styles.content}>
         <div className={styles.imageParagraph}>
-          <p>
-            Milla and Christian, (Manifestor 6/2 and Projector 4/6) have been
-            married since 2013. Christian had his first Human Design reading
-            February 2007 and Milla started her experiment June 2012. They are
-            raising their two kids, Leia (Manifesting Generator 5/1) and Elektra
-            (Generator 6/2), according to their design.
-          </p>
-          <Img className={styles.planetImage} fluid={fluid} />
+          <div>
+            <p>
+              Milla and Christian, (6/2 Manifestor and 4/6 Projector) have been
+              married since 2013. Christian had his first Human Design reading
+              February 2007 and Milla started her experiment June 2012. They are
+              raising their two kids, Leia (5/1 Manifesting Generator) and
+              Elektra (6/2 Generator), according to their design.
+            </p>
+            <p>
+              Christian is a certified Human Design Analyst and Living Your
+              Design Guide. Milla is a certified Living Your Design Guide.
+            </p>
+          </div>
+          <Img className={styles.aboutImage} fluid={fluid} />
         </div>
       </section>
     </>
