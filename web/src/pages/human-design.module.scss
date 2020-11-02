@@ -1,0 +1,41 @@
+@import '../variables.scss';
+
+.section {
+  padding: 0;
+}
+
+.hero {
+  background: $green;
+  min-height: 10rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  @include small {
+    padding: 1rem;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: row wrap;
+  }
+
+  span {
+    background:black;
+    display: inline;
+    color: white;
+    text-align: center;
+    line-height: normal;
+    font-weight: normal;
+    padding: 0 0.5rem;
+  }
+}
+
+.content {
+  max-width: 900px;
+  margin: auto;
+}

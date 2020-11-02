@@ -22,8 +22,13 @@ const HumanDesignPage: React.FC = () => {
   return (
     <>
       <SEO title="Human Design Information | Life in HD" />
-      <section className={`hero`}>
-        <h1 className={styles.heading}>The Human Design System</h1>
+      <section className={styles.hero}>
+        <h1>
+          <span>The</span>
+          <span>Human</span>
+          <span>Design</span>
+          <span>System</span>
+        </h1>
       </section>
       <section className={styles.content}>
         <div className={styles.imageParagraph}>

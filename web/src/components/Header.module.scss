@@ -16,7 +16,7 @@
     .logo {
         flex: 0 0 200px;
 
-        @include xlarge {
+        @include xxlarge {
           margin-right: -200px;
         }
     }
