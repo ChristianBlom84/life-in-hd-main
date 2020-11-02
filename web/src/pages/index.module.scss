@@ -53,6 +53,21 @@
   color: white;
 }
 
+.contentSection {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hexagramOne, .hexagramTwo {
+  flex-basis: calc((100vw - 900px) / 2);
+  margin: 1rem;
+  max-width: 300px;
+  @include xxlargeMax {
+    display: none;
+  }
+}
+
 .content {
   display: flex;
   flex-flow: column nowrap;

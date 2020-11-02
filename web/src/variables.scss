@@ -13,6 +13,7 @@ $BpSmall: 544px;
 $BpMedium: 767px;
 $BpLarge: 971px;
 $BpXLarge: 1130px;
+$BpXXLarge: 1500px;
 
 @mixin smallMax {
   @media (max-width: #{$BpSmall}) {
@@ -22,6 +23,12 @@ $BpXLarge: 1130px;
 
 @mixin mediumMax {
   @media (max-width: #{$BpMedium}) {
+    @content;
+  }
+}
+
+@mixin xxlargeMax {
+  @media (max-width: #{$BpXXLarge}) {
     @content;
   }
 }
@@ -46,6 +53,12 @@ $BpXLarge: 1130px;
 
 @mixin xlarge {
   @media (min-width: #{$BpXLarge}) {
+    @content;
+  }
+}
+
+@mixin xxlarge {
+  @media (min-width: #{$BpXXLarge}) {
     @content;
   }
 }
