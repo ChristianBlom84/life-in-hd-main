@@ -1,5 +1,6 @@
 import React from 'react';
 import SEO from '../components/Seo';
+import { Link } from 'gatsby';
 
 import styles from './services.module.scss';
 
@@ -13,8 +14,14 @@ const ServicesPage: React.FC = () => (
         <span>Services</span>
       </h1>
       <p>
-        Here you will find information about Human Design readings, courses and
-        sessions we offer.
+        <p>
+          Here at Life in HD we offer readings, sessions and classes to help you
+          get started on your own, personal journey of living correctly as
+          yourself. Often we need information, support or sharing coming from
+          outside ourselves in order to trigger a change in our direction. Is
+          this what you need? If this information resonates with you, we invite
+          you to <Link to="contact">contact us</Link>.
+        </p>
       </p>
     </section>
     <section className={styles.content}>
