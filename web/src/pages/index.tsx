@@ -1,6 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
+import { Parallax } from 'react-scroll-parallax';
 import SEO from '../components/Seo';
 import styles from './index.module.scss';
 
@@ -28,34 +30,74 @@ const IndexPage: React.FC = () => {
           }
         }
       }
+      heroBackground: file(relativePath: { eq: "backgrounds/start_hero.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      backgroundTwo: file(relativePath: { eq: "backgrounds/start_bg2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
   const bigIcon = data.bigIcon.childImageSharp.fluid;
   const hexagramOne = data.hexagramOne.childImageSharp.fluid;
   const hexagramTwo = data.hexagramTwo.childImageSharp.fluid;
+  const heroBackground = data.heroBackground.childImageSharp.fluid;
+  // const backgroundTwo = data.backgroundTwo.childImageSharp.fluid;
 
   return (
     <>
       <SEO title="Home | Life in HD" />
-      <section className={styles.hero}>
-        <div className={styles.heroText}>
-          <h1 className={styles.heroHeading}>
-            <span className={styles.heroHeadingSpanLeft}>Welcome to</span>
-            <span className={styles.heroHeadingSpanRight}>
-              Life in Human Design
-            </span>
-          </h1>
-          <p className={styles.preamble}>
-            Human Design readings and courses online and
-            <br />
-            in Stockholm, Sweden
-          </p>
+      <BackgroundImage
+        Tag={`section`}
+        id={`hero`}
+        className={styles.hero}
+        fluid={heroBackground}
+      >
+        <div className={styles.heroOverlay}>
+          <Parallax y={[-50, 50]}>
+            <div className={styles.heroText}>
+              <h1 className={styles.heroHeading}>Life in Human Design</h1>
+              <p className={styles.preamble}>
+                Welcome! Are you ready to start your experiment?
+              </p>
+            </div>
+          </Parallax>
         </div>
-        <Image className={styles.heroImage} fluid={bigIcon} />
-      </section>
+      </BackgroundImage>
       <section className={styles.contentSection}>
-        <Image className={styles.hexagramOne} fluid={hexagramOne} />
+        <BackgroundImage
+          Tag={`section`}
+          id={`hero`}
+          className={styles.background}
+          fluid={data.backgroundTwo.childImageSharp.fluid}
+        >
+          <div className={styles.contentOverlay}>
+            <h3>What is Human Design?</h3>
+            <p>
+              Human Design is an intricate, amazing system for self-discovery
+              and integrity. The core principle of Human Design is that your
+              mind is an amazing tool - but it is not meant to make decisions
+              for you in your life. Human Design shows you how you as a unique
+              individual are made to make correct decisions and gives you the
+              tools to find out the truth for yourself.
+            </p>
+            <p>
+              Human Design is not a religion and there is no dogma. There is
+              only a mapping of the mechanical aspects that lie beneath and
+              drive life as we know it, and the individual exploration possible
+              through experimentation with your own correct decision making.
+            </p>
+          </div>
+        </BackgroundImage>
         <div className={styles.content}>
           <p>
             Have you struggled with a feeling of frustration? Maybe you’re
@@ -76,7 +118,6 @@ const IndexPage: React.FC = () => {
             for you?
           </p>
         </div>
-        <Image className={styles.hexagramTwo} fluid={hexagramTwo} />
       </section>
     </>
   );

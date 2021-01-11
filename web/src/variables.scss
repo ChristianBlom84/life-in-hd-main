@@ -1,9 +1,9 @@
 // Colors
 $darkgray: #2d2a30;
 $lightgreen: #5c9ca2;
-$green-christian: #207178;
+$green: #207178;
 $darkgreen: #0d4044;
-$green: #A9D088;
+$green-milla: #A9D088;
 
 // Fonts
 $primary-font: 'Montserrat', sans-serif;
@@ -15,6 +15,13 @@ $BpMedium: 767px;
 $BpLarge: 971px;
 $BpXLarge: 1130px;
 $BpXXLarge: 1500px;
+
+// Parallax
+$parallax-perspective: 8px;
+
+@function parallax-scale-factor($z-distance) {
+  @return ($parallax-perspective  -  $z-distance) / $parallax-perspective;
+}
 
 @mixin smallMax {
   @media (max-width: #{$BpSmall}) {
