@@ -130,3 +130,19 @@
     margin-bottom: 0;
   }
 }
+
+.contentRight {
+  margin: 0 1rem 0 auto;
+  
+  @include large {
+    margin: 0 250px 0 auto;
+  }
+}
+
+.contentLeft {
+  margin: 0 auto 0 1rem;
+
+  @include large {
+    margin: 0 auto 0 250px;
+  }
+}

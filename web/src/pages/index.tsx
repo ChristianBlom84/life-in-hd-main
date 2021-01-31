@@ -39,35 +39,35 @@ const IndexPage: React.FC = () => {
       }
       backgroundThree: file(relativePath: { eq: "backgrounds/start_bg3.jpg" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 80) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       backgroundFour: file(relativePath: { eq: "backgrounds/start_bg4.jpg" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 80) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       backgroundFive: file(relativePath: { eq: "backgrounds/start_bg5.jpg" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 80) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       heroBackground: file(relativePath: { eq: "backgrounds/start_hero.jpg" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 80) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       backgroundSix: file(relativePath: { eq: "backgrounds/start_bg6.jpg" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 80) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -139,7 +139,7 @@ const IndexPage: React.FC = () => {
           fluid={backgroundThree}
         >
           <Parallax y={['-100px', '100px']}>
-            <div className={`${styles.contentOverlay} ${styles.ml4}`}>
+            <div className={`${styles.contentOverlay} ${styles.contentLeft}`}>
               <p className={styles.mb0}>
                 Here at Life in HD we offer{' '}
                 <Link to="/services">readings, sessions and classes</Link> to
@@ -159,9 +159,7 @@ const IndexPage: React.FC = () => {
           fluid={backgroundFour}
         >
           <Parallax y={['50px', '-50px']}>
-            <div
-              className={`${styles.contentOverlay} ${styles.mr4} ${styles.mlAuto}`}
-            >
+            <div className={`${styles.contentOverlay} ${styles.contentRight}`}>
               <h3>Foundation reading with Christian</h3>
               <p className={styles.mb0}>
                 A foundation reading is the natural place to start your Human
@@ -198,9 +196,7 @@ const IndexPage: React.FC = () => {
           fluid={backgroundSix}
         >
           <Parallax y={['-100px', '100px']}>
-            <div
-              className={`${styles.contentOverlay} ${styles.ml4} ${styles.mrAuto}`}
-            >
+            <div className={`${styles.contentOverlay} ${styles.contentLeft}`}>
               <h3>Who are we?</h3>
               <p>
                 Milla and Christian, (6/2 Manifestor and 4/6 Projector) have
