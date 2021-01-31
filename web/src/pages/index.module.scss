@@ -71,17 +71,17 @@
   text-align: center;
 }
 
-.backGround {
+.background {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
   align-items: center;
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 175vh;
   margin: 2px 0;
+  padding: 0;
 
   &::before, &::after {
     background-repeat: no-repeat;
@@ -94,6 +94,13 @@
   background-color: rgba(255,255,255,0.9);
   box-shadow: 0 0 4px rgba(0,0,0,.25);
   padding: 3rem 2rem;
+  width: 65%;
+  max-width: 900px;
+  line-height: 150%;
+
+  @include smallMax {
+    width: 85%;
+  }
 }
 
 .contentSection {
