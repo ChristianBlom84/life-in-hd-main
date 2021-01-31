@@ -58,14 +58,14 @@ const IndexPage: React.FC = () => {
           }
         }
       }
-      backgroundSix: file(relativePath: { eq: "backgrounds/start_bg6.jpg" }) {
+      heroBackground: file(relativePath: { eq: "backgrounds/start_hero.jpg" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      heroBackground: file(relativePath: { eq: "backgrounds/start_hero.jpg" }) {
+      backgroundSix: file(relativePath: { eq: "backgrounds/start_bg6.jpg" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
