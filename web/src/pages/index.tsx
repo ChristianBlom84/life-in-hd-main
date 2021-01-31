@@ -32,7 +32,7 @@ const IndexPage: React.FC = () => {
       }
       backgroundTwo: file(relativePath: { eq: "backgrounds/start_bg2.jpg" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 80) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
