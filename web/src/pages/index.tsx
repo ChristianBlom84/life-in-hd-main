@@ -137,6 +137,7 @@ const IndexPage: React.FC = () => {
           Tag={`section`}
           className={`${styles.background} ${styles.justifyStart}`}
           fluid={backgroundThree}
+          rootMargin="400px"
         >
           <Parallax y={['-100px', '100px']}>
             <div className={`${styles.contentOverlay} ${styles.contentLeft}`}>
@@ -157,6 +158,7 @@ const IndexPage: React.FC = () => {
           Tag={`section`}
           className={`${styles.background} ${styles.justifyEnd}`}
           fluid={backgroundFour}
+          rootMargin="400px"
         >
           <Parallax y={['50px', '-50px']}>
             <div className={`${styles.contentOverlay} ${styles.contentRight}`}>
@@ -174,6 +176,7 @@ const IndexPage: React.FC = () => {
           Tag={`section`}
           className={`${styles.background} ${styles.justifyCenter}`}
           fluid={backgroundFive}
+          rootMargin="400px"
         >
           <Parallax y={['100px', '-100px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
@@ -194,6 +197,7 @@ const IndexPage: React.FC = () => {
           Tag={`section`}
           className={`${styles.background} ${styles.justifyStart}`}
           fluid={backgroundSix}
+          rootMargin="400px"
         >
           <Parallax y={['-100px', '100px']}>
             <div className={`${styles.contentOverlay} ${styles.contentLeft}`}>

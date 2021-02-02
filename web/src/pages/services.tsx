@@ -4,7 +4,6 @@ import { Parallax } from 'react-scroll-parallax';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import SEO from '../components/Seo';
 import styles from './services.module.scss';
-import bgStyles from './index.module.scss';
 
 const ServicesPage: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -26,35 +25,29 @@ const ServicesPage: React.FC = () => {
   return (
     <>
       <SEO title="Human Design Services | Life in HD" />
-      <section className={styles.hero}>
-        <h1>
-          <span>Human</span>
-          <span>Design</span>
-          <span>Services</span>
-        </h1>
-        <p>
-          <p>
-            Here at Life in HD we offer readings, sessions and classes to help
-            you get started on your own, personal journey of living correctly as
-            yourself. Often we need information, support or sharing coming from
-            outside ourselves in order to trigger a change in our direction. Is
-            this what you need? If this information resonates with you, we
-            invite you to <Link to="contact">contact us</Link>.
-          </p>
-        </p>
-      </section>
       <BackgroundImage
         Tag={`section`}
         id={`hero`}
-        className={bgStyles.background}
+        className={styles.background}
         fluid={backgroundServices}
       >
-        <div className={bgStyles.heroOverlay}>
-          <Parallax y={[-50, 50]}>
-            <div className={bgStyles.heroText}>
-              <h2 className={bgStyles.heroHeading}>Readings and sessions</h2>
-              <p className={bgStyles.preamble}>
-                Welcome! Are you ready to start your experiment?
+        <div className={styles.heroOverlay}>
+          <Parallax y={['50px', '150px']}>
+            <div className={styles.heroText}>
+              <h1 className={styles.heroHeading}>Human Design Services</h1>
+            </div>
+          </Parallax>
+          <Parallax y={['500px', '250px']}>
+            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
+              <h2>Readings and sessions</h2>
+              <p className={styles.mb0}>
+                Here at Life in HD we offer readings, sessions and classes to
+                help you get started on your own, personal journey of living
+                correctly as yourself. Often we need information, support or
+                sharing coming from outside ourselves in order to trigger a
+                change in our direction. Is this what you need? If this
+                information resonates with you, we invite you to{' '}
+                <Link to="contact">contact us</Link>.
               </p>
             </div>
           </Parallax>

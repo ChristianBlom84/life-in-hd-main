@@ -4,42 +4,149 @@
   padding: 0;
 }
 
-.hero {
-  background: $green;
-  min-height: 10rem;
+#hero, .hero {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
 
-  @include small {
-    padding: 1rem;
-  }
-
-  h1 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-flow: row wrap;
-  }
-
-  span {
-    background:black;
-    display: inline;
-    color: white;
-    text-align: center;
-    line-height: normal;
-    font-weight: normal;
-    padding: 0 0.5rem;
+  &::before, &::after {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 
+.heroOverlay {
+  display: flex;
+  flex-flow: column nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.heroText {
+  flex: 0 1 auto;
+  align-self: flex-start;
+
+  @include medium {
+    margin-right: 5rem;
+  }
+}
+
+.heroImage {
+  @include small {
+    flex: 0 0 200px;
+  }
+}
+
+.heroHeading {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.heroHeadingSpanLeft {
+  background: white;
+  color: black;
+  padding: 0 0.5rem;
+}
+
+.heroHeadingSpanRight {
+  background: black;
+  color: white;
+  padding: 0 0.5rem;
+}
+
+.preamble {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  color: white;
+  text-align: center;
+}
+
+.background {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 175vh;
+  margin: 2px 0;
+  padding: 0;
+
+  &::before, &::after {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.contentOverlay {
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0 0 4px rgba(0,0,0,.25);
+  padding: 3rem 2rem;
+  width: 65%;
+  max-width: 900px;
+  line-height: 150%;
+
+  @include smallMax {
+    width: 85%;
+  }
+}
+
+.contentSection {
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 1rem;
   max-width: 900px;
   margin: auto;
+  background: $darkgray;
+  color: white;
 
-  h2 {
-    text-align: center;
+  a {
+    color: white;
+    :visited {
+      color: $lightgreen;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contentRight {
+  margin: 0 1rem 0 auto;
+
+  @include large {
+    margin: 0 250px 0 auto;
+  }
+}
+
+.contentLeft {
+  margin: 0 auto 0 1rem;
+
+  @include large {
+    margin: 0 auto 0 250px;
   }
 }
