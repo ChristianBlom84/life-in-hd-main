@@ -32,47 +32,65 @@ const ServicesPage: React.FC = () => {
         fluid={backgroundServices}
       >
         <div className={styles.heroOverlay}>
-          <Parallax y={['50px', '150px']}>
+          <Parallax y={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>Human Design Services</h1>
-            </div>
-          </Parallax>
-          <Parallax y={['500px', '250px']}>
-            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
-              <h2>Readings and sessions</h2>
-              <p className={styles.mb0}>
+              <p className={styles.preamble}>
                 Here at Life in HD we offer readings, sessions and classes to
                 help you get started on your own, personal journey of living
                 correctly as yourself. Often we need information, support or
                 sharing coming from outside ourselves in order to trigger a
                 change in our direction. Is this what you need? If this
                 information resonates with you, we invite you to{' '}
-                <Link to="contact">contact us</Link>.
+                <Link to="/contact">contact us</Link>.
+              </p>
+            </div>
+          </Parallax>
+          <Parallax y={['150px', '50px']}>
+            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
+              <h2>Readings and sessions</h2>
+              <h3>Foundation reading with Christian</h3>
+              <p>
+                A Human Design Foundation reading is where it all starts. We
+                will go on a journey through your bodygraph focusing on the Four
+                Views of Strategy, Authority, Definition and Profile.
+              </p>
+              <p>
+                You will learn how to know which things in life are truly for
+                you through your Type and Strategy and to make correct decision
+                through your Inner Authority or decision making process. Your
+                definition will show you what the reliable aspects of your life
+                force are and how they flow through you and your Profile gives
+                you a clear description of your natural role in the grand movie
+                of life.
+              </p>
+              <p>
+                The reading can be done online via Zoom or in person in the
+                Stockholm area. The whole process usually takes 1-2 hours
+                including time for questions.
+              </p>
+              <p>Price: $200</p>
+            </div>
+            <div
+              className={`${styles.contentOverlay} ${styles.mAuto} ${styles.mt4}`}
+            >
+              <h3>Manifestor session with Milla</h3>
+              <p>
+                Do you have a Manifestor in your life? Are you struggling with
+                communication and wondering how to best deal with this person?
+                I’m inviting you to reach out for a Manifestor session with me,
+                where you can ask all your questions and I’ll give you an inside
+                aura perspective. To be clear: I will not be speaking from
+                anything other than my direct experience and is therefore
+                unable, and unwilling, to answer on someone else’s behalf.
+              </p>
+              <p>
+                Price: <Link to="/contact">Contact us</Link>
               </p>
             </div>
           </Parallax>
         </div>
       </BackgroundImage>
-      <section className={styles.content}>
-        <h2>Readings and sessions</h2>
-        <h3>Foundation reading with Christian</h3>
-        <p>
-          A foundation reading is the natural place to start your Human Design
-          experiment. You will learn the elemental aspects and challenges of
-          your particular design and become familiar with the core concepts of
-          Type, Strategy and Inner Authority.
-        </p>
-        <h3>Manifestor session with Milla</h3>
-        <p>
-          Do you have a Manifestor in your life? Are you struggling with
-          communication and wondering how to best deal with this person? I’m
-          inviting you to reach out for a Manifestor session with me, where you
-          can ask all your questions and I’ll give you an inside aura
-          perspective. To be clear: I will not be speaking from anything other
-          than my direct experience and is therefore unable, and unwilling, to
-          answer on someone else’s behalf.
-        </p>
-      </section>
     </>
   );
 };
