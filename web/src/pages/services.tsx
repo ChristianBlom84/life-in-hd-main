@@ -35,15 +35,6 @@ const ServicesPage: React.FC = () => {
           <Parallax y={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>Human Design Services</h1>
-              <p className={styles.preamble}>
-                Here at Life in HD we offer readings, sessions and classes to
-                help you get started on your own, personal journey of living
-                correctly as yourself. Often we need information, support or
-                sharing coming from outside ourselves in order to trigger a
-                change in our direction. Is this what you need? If this
-                information resonates with you, we invite you to{' '}
-                <Link to="/contact">contact us</Link>.
-              </p>
             </div>
           </Parallax>
           <Parallax y={['150px', '50px']}>
@@ -69,10 +60,10 @@ const ServicesPage: React.FC = () => {
                 Stockholm area. The whole process usually takes 1-2 hours
                 including time for questions.
               </p>
-              <p>Price: $200</p>
+              <p className={styles.mb0}>Price: $200</p>
             </div>
             <div
-              className={`${styles.contentOverlay} ${styles.mAuto} ${styles.mt4}`}
+              className={`${styles.contentOverlay} ${styles.mt4} ${styles.mhAuto}`}
             >
               <h3>Manifestor session with Milla</h3>
               <p>
@@ -84,7 +75,7 @@ const ServicesPage: React.FC = () => {
                 anything other than my direct experience and is therefore
                 unable, and unwilling, to answer on someone else’s behalf.
               </p>
-              <p>
+              <p className={styles.mb0}>
                 Price: <Link to="/contact">Contact us</Link>
               </p>
             </div>

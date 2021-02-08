@@ -87,9 +87,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 175vh;
+  height: 315vh;
   margin: 0;
   padding: 0;
+
+  @include medium {
+    height: 185vh;
+  }
 
   &::before, &::after {
     background-repeat: no-repeat;
@@ -106,7 +110,7 @@
   max-width: 900px;
   line-height: 150%;
 
-  @include smallMax {
+  @include mediumMax {
     width: 85%;
   }
 }
