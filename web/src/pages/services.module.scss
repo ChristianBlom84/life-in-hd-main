@@ -91,6 +91,10 @@
   margin: 0;
   padding: 0;
 
+  @include xsmallMax {
+    height: 325vh;
+  }
+
   @include medium {
     height: 185vh;
   }

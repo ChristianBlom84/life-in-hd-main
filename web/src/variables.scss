@@ -12,6 +12,8 @@ $primary-font: 'Montserrat', sans-serif;
 $secondary-font: 'Open Sans', sans-serif;
 
 // Breakpoints
+$BpXXSmall: 320px;
+$BpXSmall: 375px;
 $BpSmall: 544px;
 $BpMedium: 768px;
 $BpLarge: 971px;
@@ -23,6 +25,12 @@ $parallax-perspective: 8px;
 
 @function parallax-scale-factor($z-distance) {
   @return ($parallax-perspective  -  $z-distance) / $parallax-perspective;
+}
+
+@mixin xsmallMax {
+  @media (max-width: #{$BpXSmall}) {
+    @content;
+  }
 }
 
 @mixin smallMax {
