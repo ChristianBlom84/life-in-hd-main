@@ -12,7 +12,7 @@ const ServicesPage: React.FC = () => {
         relativePath: { eq: "backgrounds/services_bg.jpg" }
       ) {
         childImageSharp {
-          fluid(quality: 80) {
+          fluid(quality: 80, srcSetBreakpoints: [800, 1200, 1600, 2500, 4032]) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -21,6 +21,7 @@ const ServicesPage: React.FC = () => {
   `);
 
   const backgroundServices = data.backgroundServices.childImageSharp.fluid;
+  console.log(backgroundServices);
 
   return (
     <>
