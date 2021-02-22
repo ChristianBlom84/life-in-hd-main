@@ -32,42 +32,42 @@ const IndexPage: React.FC = () => {
       }
       backgroundTwo: file(relativePath: { eq: "backgrounds/start_bg2.jpg" }) {
         childImageSharp {
-          fluid(quality: 80) {
+          fluid(quality: 80, srcSetBreakpoints: [600, 1200, 1600, 2500, 4032]) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       backgroundThree: file(relativePath: { eq: "backgrounds/start_bg3.jpg" }) {
         childImageSharp {
-          fluid(quality: 80) {
+          fluid(quality: 80, srcSetBreakpoints: [600, 1200, 1600, 2500, 4032]) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       backgroundFour: file(relativePath: { eq: "backgrounds/start_bg4.jpg" }) {
         childImageSharp {
-          fluid(quality: 80) {
+          fluid(quality: 80, srcSetBreakpoints: [600, 1200, 1600, 2500, 4032]) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       backgroundFive: file(relativePath: { eq: "backgrounds/start_bg5.jpg" }) {
         childImageSharp {
-          fluid(quality: 80) {
+          fluid(quality: 80, srcSetBreakpoints: [600, 1200, 1600, 2500, 4032]) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       heroBackground: file(relativePath: { eq: "backgrounds/start_hero.jpg" }) {
         childImageSharp {
-          fluid(quality: 80) {
+          fluid(quality: 80, srcSetBreakpoints: [600, 1200, 1600, 2500, 4032]) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       backgroundSix: file(relativePath: { eq: "backgrounds/start_bg6.jpg" }) {
         childImageSharp {
-          fluid(quality: 80) {
+          fluid(quality: 80, srcSetBreakpoints: [600, 1200, 1600, 2500, 4032]) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

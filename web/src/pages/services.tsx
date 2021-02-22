@@ -21,7 +21,6 @@ const ServicesPage: React.FC = () => {
   `);
 
   const backgroundServices = data.backgroundServices.childImageSharp.fluid;
-  console.log(backgroundServices);
 
   return (
     <>
