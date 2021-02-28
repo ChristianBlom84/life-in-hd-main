@@ -190,7 +190,7 @@ const IndexPage: React.FC = () => {
                 I’m inviting you to reach out for a Manifestor session with me,
                 where you can ask all your questions and I’ll give you an inside
                 aura perspective. To be clear: I will not be speaking from
-                anything other than my direct experience and is therefore
+                anything other than my direct experience and am therefore
                 unable, and unwilling, to answer on someone else’s behalf.
               </p>
               <p className={styles.mb0}>
