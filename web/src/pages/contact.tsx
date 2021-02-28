@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SEO from '../components/Seo';
+import Spinner from '../components/Spinner';
 import styles from './contact.module.scss';
 
 interface FormData {
@@ -14,6 +15,7 @@ const ContactPage: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [sendingForm, setSendingForm] = useState(false);
 
   const encodeForm = (data: FormData): string => {
     return Object.keys(data)
@@ -23,6 +25,7 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
+    setSendingForm(true);
     try {
       await fetch('/', {
         method: 'POST',
@@ -31,7 +34,9 @@ const ContactPage: React.FC = () => {
       });
     } catch (error) {
       console.error(error);
+      setSendingForm(false);
     }
+    setSendingForm(false);
   };
 
   return (
@@ -60,6 +65,7 @@ const ContactPage: React.FC = () => {
                 type="text"
                 name="name"
                 id="name"
+                required
                 value={name}
                 onChange={(e: React.FormEvent<HTMLInputElement>): void =>
                   setName(e.currentTarget.value)
@@ -72,6 +78,7 @@ const ContactPage: React.FC = () => {
                 type="email"
                 name="email"
                 id="email"
+                required
                 value={email}
                 onChange={(e: React.FormEvent<HTMLInputElement>): void =>
                   setEmail(e.currentTarget.value)
@@ -83,6 +90,7 @@ const ContactPage: React.FC = () => {
               <textarea
                 name="message"
                 id="message"
+                required
                 value={message}
                 rows={10}
                 onChange={(e: React.FormEvent<HTMLTextAreaElement>): void =>
@@ -90,8 +98,12 @@ const ContactPage: React.FC = () => {
                 }
               />
             </div>
-            <button className={styles.button} type="submit">
-              Submit
+            <button
+              className={styles.button}
+              type="submit"
+              disabled={sendingForm}
+            >
+              {sendingForm ? <Spinner /> : 'Submit'}
             </button>
             <input type="hidden" name="form-name" value="contact" />
           </form>
