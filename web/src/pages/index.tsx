@@ -123,15 +123,12 @@ const IndexPage: React.FC = () => {
                 individual are made to make correct decisions and gives you the
                 tools to find out the truth for yourself.
               </p>
-              <p>
+              <p className={styles.mb0}>
                 Human Design is not a religion and there is no dogma. There is
                 only a mapping of the mechanical aspects that lie beneath and
                 drive life as we know it, and the individual exploration
                 possible through experimentation with your own correct decision
                 making.
-              </p>
-              <p className={styles.mb0}>
-                <Link to="/services">Read more</Link>
               </p>
             </div>
           </Parallax>
