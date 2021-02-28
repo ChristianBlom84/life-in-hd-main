@@ -123,12 +123,15 @@ const IndexPage: React.FC = () => {
                 individual are made to make correct decisions and gives you the
                 tools to find out the truth for yourself.
               </p>
-              <p className={styles.mb0}>
+              <p>
                 Human Design is not a religion and there is no dogma. There is
                 only a mapping of the mechanical aspects that lie beneath and
                 drive life as we know it, and the individual exploration
                 possible through experimentation with your own correct decision
                 making.
+              </p>
+              <p className={styles.mb0}>
+                <Link to="/services">Read more</Link>
               </p>
             </div>
           </Parallax>
@@ -163,11 +166,14 @@ const IndexPage: React.FC = () => {
           <Parallax y={['50px', '-50px']}>
             <div className={`${styles.contentOverlay} ${styles.contentRight}`}>
               <h3>Foundation reading with Christian</h3>
-              <p className={styles.mb0}>
+              <p>
                 A foundation reading is the natural place to start your Human
                 Design experiment. You will learn the elemental aspects and
                 challenges of your particular design and become familiar with
                 the core concepts of Type, Strategy and Inner Authority.
+              </p>
+              <p className={styles.mb0}>
+                <Link to="/services">Read more</Link>
               </p>
             </div>
           </Parallax>
@@ -181,7 +187,7 @@ const IndexPage: React.FC = () => {
           <Parallax y={['100px', '-100px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h3>Manifestor sessions with Milla</h3>
-              <p className={styles.mb0}>
+              <p>
                 Do you have a Manifestor in your life? Are you struggling with
                 communication and wondering how to best deal with this person?
                 I’m inviting you to reach out for a Manifestor session with me,
@@ -189,6 +195,9 @@ const IndexPage: React.FC = () => {
                 aura perspective. To be clear: I will not be speaking from
                 anything other than my direct experience and is therefore
                 unable, and unwilling, to answer on someone else’s behalf.
+              </p>
+              <p className={styles.mb0}>
+                <Link to="/services">Read more</Link>
               </p>
             </div>
           </Parallax>

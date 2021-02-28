@@ -65,18 +65,36 @@ const ServicesPage: React.FC = () => {
             <div
               className={`${styles.contentOverlay} ${styles.mt4} ${styles.mhAuto}`}
             >
-              <h3>Manifestor session with Milla</h3>
+              <h3>Manifestor sessions: Manifestor to Manfestor</h3>
               <p>
-                Do you have a Manifestor in your life? Are you struggling with
-                communication and wondering how to best deal with this person?
-                I’m inviting you to reach out for a Manifestor session with me,
-                where you can ask all your questions and I’ll give you an inside
-                aura perspective. To be clear: I will not be speaking from
-                anything other than my direct experience and is therefore
-                unable, and unwilling, to answer on someone else’s behalf.
+                This is me trying to be what I would’ve wanted when I first
+                started my experiment, someone who’d be in their experiment for
+                a while and had first hand experience to share. With the focus
+                on the Manifestor navigating this world using Strategy and
+                Authority, you decide what you want to talk about. If you have
+                any questions or looking for practical advice, I’d be more than
+                willing to help.
               </p>
-              <p className={styles.mb0}>
-                Price: <Link to="/contact">Contact us</Link>
+              <p className={styles.mb0}>Price:</p>
+              <h3>
+                Manifestor sessions: Manifestor to
+                Projector/Generator/Manifesting Generator
+              </h3>
+              <p>
+                This is my way of trying to contribute to a better understanding
+                and communication between the types. It’s not uncommon to have
+                difficulties in a relationship, of varying nature, when there’s
+                a Manifestor involved. Even more so when they may not even
+                themselves know they’re a Manifestor!
+              </p>
+              <p>
+                I cordially invite you to get in touch and book a session if you
+                have questions you’d like to ask a Manifestor! Reach out on
+                Instagram (
+                <a href="https://www.instagram.com/lifeinhd.se/">
+                  @lifeinhd.se
+                </a>
+                ) or via our <Link to="/contact">contact form.</Link>
               </p>
             </div>
           </Parallax>

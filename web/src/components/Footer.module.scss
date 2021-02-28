@@ -1,21 +1,37 @@
 @import '../variables.scss';
 
 .footer {
-    min-height: 5rem;
+    min-height: 6rem;
     background: $darkgray;
     display: flex;
-    justify-content: center;
+    flex-flow: row wrap;
+    justify-content: flex-start;
     align-items: center;
     color: white;
     position: relative;
 
-    p {
-      position: absolute;
-      left: 0;
-      margin: 0;
+    @include small {
+      justify-content: center;
     }
+
+    .leftBlock {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+
+      p {
+        margin: 1rem 0 0 0;
+      }
+    }
+
 
     a {
       color: white;
+    }
+
+    .certificate {
+      right: 0;
+      min-width: 120px;
+      height: auto;
     }
 }
