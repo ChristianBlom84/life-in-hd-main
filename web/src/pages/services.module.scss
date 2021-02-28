@@ -87,7 +87,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 260vh;
+  height: 330vh;
   margin: 0;
   padding: 0;
 
@@ -96,7 +96,7 @@
   }
 
   @include medium {
-    height: 195vh;
+    height: 250vh;
   }
 
   &::before, &::after {
