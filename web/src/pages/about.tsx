@@ -29,15 +29,29 @@ const AboutPage: React.FC = () => {
         <div className={styles.imageParagraph}>
           <div>
             <p>
-              Milla and Christian, (6/2 Manifestor and 4/6 Projector) have been
-              married since 2013. Christian had his first Human Design reading
-              February 2007 and Milla started her experiment June 2012. They are
-              raising their two kids, Leia (5/1 Manifesting Generator) and
-              Elektra (6/2 Generator), according to their design.
+              Milla and Christian met during the summer of 2012 - three weeks
+              later Milla spontaneously proposed and Christian heard himself say
+              &quot;Yes!&quot; and one year later they got married. A year later
+              they were graced with their eldest daughter Leia (5/1 Manifesting
+              Generator) and four years after that Elektra (6/2 Generator)
+              entered the world. They currently live north of Stockholm and are
+              raising their children according to their design.
             </p>
             <p>
               Christian is a certified Human Design Analyst and Living Your
-              Design Guide. Milla is a certified Living Your Design Guide.
+              Design Guide. He recieved his first reading in February of 2007
+              and has been studying, experimenting with and living Human Design
+              since then. He completed his Living Your Design Guide training in
+              2012 and became a certified Analyst in 2015.
+            </p>
+            <p>
+              Milla is a trained physiotherapist and professional bodyworker,
+              since 2015 she is also a certified Living Your Design Guide. As a
+              Manifestor she has a particular passion when it comes to helping
+              both Manifestors understand how they can live more naturally
+              aligned to their own nature and working with the other types to
+              help them understand how to best deal with Manifestors in their
+              life.
             </p>
           </div>
           <Img className={styles.aboutImage} fluid={fluid} />
