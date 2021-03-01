@@ -87,7 +87,7 @@ const ServicesPage: React.FC = () => {
                 a Manifestor involved. Even more so when they may not even
                 themselves know they’re a Manifestor!
               </p>
-              <p>
+              <p className={styles.mb0}>
                 I cordially invite you to get in touch and book a session if you
                 have questions you’d like to ask a Manifestor! Reach out on
                 Instagram (
