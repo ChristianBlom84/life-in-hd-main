@@ -51,6 +51,12 @@ $parallax-perspective: 8px;
   }
 }
 
+@mixin mediumToLarge {
+  @media (min-width: #{$BpMedium}) and (max-width: #{$BpLarge}) {
+    @content;
+  }
+}
+
 @mixin small {
   @media (min-width: #{$BpSmall}) {
     @content;
