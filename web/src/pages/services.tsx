@@ -66,7 +66,7 @@ const ServicesPage: React.FC = () => {
               className={`${styles.contentOverlay} ${styles.mt4} ${styles.mhAuto}`}
             >
               <h3>Manifestor sessions: Manifestor to Manfestor</h3>
-              <p className={styles.mb0}>
+              <p>
                 This is me trying to be what I would’ve wanted when I first
                 started my experiment, someone who’d be in their experiment for
                 a while and had first hand experience to share. With the focus
