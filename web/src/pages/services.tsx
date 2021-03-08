@@ -65,7 +65,7 @@ const ServicesPage: React.FC = () => {
             <div
               className={`${styles.contentOverlay} ${styles.mt4} ${styles.mhAuto}`}
             >
-              <h3>Manifestor sessions: Manifestor to Manfestor</h3>
+              <h3>Manifestor sessions with Milla: Manifestor to Manifestor</h3>
               <p>
                 This is me trying to be what I would’ve wanted when I first
                 started my experiment, someone who’d be in their experiment for
