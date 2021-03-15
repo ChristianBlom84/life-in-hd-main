@@ -10,7 +10,7 @@ const AboutPage: React.FC = () => {
       placeholderImage: file(relativePath: { eq: "millachristian.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid
           }
         }
       }

@@ -13,12 +13,19 @@
   display: flex;
   flex-flow: row nowrap;
 
-  @include smallMax {
+  @include mediumMax {
     flex-flow: column nowrap;
   }
 }
 
 .aboutImage {
   flex: 1 0 250px;
-  margin-right: 1rem;
+  
+  @include small {
+    min-height: 300px;
+  }
+  
+  @include medium {
+    margin-left: 1rem;
+  }
 }
