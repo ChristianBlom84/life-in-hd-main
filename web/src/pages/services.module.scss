@@ -87,20 +87,20 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 315vh;
+  height: 210vh;
   margin: 0;
   padding: 0;
 
   @include xsmallMax {
-    height: 360vh;
+    height: 220vh;
   }
 
   @include mediumToLarge {
-    height: 240vh;
+    height: 160vh;
   }
 
   @include large {
-    height: 210vh;
+    height: 140vh;
   }
 
   &::before, &::after {
