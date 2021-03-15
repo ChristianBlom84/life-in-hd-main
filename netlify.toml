@@ -2,3 +2,8 @@
   # Directory to change to before starting a build.
   # This is where we will look for package.json/.nvmrc/etc.
   base = "web/"
+  functions = "functions"
+[[redirects]]
+  from = "/"
+  to = "/.netlify/functions/index"
+  status = 200
