@@ -96,11 +96,11 @@
   }
 
   @include mediumToLarge {
-    height: 160vh;
+    height: 210vh;
   }
 
   @include large {
-    height: 140vh;
+    height: 160vh;
   }
 
   &::before, &::after {
