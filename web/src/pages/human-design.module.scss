@@ -1,41 +1,198 @@
 @import '../variables.scss';
-
 .section {
-  padding: 0;
+    padding: 0;
 }
 
+#hero,
 .hero {
-  background: $green;
-  min-height: 10rem;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-
-  @include small {
-    padding: 1rem;
-  }
-
-  h1 {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-flow: row wrap;
-  }
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    &::before,
+    &::after {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
 
-  span {
-    background:black;
-    display: inline;
+.heroOverlay {
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.heroText {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    flex: 0 1 auto;
+    align-self: flex-start;
+}
+
+.heroImage {
+    @include small {
+        flex: 0 0 200px;
+    }
+}
+
+.heroHeading {
     color: white;
     text-align: center;
-    line-height: normal;
-    font-weight: normal;
+    font-size: 3rem;
+    font-weight: 200;
+}
+
+.heroHeadingSpanLeft {
+    background: white;
+    color: black;
     padding: 0 0.5rem;
-  }
+}
+
+.heroHeadingSpanRight {
+    background: black;
+    color: white;
+    padding: 0 0.5rem;
+}
+
+.preamble {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 0;
+    color: white;
+    text-align: center;
+    max-width: 75%;
+    a {
+        color: white;
+    }
+}
+
+.background {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 320vh;
+    margin: 0;
+    padding: 0;
+    @include xsmallMax {
+        height: 300vh;
+    }
+    @include mediumToLarge {
+        height: 240vh;
+    }
+    @include large {
+        height: 210vh;
+    }
+    &::before,
+    &::after {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.contentOverlay {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .25);
+    padding: 3rem 2rem;
+    width: 95%;
+    max-width: 900px;
+    line-height: 150%;
+    @include smallMax {
+        width: 100%;
+        padding: 3rem 1rem;
+    }
+    @include large {
+        width: 85%
+    }
+    @include xlarge {
+        width: 65%;
+    }
+}
+
+.contentSection {
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .content {
-  max-width: 900px;
-  margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 1rem;
+    max-width: 900px;
+    margin: auto;
+    background: $darkgray;
+    color: white;
+    a {
+        color: white;
+         :visited {
+            color: $lightgreen;
+        }
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.contentRight {
+    margin: 0 1rem 0 auto;
+    @include large {
+        margin: 0 250px 0 auto;
+    }
+}
+
+.contentLeft {
+    margin: 0 auto 0 1rem;
+    @include large {
+        margin: 0 auto 0 250px;
+    }
+}
+
+.imageRight {
+    margin-bottom: 1rem;
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.bodygraphFigure {
+    float: left;
+    margin-right: 0.75rem;
+    margin-bottom: 0;
+    padding: 10px;
+    background: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    figcaption {
+        text-align: center;
+    }
+    @include smallMax {
+        float: none;
+        margin: 0 0 0.75rem 0;
+    }
+}
+
+.bodygraph {
+    min-width: 150px;
+    max-width: 500px;
+}
+
+.planetImage {
+    display: block;
 }
