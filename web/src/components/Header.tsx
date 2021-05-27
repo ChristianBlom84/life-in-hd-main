@@ -51,7 +51,7 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <Link className={styles.logo} to="/">
-        <Img fluid={fluid} />
+        <Img fluid={fluid} alt="" />
       </Link>
       {width > 767 ? (
         <Menu />

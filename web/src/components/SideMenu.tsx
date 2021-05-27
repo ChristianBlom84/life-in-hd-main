@@ -1,7 +1,8 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
-import { BiX } from 'react-icons/bi';
+import { BiX, BiCaretDown, BiCaretUp } from 'react-icons/bi';
 import styles from './SideMenu.module.scss';
+import HumanDesignPage from '../pages/human-design';
 
 interface Props {
   menuOpen: boolean;
@@ -18,6 +19,7 @@ const Menu: React.FC<Props> = ({
 }) => {
   const [delayedOpen, setDelayedOpen] = useState(false);
   const [delayedClosing, setDelayedClosing] = useState(false);
+  const [humanDesignExpanded, setHumanDesignExpanded] = useState(false);
 
   useEffect(() => {
     if (menuOpen) {
@@ -59,6 +61,37 @@ const Menu: React.FC<Props> = ({
             <Link to="/human-design" onClick={handleClose}>
               Human Design
             </Link>
+            <button
+              className={styles.expandButton}
+              type="button"
+              onClick={(): void => setHumanDesignExpanded(!humanDesignExpanded)}
+            >
+              {humanDesignExpanded ? <BiCaretUp /> : <BiCaretDown />}
+            </button>
+          </li>
+          <li
+            aria-hidden={!humanDesignExpanded}
+            className={`${styles.humanDesignMenu} ${
+              !humanDesignExpanded ? styles.hidden : ''
+            }`}
+          >
+            <ul>
+              <li>
+                <Link to="/human-design/four-types" onClick={handleClose}>
+                  The Four Types
+                </Link>
+              </li>
+              <li>
+                <Link to="/human-design/inner-authority" onClick={handleClose}>
+                  Inner Authority
+                </Link>
+              </li>
+              <li>
+                <Link to="/human-design/nine-centers" onClick={handleClose}>
+                  The Nine Centers
+                </Link>
+              </li>
+            </ul>
           </li>
           <li className={styles.menuItem}>
             <Link to="/services" onClick={handleClose}>

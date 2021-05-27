@@ -11,15 +11,22 @@ const HumanDesignPage: React.FC = () => {
     query {
       placeholderImage: file(relativePath: { eq: "bodygraphs-planet.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid_noBase64
+          fluid(maxWidth: 750) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       bodygraph: file(relativePath: { eq: "bodygraph.png" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      mandalaBodygraph: file(relativePath: { eq: "mandala-bodygraph.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 750) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -39,6 +46,7 @@ const HumanDesignPage: React.FC = () => {
   const backgroundHumanDesign =
     data.backgroundHumanDesign.childImageSharp.fluid;
   const bodygraph = data.bodygraph.childImageSharp.fluid;
+  const mandalaBodygraph = data.mandalaBodygraph.childImageSharp.fluid;
 
   return (
     <>
@@ -58,20 +66,23 @@ const HumanDesignPage: React.FC = () => {
           <Parallax y={['100px', '50px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h2>Human Design Basics</h2>
-              <div className={styles.imageRight}>
-                <p>
-                  <figure className={styles.bodygraphFigure}>
-                    <Img fluid={bodygraph} className={styles.bodygraph} />
-                    <figcaption>The Bodygraph</figcaption>
-                  </figure>
-                  Human Design is a synthesis of several ancient and modern
-                  systems of knowing. Aspects of the I&apos;Ching, Astrology,
-                  Kabbalah&apos;s Tree of Life and the Hindu Brahman Chakra
-                  System come together with genetics and physics through the
-                  influence of neutrinos and are synthesized in what&apos;s
-                  called the Bodygraph.
-                </p>
-              </div>
+              <p>
+                Human Design is a synthesis of several ancient and modern
+                systems of knowing. Aspects of the I&apos;Ching, Astrology,
+                Kabbalah&apos;s Tree of Life and the Hindu Brahman Chakra System
+                come together with genetics and physics through the influence of
+                neutrinos and are synthesized in what&apos;s called the
+                Bodygraph.
+              </p>
+              <figure className={styles.mandalaBodygraph}>
+                <Img
+                  fluid={mandalaBodygraph}
+                  alt="Rave Mandala with the Bodygraph in the center"
+                />
+                <figcaption>
+                  Rave Mandala with the Bodygraph in the center
+                </figcaption>
+              </figure>
               <p>
                 At the center of Human Design is the revelation that every human
                 is a duality - there&apos;s the Design, what&apos;s colored in
@@ -82,7 +93,23 @@ const HumanDesignPage: React.FC = () => {
                 a magnetic force which only attracts, and gives us form as
                 unique individuals.
               </p>
-              <Img className={styles.planetImage} fluid={fluid} />
+              <h3>Strategy and Authority</h3>
+              <p>
+                The most practical surface level of Human Design begins with
+                Strategy and Authority - in fact, for most people Strategy and
+                Authority is all they&apos;ll ever need. Your Strategy and
+                Authority enable you to make correct decisions as yourself and
+                provide a path to living your unique life.
+              </p>
+              <h3>Type and Aura</h3>
+              <p>
+                Your Strategy of decision making is a description of how your
+                vehicle - your body - navigates in world in a way that
+                eliminates resistance. Strategy is derived from your Human
+                Design Type of which there are four variations, Generator,
+                Manifestor, Projector and Reflector. Each Type has a distinct
+                aura which forms the foundation of how we meet other people.
+              </p>
             </div>
           </Parallax>
         </div>
