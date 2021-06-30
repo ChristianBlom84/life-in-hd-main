@@ -36,7 +36,7 @@ const Header: React.FC = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "life-in-hd-banner.jpg" }) {
+      logo: file(relativePath: { eq: "life-in-hd-banner.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid_noBase64
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
     }
   `);
 
-  const { fluid } = data.placeholderImage.childImageSharp;
+  const { fluid } = data.logo.childImageSharp;
 
   return (
     <header className={styles.header}>

@@ -41,7 +41,7 @@ const ContactPage: React.FC = () => {
 
   return (
     <>
-      <SEO title="Contact us | Life in HD" />
+      <SEO title="Contact us" />
       <section className={styles.section}>
         <div className="hero">
           <h1>Contact us</h1>

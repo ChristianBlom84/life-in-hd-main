@@ -1,5 +1,4 @@
 @import '../variables.scss';
-
 .nav {
     flex: 1 1 auto;
     align-self: center;
@@ -21,20 +20,16 @@
     padding: 0.5rem;
     display: block;
     text-transform: uppercase;
-
+    position: relative;
     @include large {
-      font-size: 1.4rem;
-      padding: 1rem;
+        font-size: 1.4rem;
+        padding: 1rem;
     }
-
     @include xlarge {
-      padding: 1rem 2rem;
+        padding: 1rem 2rem;
     }
-
     a {
         position: relative;
-
-
         &:before {
             content: '';
             display: block;
@@ -46,11 +41,9 @@
             height: 0px;
             transition: width 0.2s;
         }
-
         &:hover {
             transition: color 0.2s;
             color: rgb(218, 218, 218);
-
             &:before {
                 top: 100%;
                 width: 100%;
@@ -59,4 +52,31 @@
             }
         }
     }
+}
+
+.humanDesignMenu {
+    background: $darkgray;
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+    font-size: 0.8em;
+    padding: 1rem;
+    transition: opacity 0.4s;
+    overflow: hidden;
+    opacity: 1;
+    border-radius: 3px;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    border: rgba(255, 255, 255, 0.5) 1px solid;
+    a:nth-child(2) {
+        margin: 0.5rem 0;
+    }
+}
+
+.hidden {
+    opacity: 0;
 }

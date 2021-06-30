@@ -24,7 +24,7 @@ const ServicesPage: React.FC = () => {
 
   return (
     <>
-      <SEO title="Human Design Services | Life in HD" />
+      <SEO title="Human Design Services" />
       <BackgroundImage
         Tag={`section`}
         id={`hero`}

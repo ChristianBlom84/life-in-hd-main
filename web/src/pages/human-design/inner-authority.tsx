@@ -1,35 +1,15 @@
 import React, { useState } from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import { Parallax } from 'react-scroll-parallax';
 import Img from 'gatsby-image';
-import SEO from '../components/Seo';
-import styles from './human-design.module.scss';
+import SEO from '../../components/Seo';
+import styles from '../human-design.module.scss';
+import localStyles from './inner-authority.module.scss';
 
-const HumanDesignPage: React.FC = () => {
+const InnerAuthorityPage: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "bodygraphs-planet.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      bodygraph: file(relativePath: { eq: "bodygraph.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      gCenter: file(relativePath: { eq: "gside.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 280) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
       mandalaBodygraph: file(relativePath: { eq: "mandala-bodygraph.png" }) {
         childImageSharp {
           fluid(maxWidth: 750) {
@@ -49,16 +29,13 @@ const HumanDesignPage: React.FC = () => {
     }
   `);
 
-  const { fluid } = data.placeholderImage.childImageSharp;
   const backgroundHumanDesign =
     data.backgroundHumanDesign.childImageSharp.fluid;
-  const bodygraph = data.bodygraph.childImageSharp.fluid;
-  const gCenter = data.gCenter.childImageSharp.fluid;
   const mandalaBodygraph = data.mandalaBodygraph.childImageSharp.fluid;
 
   return (
     <>
-      <SEO title="Human Design Information" />
+      <SEO title="The Four Types" />
       <BackgroundImage
         Tag={`section`}
         id={`hero`}
@@ -66,7 +43,7 @@ const HumanDesignPage: React.FC = () => {
         fluid={backgroundHumanDesign}
       >
         <div className={styles.heroOverlay}>
-          <Parallax y={['25px', '75px']}>
+          <Parallax y={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>The Human Design System</h1>
             </div>
@@ -107,31 +84,17 @@ const HumanDesignPage: React.FC = () => {
                 Strategy and Authority - in fact, for most people Strategy and
                 Authority is all they&apos;ll ever need. Your Strategy and
                 Authority enable you to make correct decisions as yourself and
-                provide a path to living your unique life. Read more about{' '}
-                <Link to="the-four-types">Strategy</Link> and{' '}
-                <Link to="inner-authority">Authority</Link>.
+                provide a path to living your unique life.
               </p>
-              <h3>The Nine Centers</h3>
+              <h3>Type and Aura</h3>
               <p>
-                The discovery of Uranus in 1781 triggered a mutation in humanity
-                and we moved from having 7 chakras to being 9 centered beings.
-                One way to look at the bodygraph is as a circuit board that
-                shows you how energy naturally flows in a person with the
-                centers being energy hubs and the channels connecting them being
-                part of different circuits. The way the centers are activated
-                and connected in a chart forms the foundation for Type and Inner
-                Authority and shows us where we can be susceptible to
-                conditioning in our lives.{' '}
-                <Link to="the-nine-centers">
-                  Read more about the nine Centers.
-                </Link>
+                Your Strategy of decision making is a description of how your
+                vehicle - your body - navigates in world in a way that
+                eliminates resistance. Strategy is derived from your Human
+                Design Type of which there are four variations, Generator,
+                Manifestor, Projector and Reflector. Each Type has a distinct
+                aura which forms the foundation of how we meet other people.
               </p>
-              <figure
-                className={`${styles.mandalaBodygraph} ${styles.gCenterImage}`}
-              >
-                <Img fluid={gCenter} alt="The G center" />
-                <figcaption>The G Center</figcaption>
-              </figure>
             </div>
           </Parallax>
         </div>
@@ -140,4 +103,4 @@ const HumanDesignPage: React.FC = () => {
   );
 };
 
-export default HumanDesignPage;
+export default InnerAuthorityPage;

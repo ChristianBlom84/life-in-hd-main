@@ -21,7 +21,7 @@ const AboutPage: React.FC = () => {
 
   return (
     <>
-      <SEO title="About us | Life in HD" />
+      <SEO title="About us" />
       <section className={`hero`}>
         <h1 className={styles.heading}>About us</h1>
       </section>

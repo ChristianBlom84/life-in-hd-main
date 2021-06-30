@@ -77,7 +77,7 @@ const Menu: React.FC<Props> = ({
           >
             <ul>
               <li>
-                <Link to="/human-design/four-types" onClick={handleClose}>
+                <Link to="/human-design/the-four-types" onClick={handleClose}>
                   The Four Types
                 </Link>
               </li>
@@ -87,7 +87,7 @@ const Menu: React.FC<Props> = ({
                 </Link>
               </li>
               <li>
-                <Link to="/human-design/nine-centers" onClick={handleClose}>
+                <Link to="/human-design/the-nine-centers" onClick={handleClose}>
                   The Nine Centers
                 </Link>
               </li>

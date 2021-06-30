@@ -106,7 +106,7 @@ const IndexPage: React.FC = () => {
 
   return (
     <>
-      <SEO title="Home | Life in HD" />
+      <SEO title="Home" />
       <BackgroundImage
         Tag={`section`}
         id={`hero`}
