@@ -209,10 +209,16 @@ const IndexPage: React.FC = () => {
                 where you can ask all your questions and I’ll give you an inside
                 aura perspective. To be clear: I will not be speaking from
                 anything other than my direct experience and am therefore
-                unable, and unwilling, to answer on someone else’s behalf.
+                unable, and unwilling, to answer on someone else’s behalf.{' '}
+                <Link to="/services">Read more</Link>.
               </p>
               <p className={styles.mb0}>
-                <Link to="/services">Read more</Link>
+                If you want to know more about Milla and her perspective and
+                process, you can listen to her podcast{' '}
+                <a href="https://anchor.fm/lifeonthecorrectfrequency">
+                  Life on the Correct Frequency
+                </a>
+                .
               </p>
             </div>
           </Parallax>
