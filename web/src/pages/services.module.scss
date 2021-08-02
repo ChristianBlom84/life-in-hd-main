@@ -92,7 +92,7 @@
   padding: 0;
 
   @include xsmallMax {
-    height: 300vh;
+    height: 355vh;
   }
 
   @include mediumToLarge {
@@ -100,7 +100,7 @@
   }
 
   @include large {
-    height: 210vh;
+    height: 215vh;
   }
 
   &::before, &::after {
