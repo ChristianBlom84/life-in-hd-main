@@ -67,6 +67,9 @@
     display: block;
     text-transform: uppercase;
     position: relative;
+    @include small {
+      font-size: 1.4rem;
+    }
 }
 
 .humanDesignMenu>ul>li>a,
@@ -109,7 +112,7 @@
     margin: 0;
     padding: 0 0 0 2rem;
     transition: max-height 0.3s;
-    max-height: 90px;
+    max-height: 95px;
     overflow: hidden;
     ul {
         list-style: none;
