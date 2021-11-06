@@ -16,6 +16,8 @@ const ContactPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [sendingForm, setSendingForm] = useState(false);
+  const [formErrored, setFormErrored] = useState(false);
+  const [formSentMessageVisible, setFormSentMessageVisible] = useState(false);
 
   const encodeForm = (data: FormData): string => {
     return Object.keys(data)
@@ -25,6 +27,7 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
+    setFormErrored(false);
     setSendingForm(true);
     try {
       await fetch('/', {
@@ -35,14 +38,27 @@ const ContactPage: React.FC = () => {
     } catch (error) {
       console.error(error);
       setSendingForm(false);
+      setFormErrored(true);
     }
     setSendingForm(false);
+    if (!formErrored) {
+      setFormSentMessageVisible(true);
+      setTimeout(() => {
+        setFormSentMessageVisible(false);
+      }, 2000);
+    }
   };
 
   return (
     <>
       <SEO title="Contact us | Life in HD" />
       <section className={styles.section}>
+        {formSentMessageVisible ? (
+          <div className={styles.formSentMessage}>
+            <p>Tack för ditt meddelande!</p>
+            <p>Vi hör av oss så snart vi kan.</p>
+          </div>
+        ) : null}
         <div className="hero">
           <h1>Contact us</h1>
           <p>
@@ -101,9 +117,9 @@ const ContactPage: React.FC = () => {
             <button
               className={styles.button}
               type="submit"
-              disabled={sendingForm}
+              disabled={sendingForm || formSentMessageVisible}
             >
-              {sendingForm ? <Spinner /> : 'Submit'}
+              {sendingForm || formSentMessageVisible ? <Spinner /> : 'Submit'}
             </button>
             <input type="hidden" name="form-name" value="contact" />
           </form>
