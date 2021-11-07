@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MdClose } from 'react-icons/md';
 import SEO from '../components/Seo';
 import Spinner from '../components/Spinner';
 import styles from './contact.module.scss';
@@ -55,8 +56,11 @@ const ContactPage: React.FC = () => {
       <section className={styles.section}>
         {formSentMessageVisible ? (
           <div className={styles.formSentMessage}>
-            <p>Tack för ditt meddelande!</p>
-            <p>Vi hör av oss så snart vi kan.</p>
+            <button onClick={(): void => setFormSentMessageVisible(false)}>
+              <MdClose />
+            </button>
+            <p className={styles.mb2}>Tack för ditt meddelande!</p>
+            <p className={styles.mb0}>Vi hör av oss så snart vi kan.</p>
           </div>
         ) : null}
         <div className="hero">
