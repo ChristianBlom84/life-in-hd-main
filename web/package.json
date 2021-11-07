@@ -8,7 +8,7 @@
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/image-url": "^0.140.19",
     "@types/react-helmet": "^6.1.0",
-    "gatsby": "^2.32.13",
+    "gatsby": "^2.32",
     "gatsby-background-image": "^1.4.0",
     "gatsby-image": "^2.10.0",
     "gatsby-plugin-manifest": "^2.11.0",
