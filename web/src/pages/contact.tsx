@@ -28,7 +28,7 @@ const ContactPage: React.FC = () => {
       .join('&');
   };
 
-  const handleClose = async (now = false): Promise<void> => {
+  const handleClose = async (): Promise<void> => {
     setFormMessageDelayedOpen(false);
     setTimeout(() => {
       setFormSentMessageVisible(false);
