@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import SEO from '../components/Seo';
 import Spinner from '../components/Spinner';
@@ -19,6 +19,8 @@ const ContactPage: React.FC = () => {
   const [sendingForm, setSendingForm] = useState(false);
   const [formErrored, setFormErrored] = useState(false);
   const [formSentMessageVisible, setFormSentMessageVisible] = useState(false);
+  const [formMessageDelayedOpen, setFormMessageDelayedOpen] = useState(false);
+  const formMessageRef = useRef(null);
 
   const encodeForm = (data: FormData): string => {
     return Object.keys(data)
@@ -26,41 +28,96 @@ const ContactPage: React.FC = () => {
       .join('&');
   };
 
+  const handleClose = async (now = false): Promise<void> => {
+    setFormMessageDelayedOpen(false);
+    setTimeout(() => {
+      setFormSentMessageVisible(false);
+    }, 200);
+  };
+
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
     setFormErrored(false);
     setSendingForm(true);
     try {
-      await fetch('/', {
+      const res = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encodeForm({ 'form-name': 'contact', name, email, message }),
       });
+      console.log(res);
+      if (res.status === 200) {
+        setFormSentMessageVisible(true);
+        setTimeout(() => {
+          setFormMessageDelayedOpen(true);
+        }, 70);
+        await setTimeout(() => {
+          handleClose();
+        }, 3000);
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        setFormErrored(true);
+        setFormSentMessageVisible(true);
+        setTimeout(() => {
+          setFormMessageDelayedOpen(true);
+        }, 70);
+        await setTimeout(() => {
+          handleClose();
+        }, 3000);
+      }
     } catch (error) {
       console.error(error);
       setSendingForm(false);
       setFormErrored(true);
     }
     setSendingForm(false);
-    if (!formErrored) {
-      setFormSentMessageVisible(true);
-      setTimeout(() => {
-        setFormSentMessageVisible(false);
-      }, 2000);
-    }
   };
 
   return (
     <>
       <SEO title="Contact us | Life in HD" />
-      <section className={styles.section}>
+      <section
+        className={styles.section}
+        onClick={async (e): Promise<void> => {
+          if (
+            formSentMessageVisible &&
+            formMessageRef.current !== e.currentTarget
+          ) {
+            console.log(e.currentTarget);
+            console.log(formMessageRef.current);
+            await handleClose();
+          }
+        }}
+      >
         {formSentMessageVisible ? (
-          <div className={styles.formSentMessage}>
+          <div
+            className={`${styles.formSentMessage} ${
+              formMessageDelayedOpen ? styles.visible : ''
+            }`}
+            ref={formMessageRef}
+            onClick={(e): void => {
+              e.stopPropagation();
+            }}
+          >
             <button onClick={(): void => setFormSentMessageVisible(false)}>
               <MdClose />
             </button>
-            <p className={styles.mb2}>Tack för ditt meddelande!</p>
-            <p className={styles.mb0}>Vi hör av oss så snart vi kan.</p>
+            {formErrored ? (
+              <>
+                <p className={styles.mb2}>Något gick fel!</p>
+                <p className={styles.mb0}>
+                  Vänligen försök igen, eller maila oss direkt på
+                  info@lifeinhd.se.
+                </p>
+              </>
+            ) : (
+              <>
+                <p className={styles.mb2}>Tack för ditt meddelande!</p>
+                <p className={styles.mb0}>Vi hör av oss så snart vi kan.</p>
+              </>
+            )}
           </div>
         ) : null}
         <div className="hero">

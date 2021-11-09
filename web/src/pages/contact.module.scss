@@ -84,18 +84,22 @@
 
 .formSentMessage {
   position: fixed;
+  opacity: 0;
   background: $lightgreen;
+  border: 1px solid rgba(0,0,0,0.75);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100px;
-  width: 300px;
+  width: 320px;
   top: calc(50% - 50px);
-  left: calc(50% - 150px);
+  left: calc(50% - 160px);
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   margin: auto;
+  transition: all 0.2s;
+  text-align: center;
 
   button {
     border: none;
@@ -105,5 +109,10 @@
     position: absolute;
     top: 5px;
     right: 5px;
+    font-size: 1.2em;
   }
+}
+
+.visible {
+  opacity: 1;
 }
