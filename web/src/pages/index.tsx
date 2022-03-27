@@ -153,7 +153,7 @@ const IndexPage: React.FC = () => {
         </BackgroundImage>
         <BackgroundImage
           Tag={`section`}
-          className={`${styles.background} ${styles.justifyStart}`}
+          className={`${styles.background} ${styles.justifyCenter}`}
           fluid={backgroundThree}
           rootMargin="400px"
         >
@@ -174,7 +174,7 @@ const IndexPage: React.FC = () => {
         </BackgroundImage>
         <BackgroundImage
           Tag={`section`}
-          className={`${styles.background} ${styles.justifyEnd}`}
+          className={`${styles.background} ${styles.justifyEven}`}
           fluid={backgroundFour}
           rootMargin="400px"
         >
@@ -192,15 +192,8 @@ const IndexPage: React.FC = () => {
               </p>
             </div>
           </Parallax>
-        </BackgroundImage>
-        <BackgroundImage
-          Tag={`section`}
-          className={`${styles.background} ${styles.justifyCenter}`}
-          fluid={backgroundFive}
-          rootMargin="400px"
-        >
           <Parallax y={['100px', '-100px']}>
-            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
+            <div className={`${styles.contentOverlay} ${styles.contentLeft}`}>
               <h3>Manifestor sessions with Milla</h3>
               <p>
                 Do you have a Manifestor in your life? Are you struggling with
@@ -219,7 +212,7 @@ const IndexPage: React.FC = () => {
         </BackgroundImage>
         <BackgroundImage
           Tag={`section`}
-          className={`${styles.background} ${styles.justifyStart}`}
+          className={`${styles.background} ${styles.justifyCenter}`}
           fluid={backgroundSix}
           rootMargin="400px"
         >
