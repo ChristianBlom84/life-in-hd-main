@@ -1,3 +1,6 @@
+import { graphql, useStaticQuery } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
+import { Parallax } from 'react-scroll-parallax';
 import React, { useRef, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import SEO from '../components/Seo';
@@ -21,6 +24,22 @@ const ContactPage: React.FC = () => {
   const [formSentMessageVisible, setFormSentMessageVisible] = useState(false);
   const [formMessageDelayedOpen, setFormMessageDelayedOpen] = useState(false);
   const formMessageRef = useRef(null);
+
+  const data = useStaticQuery(graphql`
+    query {
+      backgroundContact: file(
+        relativePath: { eq: "backgrounds/contact_bg.jpg" }
+      ) {
+        childImageSharp {
+          fluid(quality: 80, srcSetBreakpoints: [800, 1200, 1600, 2500, 4032]) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
+  const backgroundContact = data.backgroundContact.childImageSharp.fluid;
 
   const encodeForm = (data: FormData): string => {
     return Object.keys(data)
@@ -78,9 +97,12 @@ const ContactPage: React.FC = () => {
   return (
     <>
       <SEO title="Contact us | Life in HD" />
-      <section
-        className={styles.section}
-        onClick={async (e): Promise<void> => {
+      <BackgroundImage
+        Tag={`section`}
+        id={`hero`}
+        className={styles.background}
+        fluid={backgroundContact}
+        onClick={async (e: any): Promise<void> => {
           if (
             formSentMessageVisible &&
             formMessageRef.current !== e.currentTarget
@@ -120,72 +142,72 @@ const ContactPage: React.FC = () => {
             )}
           </div>
         ) : null}
-        <div className="hero">
-          <h1>Contact us</h1>
-          <p>
-            Use the form below to contact us and we&apos;ll get back to you as
-            soon as we can.
-          </p>
-        </div>
-        <div className={styles.formContainer}>
-          <form
-            name="contact"
-            method="post"
-            onSubmit={handleSubmit}
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            className={styles.form}
-          >
-            <div className={styles.inputGroup}>
-              <label htmlFor="name">Your Name:</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                required
-                value={name}
-                onChange={(e: React.FormEvent<HTMLInputElement>): void =>
-                  setName(e.currentTarget.value)
-                }
-              />
+        <div className={styles.heroOverlay}>
+          <Parallax y={['0px', '50px']}>
+            <div className={styles.heroText}>
+              <h1 className={styles.heroHeading}>Contact us</h1>
             </div>
-            <div className={styles.inputGroup}>
-              <label htmlFor="email">Your Email:</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-                value={email}
-                onChange={(e: React.FormEvent<HTMLInputElement>): void =>
-                  setEmail(e.currentTarget.value)
-                }
-              />
-            </div>
-            <div className={styles.inputGroup}>
-              <label htmlFor="email">Message:</label>
-              <textarea
-                name="message"
-                id="message"
-                required
-                value={message}
-                rows={10}
-                onChange={(e: React.FormEvent<HTMLTextAreaElement>): void =>
-                  setMessage(e.currentTarget.value)
-                }
-              />
-            </div>
-            <button
-              className={styles.button}
-              type="submit"
-              disabled={sendingForm || formSentMessageVisible}
+          </Parallax>
+          <Parallax y={['150px', '50px']}>
+            <form
+              name="contact"
+              method="post"
+              onSubmit={handleSubmit}
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              className={`${styles.form} ${styles.mAuto}`}
             >
-              {sendingForm || formSentMessageVisible ? <Spinner /> : 'Submit'}
-            </button>
-            <input type="hidden" name="form-name" value="contact" />
-          </form>
+              <div className={styles.inputGroup}>
+                <label htmlFor="name">Your Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  value={name}
+                  onChange={(e: React.FormEvent<HTMLInputElement>): void =>
+                    setName(e.currentTarget.value)
+                  }
+                />
+              </div>
+              <div className={styles.inputGroup}>
+                <label htmlFor="email">Your Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  value={email}
+                  onChange={(e: React.FormEvent<HTMLInputElement>): void =>
+                    setEmail(e.currentTarget.value)
+                  }
+                />
+              </div>
+              <div className={styles.inputGroup}>
+                <label htmlFor="email">Message:</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  required
+                  value={message}
+                  rows={10}
+                  onChange={(e: React.FormEvent<HTMLTextAreaElement>): void =>
+                    setMessage(e.currentTarget.value)
+                  }
+                />
+              </div>
+              <button
+                className={styles.button}
+                type="submit"
+                disabled={sendingForm || formSentMessageVisible}
+              >
+                {sendingForm || formSentMessageVisible ? <Spinner /> : 'Submit'}
+              </button>
+              <input type="hidden" name="form-name" value="contact" />
+            </form>
+          </Parallax>
         </div>
-      </section>
+      </BackgroundImage>
     </>
   );
 };
