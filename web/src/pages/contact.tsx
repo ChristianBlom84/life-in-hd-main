@@ -113,7 +113,7 @@ const ContactPage: React.FC = () => {
           }
         }}
       >
-        {!formSentMessageVisible ? (
+        {formSentMessageVisible ? (
           <div
             className={`${styles.formSentMessage} ${
               formMessageDelayedOpen ? styles.visible : ''
