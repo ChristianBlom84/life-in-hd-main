@@ -128,16 +128,17 @@ const ContactPage: React.FC = () => {
             </button>
             {formErrored ? (
               <>
-                <p className={styles.mb2}>Något gick fel!</p>
+                <p className={styles.mb2}>Something went wrong!</p>
                 <p className={styles.mb0}>
-                  Vänligen försök igen, eller maila oss direkt på
-                  info@lifeinhd.se.
+                  Please try again, or email us directly at info@lifeinhd.se.
                 </p>
               </>
             ) : (
               <>
-                <p className={styles.mb2}>Tack för ditt meddelande!</p>
-                <p className={styles.mb0}>Vi hör av oss så snart vi kan.</p>
+                <p className={styles.mb2}>Thank you for contacting us!</p>
+                <p className={styles.mb0}>
+                  We will get back to you as soon as we can.
+                </p>
               </>
             )}
           </div>
