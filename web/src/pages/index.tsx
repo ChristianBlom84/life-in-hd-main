@@ -141,24 +141,37 @@ const IndexPage: React.FC = () => {
                 individual are made to make correct decisions and gives you the
                 tools to find out the truth for yourself.
               </p>
-              <p className={styles.mb0}>
+              <p>
                 Human Design is not a religion and there is no dogma. There is
                 only a mapping of the mechanical aspects that lie beneath and
                 drive life as we know it, and the individual exploration
                 possible through experimentation with your own correct decision
                 making.
               </p>
+              <p className={styles.mb0}>
+                Are you new to Human Design?{' '}
+                <a
+                  href="http://www.jovianarchive.com/Get_Your_Chart"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Get your chart here
+                </a>{' '}
+                and read more about the basics of the system in our{' '}
+                <Link to="/human-design">Human Design information</Link>{' '}
+                section.
+              </p>
             </div>
           </Parallax>
         </BackgroundImage>
         <BackgroundImage
           Tag={`section`}
-          className={`${styles.background} ${styles.justifyStart}`}
+          className={`${styles.background} ${styles.justifyCenter}`}
           fluid={backgroundThree}
           rootMargin="400px"
         >
           <Parallax y={['-100px', '100px']}>
-            <div className={`${styles.contentOverlay} ${styles.contentLeft}`}>
+            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <p className={styles.mb0}>
                 Here at Life in HD we offer{' '}
                 <Link to="/services">readings, sessions and classes</Link> to
@@ -174,7 +187,7 @@ const IndexPage: React.FC = () => {
         </BackgroundImage>
         <BackgroundImage
           Tag={`section`}
-          className={`${styles.background} ${styles.justifyEnd}`}
+          className={`${styles.background} ${styles.justifyEven}`}
           fluid={backgroundFour}
           rootMargin="400px"
         >
@@ -192,15 +205,8 @@ const IndexPage: React.FC = () => {
               </p>
             </div>
           </Parallax>
-        </BackgroundImage>
-        <BackgroundImage
-          Tag={`section`}
-          className={`${styles.background} ${styles.justifyCenter}`}
-          fluid={backgroundFive}
-          rootMargin="400px"
-        >
           <Parallax y={['100px', '-100px']}>
-            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
+            <div className={`${styles.contentOverlay} ${styles.contentLeft}`}>
               <h3>Manifestor sessions with Milla</h3>
               <p>
                 Do you have a Manifestor in your life? Are you struggling with
@@ -225,12 +231,12 @@ const IndexPage: React.FC = () => {
         </BackgroundImage>
         <BackgroundImage
           Tag={`section`}
-          className={`${styles.background} ${styles.justifyStart}`}
+          className={`${styles.background} ${styles.justifyCenter}`}
           fluid={backgroundSix}
           rootMargin="400px"
         >
           <Parallax y={['-100px', '100px']}>
-            <div className={`${styles.contentOverlay} ${styles.contentLeft}`}>
+            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h3>Who are we?</h3>
               <p>
                 Milla and Christian, (6/2 Manifestor and 4/6 Projector) have
@@ -240,9 +246,12 @@ const IndexPage: React.FC = () => {
                 Generator) and Elektra (6/2 Generator), according to their
                 design.
               </p>
-              <p className={styles.mb0}>
+              <p>
                 Christian is a certified Human Design Analyst and Living Your
                 Design Guide. Milla is a certified Living Your Design Guide.
+              </p>
+              <p className={styles.mb0}>
+                <Link to="/about">Read more</Link>
               </p>
             </div>
           </Parallax>

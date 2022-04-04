@@ -56,7 +56,11 @@ const Header: React.FC = () => {
       {width > 767 ? (
         <Menu />
       ) : (
-        <button onClick={(): void => setMenuOpen(!menuOpen)} type="button">
+        <button
+          className={styles.menuButton}
+          onClick={(): void => setMenuOpen(!menuOpen)}
+          type="button"
+        >
           <GiHamburgerMenu className={styles.menuIcon} />
         </button>
       )}

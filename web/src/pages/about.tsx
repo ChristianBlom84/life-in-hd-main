@@ -9,7 +9,21 @@ import styles from './about.module.scss';
 const AboutPage: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "millachristian.jpg" }) {
+      millaChristian: file(relativePath: { eq: "millachristian.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      milla: file(relativePath: { eq: "Milla.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      christian: file(relativePath: { eq: "Christian.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
@@ -26,7 +40,9 @@ const AboutPage: React.FC = () => {
     }
   `);
 
-  const { fluid } = data.placeholderImage.childImageSharp;
+  const millaChristian = data.millaChristian.childImageSharp.fluid;
+  const milla = data.milla.childImageSharp.fluid;
+  const christian = data.christian.childImageSharp.fluid;
   const backgroundAbout = data.backgroundAbout.childImageSharp.fluid;
 
   return (
@@ -60,9 +76,7 @@ const AboutPage: React.FC = () => {
                 Stockholm and are raising their children according to their
                 design.
               </p>
-              <div className={styles.imageParagraph}>
-                <Img className={styles.aboutImage} fluid={fluid} />
-              </div>
+              <Img className={styles.aboutImage} fluid={millaChristian} />
               <p>
                 Christian is a certified Human Design Analyst and Living Your
                 Design Guide. He recieved his first reading in February of 2007
@@ -84,6 +98,28 @@ const AboutPage: React.FC = () => {
                 types to help them understand how to best deal with Manifestors
                 in their life.
               </p>
+              <div className={styles.imageParagraph}>
+                <div className={styles.bodygraphContainer}>
+                  <Img
+                    className={styles.bodygraphImage}
+                    fluid={milla}
+                    alt="Milla's bodygraph"
+                  />
+                  <p>
+                    <i>Milla</i>
+                  </p>
+                </div>
+                <div className={styles.bodygraphContainer}>
+                  <Img
+                    className={styles.bodygraphImage}
+                    fluid={christian}
+                    alt="Christian's bodygraph"
+                  />
+                  <p>
+                    <i>Christian</i>
+                  </p>
+                </div>
+              </div>
             </div>
           </Parallax>
         </div>

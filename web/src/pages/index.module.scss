@@ -32,10 +32,6 @@
 
 .heroText {
   flex: 0 1 auto;
-
-  @include medium {
-    margin-right: 5rem;
-  }
 }
 
 .heroImage {
@@ -73,7 +69,7 @@
 
 .background {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   align-items: center;
   position: relative;
   top: 0;
@@ -99,7 +95,7 @@
   line-height: 150%;
 
   @include smallMax {
-    width: 85%;
+    width: 95%;
   }
 }
 
@@ -133,7 +129,7 @@
 
 .contentRight {
   margin: 0 1rem 0 auto;
-  
+
   @include large {
     margin: 0 250px 0 auto;
   }

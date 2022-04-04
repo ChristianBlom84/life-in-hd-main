@@ -6,6 +6,7 @@ module.exports = {
     description: `Life in HD provides Human Design readings and Living Your Design classes in Stockholm, Sweden.`,
     author: `Christian Blom`,
     url: `https://lifeinhd.se`,
+    siteUrl: `https://lifeinhd.se`,
     keywords: `Human Design, Human Design Reading, Splenic Center, Ajna Center, Head Center, G Center, Sacral Center, Root Center, Solar Plexus Center, Throat Center,
     Generator, Manifesting Generator, Projector, Reflector, Manifestor`,
     image: `${siteUrl}/images/icons/life-in-hd-icon.jpg`,
@@ -34,5 +35,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
   ],
 };
