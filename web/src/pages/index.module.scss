@@ -32,10 +32,6 @@
 
 .heroText {
   flex: 0 1 auto;
-
-  @include medium {
-    margin-right: 5rem;
-  }
 }
 
 .heroImage {

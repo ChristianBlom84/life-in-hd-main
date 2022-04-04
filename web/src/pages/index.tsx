@@ -141,12 +141,25 @@ const IndexPage: React.FC = () => {
                 individual are made to make correct decisions and gives you the
                 tools to find out the truth for yourself.
               </p>
-              <p className={styles.mb0}>
+              <p>
                 Human Design is not a religion and there is no dogma. There is
                 only a mapping of the mechanical aspects that lie beneath and
                 drive life as we know it, and the individual exploration
                 possible through experimentation with your own correct decision
                 making.
+              </p>
+              <p className={styles.mb0}>
+                Are you new to Human Design?{' '}
+                <a
+                  href="http://www.jovianarchive.com/Get_Your_Chart"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Get your chart here
+                </a>{' '}
+                and read more about the basics of the system in our{' '}
+                <Link to="/human-design">Human Design information</Link>{' '}
+                section.
               </p>
             </div>
           </Parallax>
