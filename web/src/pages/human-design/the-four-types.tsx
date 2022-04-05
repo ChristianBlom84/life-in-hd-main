@@ -45,7 +45,7 @@ const FourTypesPage: React.FC = () => {
         <div className={styles.heroOverlay}>
           <Parallax y={['0px', '50px']}>
             <div className={styles.heroText}>
-              <h1 className={styles.heroHeading}>The Human Design System</h1>
+              <h1 className={styles.heroHeading}>The Four Types</h1>
             </div>
           </Parallax>
           <Parallax y={['100px', '50px']}>
@@ -58,6 +58,10 @@ const FourTypesPage: React.FC = () => {
                 Design Type of which there are four variations, Generator,
                 Manifestor, Projector and Reflector. Each Type has a distinct
                 aura which forms the foundation of how we meet other people.
+              </p>
+              <p>
+                Below you will soon find a description of each Type and their
+                aura mechanics.
               </p>
             </div>
           </Parallax>

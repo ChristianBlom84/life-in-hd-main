@@ -104,12 +104,12 @@ const HumanDesignPage: React.FC = () => {
               <h3>Strategy and Authority</h3>
               <p>
                 The most practical surface level of Human Design begins with
-                Strategy and Authority - in fact, for most people Strategy and
-                Authority is all they&apos;ll ever need. Your Strategy and
-                Authority enable you to make correct decisions as yourself and
-                provide a path to living your unique life. Read more about{' '}
-                <Link to="the-four-types">Strategy</Link> and{' '}
-                <Link to="inner-authority">Authority</Link>.
+                Type, which shows you your Strategy, and Authority - in fact,
+                for most people Strategy and Authority is all they&apos;ll ever
+                need. Your Strategy and Authority enable you to make correct
+                decisions as yourself and provide a path to living your unique
+                life. Read more about <Link to="the-four-types">Strategy</Link>{' '}
+                and <Link to="inner-authority">Authority</Link>.
               </p>
               <h3>The Nine Centers</h3>
               <p>

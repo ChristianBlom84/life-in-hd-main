@@ -10,7 +10,7 @@ import localStyles from './the-nine-centers.module.scss';
 const NineCentersPage: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
-      mandalaBodygraph: file(relativePath: { eq: "mandala-bodygraph.png" }) {
+      bodygraph: file(relativePath: { eq: "bodygraph.png" }) {
         childImageSharp {
           fluid(maxWidth: 750) {
             ...GatsbyImageSharpFluid_withWebp
@@ -31,7 +31,7 @@ const NineCentersPage: React.FC = () => {
 
   const backgroundHumanDesign =
     data.backgroundHumanDesign.childImageSharp.fluid;
-  const mandalaBodygraph = data.mandalaBodygraph.childImageSharp.fluid;
+  const bodygraph = data.bodygraph.childImageSharp.fluid;
 
   return (
     <>
@@ -45,56 +45,39 @@ const NineCentersPage: React.FC = () => {
         <div className={styles.heroOverlay}>
           <Parallax y={['0px', '50px']}>
             <div className={styles.heroText}>
-              <h1 className={styles.heroHeading}>The Human Design System</h1>
+              <h1 className={styles.heroHeading}>The Nine Centers</h1>
             </div>
           </Parallax>
           <Parallax y={['100px', '50px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
-              <h2>Human Design Basics</h2>
+              <h2>Homo Sapiens in Transitus</h2>
               <p>
-                Human Design is a synthesis of several ancient and modern
-                systems of knowing. Aspects of the I&apos;Ching, Astrology,
-                Kabbalah&apos;s Tree of Life and the Hindu Brahman Chakra System
-                come together with genetics and physics through the influence of
-                neutrinos and are synthesized in what&apos;s called the
-                Bodygraph.
+                Before 1781 humans had 7 centers, or chakras. According to the
+                information Ra Uru Hu got during his encounter with the Voice,
+                the discovery of Uranus by Hershel triggered a mutation that
+                made us 9-centered, or Homo Sapiens in Transitus.
               </p>
-              <figure className={styles.mandalaBodygraph}>
-                <Img
-                  fluid={mandalaBodygraph}
-                  alt="Rave Mandala with the Bodygraph in the center"
-                />
-                <figcaption>
-                  Rave Mandala with the Bodygraph in the center
-                </figcaption>
+              <p>
+                In many ways, we 9-centered humans are as different from
+                7-centered humans as they were from Neanderthals, who were
+                5-centered. Humanity still lives a conditioned strategic life
+                that is a remnant of our 7-centered conditioning that
+                doesn&apos;t belong to us. Human Design can show you why your
+                mind is not fit to be the decision maker in your life. The mind
+                is here to measure and be a witness, not to try to decide where
+                we should and what we should do.
+              </p>
+              <p>
+                Below you will soon find a short overview of each center, their
+                biological functions and the way the open centers can condition
+                our minds.
+              </p>
+              <figure
+                className={`${styles.mandalaBodygraph} ${localStyles.bodygraph}`}
+              >
+                <Img fluid={bodygraph} alt="Bodygraph with the nine centers" />
+                <figcaption>Bodygraph with the nine centers</figcaption>
               </figure>
-              <p>
-                At the center of Human Design is the revelation that every human
-                is a duality - there&apos;s the Design, what&apos;s colored in
-                red in the chart, which is the body and the unconscious. The
-                other aspect is what we call Personality, the conscious part of
-                us, who we think we are and this is what&apos;s colored in
-                black. These aspects are held together by the Magnetic Monopole,
-                a magnetic force which only attracts, and gives us form as
-                unique individuals.
-              </p>
-              <h3>Strategy and Authority</h3>
-              <p>
-                The most practical surface level of Human Design begins with
-                Strategy and Authority - in fact, for most people Strategy and
-                Authority is all they&apos;ll ever need. Your Strategy and
-                Authority enable you to make correct decisions as yourself and
-                provide a path to living your unique life.
-              </p>
-              <h3>Type and Aura</h3>
-              <p>
-                Your Strategy of decision making is a description of how your
-                vehicle - your body - navigates in world in a way that
-                eliminates resistance. Strategy is derived from your Human
-                Design Type of which there are four variations, Generator,
-                Manifestor, Projector and Reflector. Each Type has a distinct
-                aura which forms the foundation of how we meet other people.
-              </p>
             </div>
           </Parallax>
         </div>
