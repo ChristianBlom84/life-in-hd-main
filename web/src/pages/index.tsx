@@ -36,7 +36,7 @@ const IndexPage: React.FC = () => {
             quality: 70
             srcSetBreakpoints: [600, 1000, 1200, 1600, 2500, 4032]
           ) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -76,7 +76,7 @@ const IndexPage: React.FC = () => {
             quality: 70
             srcSetBreakpoints: [600, 1000, 1200, 1600, 2500, 4032]
           ) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
