@@ -87,20 +87,20 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 320vh;
+  height: 480vh;
   margin: 0;
   padding: 0;
 
   @include xsmallMax {
-    height: 355vh;
+    height: 520vh;
   }
 
   @include mediumToLarge {
-    height: 240vh;
+    height: 400vh;
   }
 
   @include large {
-    height: 215vh;
+    height: 370vh;
   }
 
   &::before, &::after {
@@ -169,4 +169,13 @@
   @include large {
     margin: 0 auto 0 250px;
   }
+}
+
+#paypal {
+  margin-bottom: 0;
+}
+
+.gatheringImage {
+  max-width: 50%;
+  margin: 1rem auto;
 }
