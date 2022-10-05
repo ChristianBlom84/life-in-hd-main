@@ -105,6 +105,11 @@ const ServicesPage: React.FC = () => {
                   height="1"
                 />
               </form>
+              <p>
+                If you are unable to pay using the button above, please{' '}
+                <Link to="/contact">contact us</Link> and we can send you a
+                personal payment link.
+              </p>
             </div>
             <div
               className={`${styles.contentOverlay} ${styles.mhAuto} ${styles.mt4}`}
