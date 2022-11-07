@@ -54,7 +54,7 @@ const ServicesPage: React.FC = () => {
               <figure className={styles.gatheringImage}>
                 <Img fluid={gatheringImage} alt="" />
               </figure>
-              <p>Welcome to the inaugural Manifestors Talk online gathering</p>
+              <p>Welcome to our Manifestors Talk online gathering.</p>
               <p>
                 The space is held by Milla, 6/2 Splenic Manifestor,
                 experimenting since 2012, and Leena, 3/5 Ego Manifestor,
