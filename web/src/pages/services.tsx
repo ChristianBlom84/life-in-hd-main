@@ -49,68 +49,6 @@ const ServicesPage: React.FC = () => {
             </div>
           </Parallax>
           <Parallax y={['150px', '50px']}>
-            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
-              <h2>Manifestor Online Gathering</h2>
-              <figure className={styles.gatheringImage}>
-                <Img fluid={gatheringImage} alt="" />
-              </figure>
-              <p>Welcome to our Manifestors Talk online gathering.</p>
-              <p>
-                The space is held by Milla, 6/2 Splenic Manifestor,
-                experimenting since 2012, and Leena, 3/5 Ego Manifestor,
-                experimenting since 2020.
-              </p>
-              <p>
-                We created this to come together and share our experience with
-                Strategy and Authority. This is a space safe for you to listen
-                and share, or not!, about your experiment. Whether you’re just
-                starting or years deep in the experiment, you are most welcome.
-              </p>
-              <p>
-                FYI: This is NOT a teaching of the Human Design system. We are
-                keeping it simple and profound.{' '}
-              </p>
-              <p>
-                And yes, there will be frequent use of creative, colorful
-                language.
-              </p>
-              <p>Much love, Milla & Leena </p>
-              <p>
-                NOTE: The Zoomlink will be sent to the email address you use to
-                pay. If you want it sent to another email, let me know.
-              </p>
-              <p className={styles.mb2}>Price: €15</p>
-              <form
-                action="https://www.paypal.com/cgi-bin/webscr"
-                method="post"
-                target="_blank"
-                id={`paypal`}
-              >
-                <input type="hidden" name="cmd" value="_s-xclick" />
-                <input
-                  type="hidden"
-                  name="encrypted"
-                  value="-----BEGIN PKCS7-----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-----END PKCS7-----"
-                />
-                <input
-                  type="image"
-                  src="https://www.paypalobjects.com/en_US/SE/i/btn/btn_buynowCC_LG.gif"
-                  name="submit"
-                  alt="PayPal - The safer, easier way to pay online!"
-                />
-                <img
-                  alt=""
-                  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
-                  width="1"
-                  height="1"
-                />
-              </form>
-              <p>
-                If you are unable to pay using the button above, please{' '}
-                <Link to="/contact">contact us</Link> and we can send you a
-                personal payment link.
-              </p>
-            </div>
             <div
               className={`${styles.contentOverlay} ${styles.mhAuto} ${styles.mt4}`}
             >
