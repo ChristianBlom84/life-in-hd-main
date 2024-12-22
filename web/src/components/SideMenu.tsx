@@ -94,6 +94,11 @@ const Menu: React.FC<Props> = ({
             </ul>
           </li>
           <li className={styles.menuItem}>
+            <Link to="/immersion" onClick={handleClose}>
+              Immersion
+            </Link>
+          </li>
+          <li className={styles.menuItem}>
             <Link to="/services" onClick={handleClose}>
               Services
             </Link>

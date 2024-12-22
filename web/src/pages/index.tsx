@@ -193,7 +193,7 @@ const IndexPage: React.FC = () => {
         >
           <Parallax y={['50px', '-50px']}>
             <div className={`${styles.contentOverlay} ${styles.contentRight}`}>
-              <h3>Foundation reading with Christian</h3>
+              <h3>Foundation reading</h3>
               <p>
                 A foundation reading is the natural place to start your Human
                 Design experiment. You will learn the elemental aspects and
@@ -247,8 +247,8 @@ const IndexPage: React.FC = () => {
                 design.
               </p>
               <p>
-                Christian is a certified Human Design Analyst and Living Your
-                Design Guide. Milla is a certified Living Your Design Guide.
+                Christian and Milla are both certified Human Design Analysts and
+                Living Your Design Guides.
               </p>
               <p className={styles.mb0}>
                 <Link to="/about">Read more</Link>

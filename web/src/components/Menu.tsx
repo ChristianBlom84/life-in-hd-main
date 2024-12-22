@@ -28,6 +28,9 @@ const Menu: React.FC = () => {
           </div>
         </li>
         <li className={styles.menuItem}>
+          <Link to="/immersion">Immersion</Link>
+        </li>
+        <li className={styles.menuItem}>
           <Link to="/services">Services</Link>
         </li>
         <li className={styles.menuItem}>

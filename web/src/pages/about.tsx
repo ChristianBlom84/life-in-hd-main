@@ -88,15 +88,12 @@ const AboutPage: React.FC = () => {
                 Milla is a trained physiotherapist and professional bodyworker.
                 She received her reading June 2012 and hurtled head long into
                 her experiment. Since 2015 she is also a certified Living Your
-                Design Guide and she’s currently enrolled at IHDS to become a
-                certified Analyst.
-              </p>
-              <p>
-                As a Manifestor she has a particular passion when it comes to
-                helping both Manifestors understand how they can live more
-                naturally aligned to their own nature and working with the other
-                types to help them understand how to best deal with Manifestors
-                in their life.
+                Design Guide and became an IHDS Analyst in 2024. She travels the
+                world working with Human Design, facilitating workshops and
+                retreats, creating space for profound transformation for
+                participants. The soft spot in her heart for Manifestors, and
+                for people who have Manifestors in their life, is still as
+                caring and supportive as ever.
               </p>
               <div className={styles.imageParagraph}>
                 <div className={styles.bodygraphContainer}>
