@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Parallax } from 'react-scroll-parallax';
 import Img from 'gatsby-image';
 import SEO from '../components/Seo';
-import styles from './about.module.scss';
+import * as styles from './about.module.scss';
 
 const AboutPage: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -55,12 +55,12 @@ const AboutPage: React.FC = () => {
         fluid={backgroundAbout}
       >
         <div className={styles.heroOverlay}>
-          <Parallax y={['0px', '50px']}>
+          <Parallax translateY={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>About us</h1>
             </div>
           </Parallax>
-          <Parallax y={['150px', '50px']}>
+          <Parallax translateY={['150px', '50px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <p>Milla and Christian met during the summer of 2012.</p>
               <p>

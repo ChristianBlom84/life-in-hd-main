@@ -4,8 +4,8 @@ import BackgroundImage from 'gatsby-background-image';
 import { Parallax } from 'react-scroll-parallax';
 import Img from 'gatsby-image';
 import SEO from '../../components/Seo';
-import styles from '../human-design.module.scss';
-import localStyles from './the-nine-centers.module.scss';
+import * as styles from '../human-design.module.scss';
+import * as localStyles from './the-nine-centers.module.scss';
 
 const NineCentersPage: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -43,12 +43,12 @@ const NineCentersPage: React.FC = () => {
         fluid={backgroundHumanDesign}
       >
         <div className={styles.heroOverlay}>
-          <Parallax y={['0px', '50px']}>
+          <Parallax translateY={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>The Nine Centers</h1>
             </div>
           </Parallax>
-          <Parallax y={['100px', '50px']}>
+          <Parallax translateY={['100px', '50px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h2>Homo Sapiens in Transitus</h2>
               <p>

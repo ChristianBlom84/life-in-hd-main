@@ -4,7 +4,7 @@ import BackgroundImage from 'gatsby-background-image';
 import { Parallax } from 'react-scroll-parallax';
 import Img from 'gatsby-image';
 import SEO from '../components/Seo';
-import styles from './human-design.module.scss';
+import * as styles from './human-design.module.scss';
 
 const HumanDesignPage: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -66,12 +66,12 @@ const HumanDesignPage: React.FC = () => {
         fluid={backgroundHumanDesign}
       >
         <div className={styles.heroOverlay}>
-          <Parallax y={['25px', '75px']}>
+          <Parallax translateY={['25px', '75px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>The Human Design System</h1>
             </div>
           </Parallax>
-          <Parallax y={['100px', '50px']}>
+          <Parallax translateY={['100px', '50px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h2>Human Design Basics</h2>
               <p>

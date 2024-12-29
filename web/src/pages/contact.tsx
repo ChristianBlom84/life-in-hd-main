@@ -5,7 +5,7 @@ import React, { useRef, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import SEO from '../components/Seo';
 import Spinner from '../components/Spinner';
-import styles from './contact.module.scss';
+import * as styles from './contact.module.scss';
 
 interface FormData {
   [key: string]: string;
@@ -144,12 +144,12 @@ const ContactPage: React.FC = () => {
           </div>
         ) : null}
         <div className={styles.heroOverlay}>
-          <Parallax y={['0px', '50px']}>
+          <Parallax translateY={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>Contact us</h1>
             </div>
           </Parallax>
-          <Parallax y={['150px', '50px']}>
+          <Parallax translateY={['150px', '50px']}>
             <form
               name="contact"
               method="post"

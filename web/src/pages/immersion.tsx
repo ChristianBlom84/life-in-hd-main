@@ -1,12 +1,22 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import React, { useState } from 'react';
 import BackgroundImage from 'gatsby-background-image';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { Parallax } from 'react-scroll-parallax';
-import Img from 'gatsby-image';
+import Lightbox from 'yet-another-react-lightbox';
+import Inline from 'yet-another-react-lightbox/plugins/inline';
+import 'yet-another-react-lightbox/styles.css';
 import SEO from '../components/Seo';
-import styles from './about.module.scss';
+import * as styles from './about.module.scss';
 
-const AboutPage: React.FC = () => {
+const Immersion: React.FC = () => {
+  const [open, setOpen] = useState(false);
+  const [index, setIndex] = useState(0);
+
+  const toggleOpen = (state: boolean) => () => setOpen(state);
+  const updateIndex = ({ index: current }: { index: number }) =>
+    setIndex(current);
+
   const data = useStaticQuery(graphql`
     query {
       backgroundImmersion: file(
@@ -18,10 +28,35 @@ const AboutPage: React.FC = () => {
           }
         }
       }
+      venueOne: file(relativePath: { eq: "backgrounds/Venue1.jpg" }) {
+        childImageSharp {
+          fluid(quality: 80, srcSetBreakpoints: [320, 640]) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      venueTwo: file(relativePath: { eq: "backgrounds/Venue2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 80, srcSetBreakpoints: [320, 640]) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      venueThree: file(relativePath: { eq: "backgrounds/Venue3.jpg" }) {
+        childImageSharp {
+          fluid(quality: 80, srcSetBreakpoints: [320, 640]) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
   const backgroundImmersion = data.backgroundImmersion.childImageSharp.fluid;
+  const venueOne = data.venueOne.childImageSharp.fluid;
+  const venueTwo = data.venueTwo.childImageSharp.fluid;
+  const venueThree = data.venueThree.childImageSharp.fluid;
+  const slides = [venueOne, venueTwo, venueThree];
 
   return (
     <>
@@ -33,12 +68,12 @@ const AboutPage: React.FC = () => {
         fluid={backgroundImmersion}
       >
         <div className={styles.heroOverlay}>
-          <Parallax y={['0px', '50px']}>
+          <Parallax translateY={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>Human Design Immersions</h1>
             </div>
           </Parallax>
-          <Parallax y={['150px', '50px']}>
+          <Parallax translateY={['150px', '50px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h2>What is an Immersion?</h2>
               <p>
@@ -72,7 +107,7 @@ const AboutPage: React.FC = () => {
               <p> Are you ready?</p>
             </div>
           </Parallax>
-          <Parallax y={['150px', '75px']}>
+          <Parallax translateY={['150px', '75px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h2>The Inaugural Human Design Immersion on Gran Canaria</h2>
               <p>
@@ -121,10 +156,43 @@ const AboutPage: React.FC = () => {
               </p>
             </div>
           </Parallax>
+
+          <Lightbox
+            index={index}
+            slides={slides}
+            plugins={[Inline]}
+            on={{
+              view: updateIndex,
+              click: toggleOpen(true),
+            }}
+            carousel={{
+              padding: 0,
+              spacing: 0,
+              imageFit: 'cover',
+            }}
+            inline={{
+              style: {
+                width: '100%',
+                maxWidth: '900px',
+                aspectRatio: '3 / 2',
+                margin: '0 auto',
+              },
+            }}
+          />
+
+          <Lightbox
+            open={open}
+            close={toggleOpen(false)}
+            index={index}
+            slides={slides}
+            on={{ view: updateIndex }}
+            animation={{ fade: 0 }}
+            controller={{ closeOnPullDown: true, closeOnBackdropClick: true }}
+          />
         </div>
       </BackgroundImage>
     </>
   );
 };
 
-export default AboutPage;
+export default Immersion;

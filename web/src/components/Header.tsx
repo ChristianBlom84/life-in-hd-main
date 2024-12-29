@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Menu from './Menu';
 import SideMenu from './SideMenu';
-import styles from './Header.module.scss';
+import * as styles from './Header.module.scss';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);

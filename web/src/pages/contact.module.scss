@@ -1,10 +1,12 @@
-@import '../variables.scss';
+@import '../variables';
+@import '../utilities';
 
 .section {
   padding: 0;
 }
 
-#hero, .hero {
+#hero,
+.hero {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -15,7 +17,8 @@
   width: 100%;
   height: 100vh;
 
-  &::before, &::after {
+  &::before,
+  &::after {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -103,7 +106,8 @@
     height: 115vh;
   }
 
-  &::before, &::after {
+  &::before,
+  &::after {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -128,6 +132,7 @@
 
   a {
     color: white;
+
     :visited {
       color: $lightgreen;
     }
@@ -159,8 +164,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255,255,255,0.9);
-  box-shadow: 0 0 4px rgba(0,0,0,.25);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 4px rgba(0, 0, 0, .25);
   padding: 1rem;
   max-width: 900px;
   line-height: 150%;
@@ -179,8 +184,8 @@
   align-items: center;
   flex-direction: column;
   align-items: stretch;
-  background-color: rgba(255,255,255,0.9);
-  box-shadow: 0 0 4px rgba(0,0,0,.25);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 4px rgba(0, 0, 0, .25);
   padding: 2rem;
   max-width: 95%;
   line-height: 150%;
@@ -194,7 +199,8 @@
     width: 400px;
   }
 
-  input, textarea {
+  input,
+  textarea {
     border-radius: 5px;
     border: 1px solid black;
     height: 40px;
@@ -219,7 +225,8 @@
   flex-direction: column;
   margin-bottom: 1rem;
 
-  input, textarea {
+  input,
+  textarea {
     background: white;
   }
 }
@@ -251,7 +258,7 @@
   position: fixed;
   opacity: 0;
   background: white;
-  border: 1px solid rgba(0,0,0,0.75);
+  border: 1px solid rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -261,7 +268,7 @@
   width: 320px;
   top: calc(50% - 50px);
   left: calc(50% - 160px);
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   margin: auto;
   transition: all 0.2s;
   text-align: center;

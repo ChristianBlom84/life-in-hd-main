@@ -1,4 +1,4 @@
-@import './utilities.scss';
+@import 'utilities';
 
 // Colors
 $darkgray: #2d2a30;
@@ -24,7 +24,7 @@ $BpXXLarge: 1500px;
 $parallax-perspective: 8px;
 
 @function parallax-scale-factor($z-distance) {
-  @return ($parallax-perspective  -  $z-distance) / $parallax-perspective;
+  @return ($parallax-perspective - $z-distance) / $parallax-perspective;
 }
 
 @mixin xsmallMax {

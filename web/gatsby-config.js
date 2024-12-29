@@ -34,7 +34,13 @@ module.exports = {
         icon: `src/images/icons/life-in-hd-icon.jpg`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-sass`,
+    // `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require('node-sass'),
+      },
+    },
     `gatsby-plugin-sitemap`,
   ],
 };

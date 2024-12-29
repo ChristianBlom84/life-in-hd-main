@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 import { BiX, BiCaretDown, BiCaretUp } from 'react-icons/bi';
-import styles from './SideMenu.module.scss';
+import * as styles from './SideMenu.module.scss';
 import HumanDesignPage from '../pages/human-design';
 
 interface Props {

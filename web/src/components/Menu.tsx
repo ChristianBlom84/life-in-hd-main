@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import styles from './Menu.module.scss';
+import * as styles from './Menu.module.scss';
 
 const Menu: React.FC = () => {
   const [humanDesignExpanded, setHumanDesignExpanded] = useState(false);

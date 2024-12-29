@@ -1,10 +1,11 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import Image from 'gatsby-image';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import BackgroundImage from 'gatsby-background-image';
+import { convertToBgImage } from 'gbimage-bridge';
 import { Parallax } from 'react-scroll-parallax';
 import SEO from '../components/Seo';
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 
 const IndexPage: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -114,7 +115,7 @@ const IndexPage: React.FC = () => {
         fluid={heroBackground}
       >
         <div className={styles.heroOverlay}>
-          <Parallax y={[-50, 50]}>
+          <Parallax translateY={[-50, 50]}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>Life in Human Design</h1>
               <p className={styles.preamble}>
@@ -130,7 +131,7 @@ const IndexPage: React.FC = () => {
           className={`${styles.background} ${styles.justifyCenter}`}
           fluid={backgroundTwo}
         >
-          <Parallax y={['-75px', '75px']}>
+          <Parallax translateY={['-75px', '75px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h3>What is Human Design?</h3>
               <p>
@@ -170,7 +171,7 @@ const IndexPage: React.FC = () => {
           fluid={backgroundThree}
           rootMargin="400px"
         >
-          <Parallax y={['-100px', '100px']}>
+          <Parallax translateY={['-100px', '100px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <p className={styles.mb0}>
                 Here at Life in HD we offer{' '}
@@ -191,7 +192,7 @@ const IndexPage: React.FC = () => {
           fluid={backgroundFour}
           rootMargin="400px"
         >
-          <Parallax y={['50px', '-50px']}>
+          <Parallax translateY={['50px', '-50px']}>
             <div className={`${styles.contentOverlay} ${styles.contentRight}`}>
               <h3>Foundation reading</h3>
               <p>
@@ -205,7 +206,7 @@ const IndexPage: React.FC = () => {
               </p>
             </div>
           </Parallax>
-          <Parallax y={['100px', '-100px']}>
+          <Parallax translateY={['100px', '-100px']}>
             <div className={`${styles.contentOverlay} ${styles.contentLeft}`}>
               <h3>Manifestor sessions with Milla</h3>
               <p>
@@ -235,7 +236,7 @@ const IndexPage: React.FC = () => {
           fluid={backgroundSix}
           rootMargin="400px"
         >
-          <Parallax y={['-100px', '100px']}>
+          <Parallax translateY={['-100px', '100px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h3>Who are we?</h3>
               <p>

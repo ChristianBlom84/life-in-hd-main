@@ -4,7 +4,7 @@ import BackgroundImage from 'gatsby-background-image';
 import { Parallax } from 'react-scroll-parallax';
 import Img from 'gatsby-image';
 import SEO from '../../components/Seo';
-import styles from '../human-design.module.scss';
+import * as styles from '../human-design.module.scss';
 import localStyles from './the-four-types.module.scss';
 
 const FourTypesPage: React.FC = () => {

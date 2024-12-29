@@ -2,9 +2,8 @@ import React from 'react';
 import BackgroundImage from 'gatsby-background-image';
 import { Parallax } from 'react-scroll-parallax';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
 import SEO from '../components/Seo';
-import styles from './services.module.scss';
+import * as styles from './services.module.scss';
 
 const ServicesPage: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -31,7 +30,6 @@ const ServicesPage: React.FC = () => {
   `);
 
   const backgroundServices = data.backgroundServices.childImageSharp.fluid;
-  const gatheringImage = data.gatheringImage.childImageSharp.fluid;
 
   return (
     <>
@@ -43,12 +41,12 @@ const ServicesPage: React.FC = () => {
         fluid={backgroundServices}
       >
         <div className={styles.heroOverlay}>
-          <Parallax y={['0px', '50px']}>
+          <Parallax translateY={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>Human Design Services</h1>
             </div>
           </Parallax>
-          <Parallax y={['150px', '50px']}>
+          <Parallax translateY={['150px', '50px']}>
             <div
               className={`${styles.contentOverlay} ${styles.mhAuto} ${styles.mt4}`}
             >

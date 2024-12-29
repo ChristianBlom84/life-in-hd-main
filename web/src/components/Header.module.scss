@@ -1,40 +1,42 @@
-@import '../variables.scss';
+@import '../variables';
+@import '../utilities';
 
 .header {
-    background: $darkgray;
-    color: white;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    height: 100px;
-    padding: 0 1rem;
+  background: $darkgray;
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 100px;
+  padding: 0 1rem;
 
-    @include mediumMax {
-      justify-content: space-between;
-    }
+  @include mediumMax {
+    justify-content: space-between;
+  }
 
-    .logo {
-        flex: 0 0 200px;
+  .logo {
+    flex: 0 0 200px;
 
-        @include xxlarge {
-          margin-right: -200px;
-        }
-    }
-
-    h1 {
-        padding: 0;
-        margin: 0;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-        :visited {
-            text-decoration: none;
-            color: white;
-        }
+    @include xxlarge {
+      margin-right: -200px;
     }
   }
+
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+
+    :visited {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
 
 .menuButton {
   display: flex;
@@ -49,6 +51,7 @@
   border-radius: 9999px;
   border: 2px rgb(100, 100, 100) solid;
   transition: border 0.5s;
+
   &:hover {
     border: 2px white solid;
   }
