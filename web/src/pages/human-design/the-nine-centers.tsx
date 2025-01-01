@@ -2,36 +2,36 @@ import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import { Parallax } from 'react-scroll-parallax';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import SEO from '../../components/Seo';
 import * as styles from '../human-design.module.scss';
 import * as localStyles from './the-nine-centers.module.scss';
 
 const NineCentersPage: React.FC = () => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       bodygraph: file(relativePath: { eq: "bodygraph.png" }) {
         childImageSharp {
-          fluid(maxWidth: 750) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(width: 750, layout: CONSTRAINED)
         }
       }
       backgroundHumanDesign: file(
         relativePath: { eq: "backgrounds/humandesign_bg.jpg" }
       ) {
         childImageSharp {
-          fluid(quality: 80, srcSetBreakpoints: [800, 1200, 1600, 2500, 4032]) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [800, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
     }
   `);
 
   const backgroundHumanDesign =
-    data.backgroundHumanDesign.childImageSharp.fluid;
-  const bodygraph = data.bodygraph.childImageSharp.fluid;
+    data.backgroundHumanDesign.childImageSharp.gatsbyImageData;
+  const bodygraph = data.bodygraph.childImageSharp.gatsbyImageData;
 
   return (
     <>
@@ -75,7 +75,10 @@ const NineCentersPage: React.FC = () => {
               <figure
                 className={`${styles.mandalaBodygraph} ${localStyles.bodygraph}`}
               >
-                <Img fluid={bodygraph} alt="Bodygraph with the nine centers" />
+                <GatsbyImage
+                  image={bodygraph}
+                  alt="Bodygraph with the nine centers"
+                />
                 <figcaption>Bodygraph with the nine centers</figcaption>
               </figure>
             </div>

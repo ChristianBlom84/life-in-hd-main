@@ -1,5 +1,5 @@
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useState, useEffect, useRef } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Menu from './Menu';
@@ -34,24 +34,20 @@ const Header: React.FC = () => {
     }
   }, []);
 
-  const data = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "life-in-hd-banner.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  logo: file(relativePath: {eq: "life-in-hd-banner.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 500, placeholder: NONE, layout: CONSTRAINED)
     }
-  `);
+  }
+}`);
 
   const { fluid } = data.logo.childImageSharp;
 
   return (
     <header className={styles.header}>
       <Link className={styles.logo} to="/">
-        <Img fluid={fluid} alt="" />
+        <GatsbyImage image={fluid} alt="" />
       </Link>
       {width > 767 ? (
         <Menu />

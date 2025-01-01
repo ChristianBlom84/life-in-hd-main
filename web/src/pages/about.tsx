@@ -2,48 +2,44 @@ import React from 'react';
 import BackgroundImage from 'gatsby-background-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Parallax } from 'react-scroll-parallax';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import SEO from '../components/Seo';
 import * as styles from './about.module.scss';
 
 const AboutPage: React.FC = () => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       millaChristian: file(relativePath: { eq: "millachristian.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
       }
       milla: file(relativePath: { eq: "Milla.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
       }
       christian: file(relativePath: { eq: "Christian.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
       }
       backgroundAbout: file(relativePath: { eq: "backgrounds/about_bg.jpg" }) {
         childImageSharp {
-          fluid(quality: 80, srcSetBreakpoints: [800, 1200, 1600, 2500, 4032]) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [800, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
     }
   `);
 
-  const millaChristian = data.millaChristian.childImageSharp.fluid;
-  const milla = data.milla.childImageSharp.fluid;
-  const christian = data.christian.childImageSharp.fluid;
-  const backgroundAbout = data.backgroundAbout.childImageSharp.fluid;
+  const millaChristian = data.millaChristian.childImageSharp.gatsbyImageData;
+  const milla = data.milla.childImageSharp.gatsbyImageData;
+  const christian = data.christian.childImageSharp.gatsbyImageData;
+  const backgroundAbout = data.backgroundAbout.childImageSharp.gatsbyImageData;
 
   return (
     <>
@@ -76,7 +72,11 @@ const AboutPage: React.FC = () => {
                 Stockholm and are raising their children according to their
                 design.
               </p>
-              <Img className={styles.aboutImage} fluid={millaChristian} />
+              <GatsbyImage
+                image={millaChristian}
+                alt="Milla and Christian"
+                className={styles.aboutImage}
+              />
               <p>
                 Christian is a certified Human Design Analyst and Living Your
                 Design Guide. He recieved his first reading in February of 2007
@@ -97,9 +97,9 @@ const AboutPage: React.FC = () => {
               </p>
               <div className={styles.imageParagraph}>
                 <div className={styles.bodygraphContainer}>
-                  <Img
+                  <GatsbyImage
+                    image={milla}
                     className={styles.bodygraphImage}
-                    fluid={milla}
                     alt="Milla's bodygraph"
                   />
                   <p>
@@ -107,9 +107,9 @@ const AboutPage: React.FC = () => {
                   </p>
                 </div>
                 <div className={styles.bodygraphContainer}>
-                  <Img
+                  <GatsbyImage
+                    image={christian}
                     className={styles.bodygraphImage}
-                    fluid={christian}
                     alt="Christian's bodygraph"
                   />
                   <p>

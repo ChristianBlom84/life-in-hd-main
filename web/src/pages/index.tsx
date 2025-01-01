@@ -1,6 +1,5 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import BackgroundImage from 'gatsby-background-image';
 import { convertToBgImage } from 'gbimage-bridge';
 import { Parallax } from 'react-scroll-parallax';
@@ -9,101 +8,98 @@ import * as styles from './index.module.scss';
 
 const IndexPage: React.FC = () => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       bigIcon: file(relativePath: { eq: "BG-2-Def-Cent-on-white.png" }) {
         childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
       }
       hexagramOne: file(relativePath: { eq: "hexagram1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
       }
       hexagramTwo: file(relativePath: { eq: "hexagram2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
       }
       backgroundTwo: file(relativePath: { eq: "backgrounds/start_bg2.jpg" }) {
         childImageSharp {
-          fluid(
+          gatsbyImageData(
             quality: 70
-            srcSetBreakpoints: [600, 1000, 1200, 1600, 2500, 4032]
-          ) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+            breakpoints: [600, 1000, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
       backgroundThree: file(relativePath: { eq: "backgrounds/start_bg3.jpg" }) {
         childImageSharp {
-          fluid(
+          gatsbyImageData(
             quality: 70
-            srcSetBreakpoints: [600, 1000, 1200, 1600, 2500, 4032]
-          ) {
-            ...GatsbyImageSharpFluid
-          }
+            breakpoints: [600, 1000, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
       backgroundFour: file(relativePath: { eq: "backgrounds/start_bg4.jpg" }) {
         childImageSharp {
-          fluid(
+          gatsbyImageData(
             quality: 70
-            srcSetBreakpoints: [600, 1000, 1200, 1600, 2500, 4032]
-          ) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+            breakpoints: [600, 1000, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
       backgroundFive: file(relativePath: { eq: "backgrounds/start_bg5.jpg" }) {
         childImageSharp {
-          fluid(
+          gatsbyImageData(
             quality: 70
-            srcSetBreakpoints: [600, 1000, 1200, 1600, 2500, 4032]
-          ) {
-            ...GatsbyImageSharpFluid
-          }
+            breakpoints: [600, 1000, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
       heroBackground: file(relativePath: { eq: "backgrounds/start_hero.jpg" }) {
         childImageSharp {
-          fluid(
+          gatsbyImageData(
             quality: 70
-            srcSetBreakpoints: [600, 1000, 1200, 1600, 2500, 4032]
-          ) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+            breakpoints: [600, 1000, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
       backgroundSix: file(relativePath: { eq: "backgrounds/start_bg6.jpg" }) {
         childImageSharp {
-          fluid(
+          gatsbyImageData(
             quality: 70
-            srcSetBreakpoints: [600, 1000, 1200, 1600, 2500, 4032]
-          ) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+            breakpoints: [600, 1000, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
     }
   `);
 
-  const bigIcon = data.bigIcon.childImageSharp.fluid;
-  const hexagramOne = data.hexagramOne.childImageSharp.fluid;
-  const hexagramTwo = data.hexagramTwo.childImageSharp.fluid;
-  const heroBackground = data.heroBackground.childImageSharp.fluid;
+  const heroBackground = convertToBgImage(
+    data.heroBackground.childImageSharp.gatsbyImageData,
+  );
   console.log(data.backgroundTwo);
-  const backgroundTwo = data.backgroundTwo.childImageSharp.fluid;
-  const backgroundThree = data.backgroundThree.childImageSharp.fluid;
-  const backgroundFour = data.backgroundFour.childImageSharp.fluid;
-  const backgroundFive = data.backgroundFive.childImageSharp.fluid;
-  const backgroundSix = data.backgroundSix.childImageSharp.fluid;
+  const backgroundTwo = convertToBgImage(
+    data.backgroundTwo.childImageSharp.gatsbyImageData,
+  );
+  const backgroundThree = convertToBgImage(
+    data.backgroundThree.childImageSharp.gatsbyImageData,
+  );
+  const backgroundFour = convertToBgImage(
+    data.backgroundFour.childImageSharp.gatsbyImageData,
+  );
+  const backgroundFive = convertToBgImage(
+    data.backgroundFive.childImageSharp.gatsbyImageData,
+  );
+  const backgroundSix = convertToBgImage(
+    data.backgroundSix.childImageSharp.gatsbyImageData,
+  );
 
   return (
     <>
@@ -112,7 +108,7 @@ const IndexPage: React.FC = () => {
         Tag={`section`}
         id={`hero`}
         className={styles.hero}
-        fluid={heroBackground}
+        {...heroBackground}
       >
         <div className={styles.heroOverlay}>
           <Parallax translateY={[-50, 50]}>
@@ -129,7 +125,7 @@ const IndexPage: React.FC = () => {
         <BackgroundImage
           Tag={`section`}
           className={`${styles.background} ${styles.justifyCenter}`}
-          fluid={backgroundTwo}
+          {...backgroundTwo}
         >
           <Parallax translateY={['-75px', '75px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
@@ -168,7 +164,7 @@ const IndexPage: React.FC = () => {
         <BackgroundImage
           Tag={`section`}
           className={`${styles.background} ${styles.justifyCenter}`}
-          fluid={backgroundThree}
+          {...backgroundThree}
           rootMargin="400px"
         >
           <Parallax translateY={['-100px', '100px']}>
@@ -189,7 +185,7 @@ const IndexPage: React.FC = () => {
         <BackgroundImage
           Tag={`section`}
           className={`${styles.background} ${styles.justifyEven}`}
-          fluid={backgroundFour}
+          {...backgroundFour}
           rootMargin="400px"
         >
           <Parallax translateY={['50px', '-50px']}>
@@ -233,7 +229,7 @@ const IndexPage: React.FC = () => {
         <BackgroundImage
           Tag={`section`}
           className={`${styles.background} ${styles.justifyCenter}`}
-          fluid={backgroundSix}
+          {...backgroundSix}
           rootMargin="400px"
         >
           <Parallax translateY={['-100px', '100px']}>

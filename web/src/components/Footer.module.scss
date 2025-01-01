@@ -2,7 +2,7 @@
 @import '../utilities';
 
 .footer {
-  min-height: 6rem;
+  min-height: 150px;
   background: $darkgray;
   display: flex;
   flex-flow: row wrap;
@@ -32,7 +32,7 @@
 
   .certificate {
     right: 0;
-    min-width: 120px;
+    min-width: 100px;
     height: auto;
   }
 }

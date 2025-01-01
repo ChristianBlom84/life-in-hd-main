@@ -1,25 +1,23 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { SiInstagram, SiFacebook } from 'react-icons/si';
 import * as styles from './Footer.module.scss';
 
 const Footer: React.FC = () => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       certificate: file(
         relativePath: { eq: "icons/certified-pro-transparent.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
+          gatsbyImageData(width: 200, placeholder: NONE, layout: CONSTRAINED)
         }
       }
     }
   `);
 
-  const certificate = data.certificate.childImageSharp.fluid;
+  const certificate = data.certificate.childImageSharp.gatsbyImageData;
 
   return (
     <footer className={styles.footer}>
@@ -37,10 +35,11 @@ const Footer: React.FC = () => {
         </div>
         <p>© {new Date().getFullYear()} Life in HD</p>
       </div>
-      <Img
+      <GatsbyImage
+        image={certificate}
+        alt="Certified Human Design Professional"
         className={styles.certificate}
         style={{ position: 'absolute' }}
-        fluid={certificate}
       />
     </footer>
   );

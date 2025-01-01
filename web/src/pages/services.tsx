@@ -7,29 +7,34 @@ import * as styles from './services.module.scss';
 
 const ServicesPage: React.FC = () => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       backgroundServices: file(
         relativePath: { eq: "backgrounds/services_bg.jpg" }
       ) {
         childImageSharp {
-          fluid(quality: 80, srcSetBreakpoints: [800, 1200, 1600, 2500, 4032]) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [800, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
       gatheringImage: file(
         relativePath: { eq: "manifestors-talk-gathering.jpg" }
       ) {
         childImageSharp {
-          fluid(quality: 80, srcSetBreakpoints: [800, 1200, 1600]) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [800, 1200, 1600]
+            layout: FULL_WIDTH
+          )
         }
       }
     }
   `);
 
-  const backgroundServices = data.backgroundServices.childImageSharp.fluid;
+  const backgroundServices =
+    data.backgroundServices.childImageSharp.gatsbyImageData;
 
   return (
     <>

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React, { useState } from 'react';
 import BackgroundImage from 'gatsby-background-image';
+import { convertToBgImage } from 'gbimage-bridge';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { Parallax } from 'react-scroll-parallax';
 import Lightbox from 'yet-another-react-lightbox';
@@ -18,44 +19,54 @@ const Immersion: React.FC = () => {
     setIndex(current);
 
   const data = useStaticQuery(graphql`
-    query {
+    {
       backgroundImmersion: file(
         relativePath: { eq: "backgrounds/immersion_bg.jpg" }
       ) {
         childImageSharp {
-          fluid(quality: 80, srcSetBreakpoints: [800, 1200, 1600, 2500, 4032]) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [800, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
-      venueOne: file(relativePath: { eq: "backgrounds/Venue1.jpg" }) {
+      venueOne: file(relativePath: { eq: "Venue1.jpg" }) {
         childImageSharp {
-          fluid(quality: 80, srcSetBreakpoints: [320, 640]) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [320, 640]
+            layout: FULL_WIDTH
+          )
         }
       }
-      venueTwo: file(relativePath: { eq: "backgrounds/Venue2.jpg" }) {
+      venueTwo: file(relativePath: { eq: "Venue2.jpg" }) {
         childImageSharp {
-          fluid(quality: 80, srcSetBreakpoints: [320, 640]) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [320, 640]
+            layout: FULL_WIDTH
+          )
         }
       }
-      venueThree: file(relativePath: { eq: "backgrounds/Venue3.jpg" }) {
+      venueThree: file(relativePath: { eq: "Venue3.jpg" }) {
         childImageSharp {
-          fluid(quality: 80, srcSetBreakpoints: [320, 640]) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [320, 640]
+            layout: FULL_WIDTH
+          )
         }
       }
     }
   `);
 
-  const backgroundImmersion = data.backgroundImmersion.childImageSharp.fluid;
-  const venueOne = data.venueOne.childImageSharp.fluid;
-  const venueTwo = data.venueTwo.childImageSharp.fluid;
-  const venueThree = data.venueThree.childImageSharp.fluid;
+  const backgroundImmersion = convertToBgImage(
+    data.backgroundImmersion.childImageSharp.gatsbyImageData,
+  );
+  const venueOne = data.venueOne.childImageSharp.gatsbyImageData;
+  const venueTwo = data.venueTwo.childImageSharp.gatsbyImageData;
+  const venueThree = data.venueThree.childImageSharp.gatsbyImageData;
   const slides = [venueOne, venueTwo, venueThree];
 
   return (
@@ -65,7 +76,7 @@ const Immersion: React.FC = () => {
         Tag={`section`}
         id={`hero`}
         className={styles.background}
-        fluid={backgroundImmersion}
+        {...backgroundImmersion}
       >
         <div className={styles.heroOverlay}>
           <Parallax translateY={['0px', '50px']}>

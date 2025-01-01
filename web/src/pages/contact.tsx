@@ -26,20 +26,23 @@ const ContactPage: React.FC = () => {
   const formMessageRef = useRef(null);
 
   const data = useStaticQuery(graphql`
-    query {
+    {
       backgroundContact: file(
         relativePath: { eq: "backgrounds/contact_bg.jpg" }
       ) {
         childImageSharp {
-          fluid(quality: 80, srcSetBreakpoints: [800, 1200, 1600, 2500, 4032]) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [800, 1200, 1600, 2500, 4032]
+            layout: FULL_WIDTH
+          )
         }
       }
     }
   `);
 
-  const backgroundContact = data.backgroundContact.childImageSharp.fluid;
+  const backgroundContact =
+    data.backgroundContact.childImageSharp.gatsbyImageData;
 
   const encodeForm = (data: FormData): string => {
     return Object.keys(data)
