@@ -64,9 +64,9 @@ const Immersion: React.FC = () => {
   const backgroundImmersion = convertToBgImage(
     data.backgroundImmersion.childImageSharp.gatsbyImageData,
   );
-  // const venueOne = data.venueOne.childImageSharp.gatsbyImageData;
-  // const venueTwo = data.venueTwo.childImageSharp.gatsbyImageData;
-  // const venueThree = data.venueThree.childImageSharp.gatsbyImageData;
+  const venueOne = data.venueOne.childImageSharp.gatsbyImageData;
+  const venueTwo = data.venueTwo.childImageSharp.gatsbyImageData;
+  const venueThree = data.venueThree.childImageSharp.gatsbyImageData;
   // const slides = [venueOne, venueTwo, venueThree];
   const slides = [
     { src: data.venueOne.childImageSharp.gatsbyImageData.images.fallback.src },
