@@ -1,6 +1,6 @@
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
-import React, { useState, useEffect, useRef } from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import React, { useState, useEffect } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Menu from './Menu';
 import SideMenu from './SideMenu';
