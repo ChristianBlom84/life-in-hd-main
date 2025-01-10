@@ -1,5 +1,5 @@
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import React, { useState, useEffect, useRef } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Menu from './Menu';
@@ -28,21 +28,23 @@ const Header: React.FC = () => {
   };
 
   useEffect(() => {
-    if (typeof window !== undefined) {
+    if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleResize);
       handleResize();
     }
   }, []);
 
-  const data = useStaticQuery(graphql`{
-  logo: file(relativePath: {eq: "life-in-hd-banner.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(width: 500, placeholder: NONE, layout: CONSTRAINED)
+  const data = useStaticQuery(graphql`
+    {
+      logo: file(relativePath: { eq: "life-in-hd-banner.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, placeholder: NONE, layout: CONSTRAINED)
+        }
+      }
     }
-  }
-}`);
+  `);
 
-  const { fluid } = data.logo.childImageSharp;
+  const { fluid } = data.logo.childImageSharp.gatsbyImageData;
 
   return (
     <header className={styles.header}>

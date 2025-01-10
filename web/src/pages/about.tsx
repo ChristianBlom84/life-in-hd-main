@@ -1,5 +1,6 @@
 import React from 'react';
 import BackgroundImage from 'gatsby-background-image';
+import { convertToBgImage } from 'gbimage-bridge';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Parallax } from 'react-scroll-parallax';
 import { GatsbyImage } from 'gatsby-plugin-image';
@@ -39,7 +40,9 @@ const AboutPage: React.FC = () => {
   const millaChristian = data.millaChristian.childImageSharp.gatsbyImageData;
   const milla = data.milla.childImageSharp.gatsbyImageData;
   const christian = data.christian.childImageSharp.gatsbyImageData;
-  const backgroundAbout = data.backgroundAbout.childImageSharp.gatsbyImageData;
+  const backgroundAbout = convertToBgImage(
+    data.backgroundAbout.childImageSharp.gatsbyImageData,
+  );
 
   return (
     <>
@@ -48,7 +51,7 @@ const AboutPage: React.FC = () => {
         Tag={`section`}
         id={`hero`}
         className={styles.background}
-        fluid={backgroundAbout}
+        {...backgroundAbout}
       >
         <div className={styles.heroOverlay}>
           <Parallax translateY={['0px', '50px']}>

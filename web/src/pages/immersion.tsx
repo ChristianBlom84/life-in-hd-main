@@ -8,7 +8,7 @@ import Lightbox from 'yet-another-react-lightbox';
 import Inline from 'yet-another-react-lightbox/plugins/inline';
 import 'yet-another-react-lightbox/styles.css';
 import SEO from '../components/Seo';
-import * as styles from './about.module.scss';
+import * as styles from './immersion.module.scss';
 
 const Immersion: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -67,7 +67,14 @@ const Immersion: React.FC = () => {
   const venueOne = data.venueOne.childImageSharp.gatsbyImageData;
   const venueTwo = data.venueTwo.childImageSharp.gatsbyImageData;
   const venueThree = data.venueThree.childImageSharp.gatsbyImageData;
-  const slides = [venueOne, venueTwo, venueThree];
+  // const slides = [venueOne, venueTwo, venueThree];
+  const slides = [
+    { src: data.venueOne.childImageSharp.gatsbyImageData.images.fallback.src },
+    { src: data.venueTwo.childImageSharp.gatsbyImageData.images.fallback.src },
+    {
+      src: data.venueThree.childImageSharp.gatsbyImageData.images.fallback.src,
+    },
+  ];
 
   return (
     <>
@@ -181,14 +188,8 @@ const Immersion: React.FC = () => {
               spacing: 0,
               imageFit: 'cover',
             }}
-            inline={{
-              style: {
-                width: '100%',
-                maxWidth: '900px',
-                aspectRatio: '3 / 2',
-                margin: '0 auto',
-              },
-            }}
+            inline={{}}
+            className={styles.yarl__root}
           />
 
           <Lightbox

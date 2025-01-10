@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import { convertToBgImage } from 'gbimage-bridge';
 import { Parallax } from 'react-scroll-parallax';
 import React, { useRef, useState } from 'react';
 import { MdClose } from 'react-icons/md';
@@ -41,8 +42,9 @@ const ContactPage: React.FC = () => {
     }
   `);
 
-  const backgroundContact =
-    data.backgroundContact.childImageSharp.gatsbyImageData;
+  const backgroundContact = convertToBgImage(
+    data.backgroundContact.childImageSharp.gatsbyImageData,
+  );
 
   const encodeForm = (data: FormData): string => {
     return Object.keys(data)
@@ -104,8 +106,9 @@ const ContactPage: React.FC = () => {
         Tag={`section`}
         id={`hero`}
         className={styles.background}
-        fluid={backgroundContact}
-        onClick={async (e: any): Promise<void> => {
+        {...backgroundContact}
+        onClick={async (e: React.MouseEvent<HTMLElement>): Promise<void> => {
+          console.log(e);
           if (
             formSentMessageVisible &&
             formMessageRef.current !== e.currentTarget

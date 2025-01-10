@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import { convertToBgImage } from 'gbimage-bridge';
 import { Parallax } from 'react-scroll-parallax';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import SEO from '../components/Seo';
@@ -44,8 +45,9 @@ const HumanDesignPage: React.FC = () => {
   `);
 
   const { fluid } = data.placeholderImage.childImageSharp;
-  const backgroundHumanDesign =
-    data.backgroundHumanDesign.childImageSharp.gatsbyImageData;
+  const backgroundHumanDesign = convertToBgImage(
+    data.backgroundHumanDesign.childImageSharp.gatsbyImageData,
+  );
   const bodygraph = data.bodygraph.childImageSharp.gatsbyImageData;
   const gCenter = data.gCenter.childImageSharp.gatsbyImageData;
   const mandalaBodygraph =
@@ -58,7 +60,7 @@ const HumanDesignPage: React.FC = () => {
         Tag={`section`}
         id={`hero`}
         className={styles.background}
-        fluid={backgroundHumanDesign}
+        {...backgroundHumanDesign}
       >
         <div className={styles.heroOverlay}>
           <Parallax translateY={['25px', '75px']}>

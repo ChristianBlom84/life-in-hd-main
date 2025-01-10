@@ -90,7 +90,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 350vh;
+  height: 365vh;
   margin: 0;
   padding: 0;
 
@@ -99,11 +99,11 @@
   }
 
   @include mediumToLarge {
-    height: 275vh;
+    height: 350vh;
   }
 
   @include large {
-    height: 270vh;
+    height: 310vh;
   }
 
   &::before,
@@ -207,4 +207,11 @@
 .bodygraphImage {
   width: 100%;
   max-width: 500px;
+}
+
+.yarl__root {
+  width: '80%';
+  max-width: '900px';
+  aspect-ratio: '2 / 1';
+  margin: '150px auto';
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import BackgroundImage from 'gatsby-background-image';
+import { convertToBgImage } from 'gbimage-bridge';
 import { Parallax } from 'react-scroll-parallax';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import SEO from '../components/Seo';
@@ -33,8 +34,9 @@ const ServicesPage: React.FC = () => {
     }
   `);
 
-  const backgroundServices =
-    data.backgroundServices.childImageSharp.gatsbyImageData;
+  const backgroundServices = convertToBgImage(
+    data.backgroundServices.childImageSharp.gatsbyImageData,
+  );
 
   return (
     <>
@@ -43,7 +45,7 @@ const ServicesPage: React.FC = () => {
         Tag={`section`}
         id={`hero`}
         className={styles.background}
-        fluid={backgroundServices}
+        {...backgroundServices}
       >
         <div className={styles.heroOverlay}>
           <Parallax translateY={['0px', '50px']}>
