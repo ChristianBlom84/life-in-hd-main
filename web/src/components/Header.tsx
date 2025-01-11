@@ -38,20 +38,20 @@ const Header: React.FC = () => {
     {
       logo: file(relativePath: { eq: "life-in-hd-banner.jpg" }) {
         childImageSharp {
-          gatsbyImageData(width: 500, placeholder: NONE, layout: CONSTRAINED)
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
       }
     }
   `);
 
-  const { fluid } = data.logo.childImageSharp.gatsbyImageData;
+  const logo = data.logo.childImageSharp.gatsbyImageData;
 
   return (
     <header className={styles.header}>
       <Link className={styles.logo} to="/">
-        <GatsbyImage image={fluid} alt="" />
+        <GatsbyImage image={logo} alt="" />
       </Link>
-      {width > 767 ? (
+      {width > 970 ? (
         <Menu />
       ) : (
         <button

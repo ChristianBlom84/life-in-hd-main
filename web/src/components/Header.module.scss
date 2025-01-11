@@ -10,7 +10,7 @@
   height: 100px;
   padding: 0 1rem;
 
-  @include mediumMax {
+  @include largeMax {
     justify-content: space-between;
   }
 
