@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 const siteUrl = 'http://localhost:8000';
 module.exports = {
   siteMetadata: {
@@ -22,6 +21,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -38,6 +38,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
         implementation: require('node-sass'),
       },
     },

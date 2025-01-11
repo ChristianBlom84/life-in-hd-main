@@ -90,12 +90,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 365vh;
+  height: 380vh;
   margin: 0;
   padding: 0;
 
   @include xsmallMax {
-    height: 355vh;
+    height: 410vh;
   }
 
   @include mediumToLarge {
@@ -103,7 +103,7 @@
   }
 
   @include large {
-    height: 310vh;
+    height: 320vh;
   }
 
   &::before,
