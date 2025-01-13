@@ -48,7 +48,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
-      <Link className={styles.logo} to="/">
+      <Link className={styles.logo} aria-label="Back to home page" to="/">
         <GatsbyImage image={logo} alt="" />
       </Link>
       {width > 970 ? (
@@ -58,6 +58,7 @@ const Header: React.FC = () => {
           className={styles.menuButton}
           onClick={(): void => setMenuOpen(!menuOpen)}
           type="button"
+          aria-label="Open menu"
         >
           <GiHamburgerMenu className={styles.menuIcon} />
         </button>
