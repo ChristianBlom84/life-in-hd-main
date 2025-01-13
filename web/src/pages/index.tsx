@@ -129,7 +129,7 @@ const IndexPage: React.FC = () => {
         >
           <Parallax translateY={['-75px', '75px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
-              <h3>What is Human Design?</h3>
+              <h2>What is Human Design?</h2>
               <p>
                 Human Design is an intricate, amazing system for self-discovery
                 and integrity. The core principle of Human Design is that your
