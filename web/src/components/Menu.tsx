@@ -15,7 +15,12 @@ const Menu: React.FC = () => {
           // onBlur={(): void => setHumanDesignExpanded(false)}
           className={styles.menuItem}
         >
-          <Link to="/human-design">Human Design</Link>
+          <Link
+            to="/human-design"
+            aria-label="Learn more about the Human Design system."
+          >
+            Human Design
+          </Link>
           <div
             aria-hidden={!humanDesignExpanded}
             className={`${styles.humanDesignMenu} ${
@@ -28,16 +33,30 @@ const Menu: React.FC = () => {
           </div>
         </li>
         <li className={styles.menuItem}>
-          <Link to="/immersion">Immersion</Link>
+          <Link
+            to="/immersion"
+            aria-label="More information about our Human Design immersions."
+          >
+            Immersion
+          </Link>
         </li>
         <li className={styles.menuItem}>
-          <Link to="/services">Services</Link>
+          <Link
+            to="/services"
+            aria-label="Read more about our Human Design services."
+          >
+            Services
+          </Link>
         </li>
         <li className={styles.menuItem}>
-          <Link to="/about">About</Link>
+          <Link to="/about" aria-label="Learn more about who we are.">
+            About
+          </Link>
         </li>
         <li className={styles.menuItem}>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" aria-label="Contact us.">
+            Contact
+          </Link>
         </li>
       </ul>
     </nav>

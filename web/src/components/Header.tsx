@@ -38,7 +38,7 @@ const Header: React.FC = () => {
     {
       logo: file(relativePath: { eq: "life-in-hd-banner.jpg" }) {
         childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
+          gatsbyImageData(width: 200, layout: CONSTRAINED)
         }
       }
     }

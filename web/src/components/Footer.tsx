@@ -26,10 +26,14 @@ const Footer: React.FC = () => {
           <a
             className={styles.mr4}
             href="https://www.facebook.com/Life-in-HD-102470187893894"
+            aria-label="Visit our Facebook page"
           >
             <SiFacebook size="1.5rem" />
           </a>
-          <a href="https://www.instagram.com/lifeinhd.se/">
+          <a
+            href="https://www.instagram.com/lifeinhd.se/"
+            aria-label="Visit our Instagram page"
+          >
             <SiInstagram size="1.5rem" />
           </a>
         </div>
