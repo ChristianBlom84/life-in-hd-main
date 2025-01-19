@@ -58,7 +58,11 @@ const Menu: React.FC<Props> = ({
         </button>
         <ul className={styles.menuList}>
           <li className={styles.menuItem}>
-            <Link to="/human-design" onClick={handleClose}>
+            <Link
+              to="/human-design"
+              onClick={handleClose}
+              aria-label="Learn more about the Human Design system."
+            >
               Human Design
             </Link>
             <button
@@ -94,22 +98,34 @@ const Menu: React.FC<Props> = ({
             </ul>
           </li>
           <li className={styles.menuItem}>
-            <Link to="/immersion" onClick={handleClose}>
+            <Link
+              to="/immersion"
+              onClick={handleClose}
+              aria-label="More information about our Human Design immersions."
+            >
               Immersion
             </Link>
           </li>
           <li className={styles.menuItem}>
-            <Link to="/services" onClick={handleClose}>
+            <Link
+              to="/services"
+              onClick={handleClose}
+              aria-label="Read more about our Human Design services."
+            >
               Services
             </Link>
           </li>
           <li className={styles.menuItem}>
-            <Link to="/about" onClick={handleClose}>
+            <Link
+              to="/about"
+              onClick={handleClose}
+              aria-label="Learn more about who we are."
+            >
               About
             </Link>
           </li>
           <li className={styles.menuItem}>
-            <Link to="/contact" onClick={handleClose}>
+            <Link to="/contact" onClick={handleClose} aria-label="Contact us.">
               Contact
             </Link>
           </li>
