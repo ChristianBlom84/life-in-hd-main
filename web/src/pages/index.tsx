@@ -191,14 +191,12 @@ const IndexPage: React.FC = () => {
           <Parallax translateY={['50px', '-50px']}>
             <div className={`${styles.contentOverlay} ${styles.contentRight}`}>
               <h3>Foundation reading</h3>
-              <p>
-                A foundation reading is the natural place to start your Human
-                Design experiment. You will learn the elemental aspects and
-                challenges of your particular design and become familiar with
-                the core concepts of Type, Strategy and Inner Authority.
-              </p>
               <p className={styles.mb0}>
-                <Link to="/services">Read more</Link>
+                A <Link to="/services">foundation reading</Link> is the natural
+                place to start your Human Design experiment. You will learn the
+                elemental aspects and challenges of your particular design and
+                become familiar with the core concepts of Type, Strategy, Inner
+                Authority and Profile.
               </p>
             </div>
           </Parallax>
@@ -208,12 +206,12 @@ const IndexPage: React.FC = () => {
               <p>
                 Do you have a Manifestor in your life? Are you struggling with
                 communication and wondering how to best deal with this person?
-                I’m inviting you to reach out for a Manifestor session with me,
-                where you can ask all your questions and I’ll give you an inside
-                aura perspective. To be clear: I will not be speaking from
-                anything other than my direct experience and am therefore
-                unable, and unwilling, to answer on someone else’s behalf.{' '}
-                <Link to="/services">Read more</Link>.
+                I’m inviting you to{' '}
+                <Link to="/services">reach out for a Manifestor session</Link>{' '}
+                with me, where you can ask all your questions and I’ll give you
+                an inside aura perspective. To be clear: I will not be speaking
+                from anything other than my direct experience and am therefore
+                unable, and unwilling, to answer on someone else’s behalf.
               </p>
               <p className={styles.mb0}>
                 If you want to know more about Milla and her perspective and
@@ -248,7 +246,7 @@ const IndexPage: React.FC = () => {
                 Living Your Design Guides.
               </p>
               <p className={styles.mb0}>
-                <Link to="/about">Read more</Link>
+                <Link to="/about">Read more about us.</Link>
               </p>
             </div>
           </Parallax>
