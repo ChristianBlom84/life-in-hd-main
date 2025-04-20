@@ -9,6 +9,8 @@ import Inline from 'yet-another-react-lightbox/plugins/inline';
 import 'yet-another-react-lightbox/styles.css';
 import SEO from '../components/Seo';
 import * as styles from './immersion.module.scss';
+import * as aboutStyles from './about.module.scss';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Immersion: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -31,25 +33,9 @@ const Immersion: React.FC = () => {
           )
         }
       }
-      venueOne: file(relativePath: { eq: "Venue1.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            quality: 80
-            breakpoints: [320, 640]
-            layout: FULL_WIDTH
-          )
-        }
-      }
-      venueTwo: file(relativePath: { eq: "Venue2.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            quality: 80
-            breakpoints: [320, 640]
-            layout: FULL_WIDTH
-          )
-        }
-      }
-      venueThree: file(relativePath: { eq: "Venue3.jpg" }) {
+      immersionAustralia: file(
+        relativePath: { eq: "immersion-australia.png" }
+      ) {
         childImageSharp {
           gatsbyImageData(
             quality: 80
@@ -64,17 +50,15 @@ const Immersion: React.FC = () => {
   const backgroundImmersion = convertToBgImage(
     data.backgroundImmersion.childImageSharp.gatsbyImageData,
   );
-  const venueOne = data.venueOne.childImageSharp.gatsbyImageData;
-  const venueTwo = data.venueTwo.childImageSharp.gatsbyImageData;
-  const venueThree = data.venueThree.childImageSharp.gatsbyImageData;
-  // const slides = [venueOne, venueTwo, venueThree];
-  const slides = [
-    { src: data.venueOne.childImageSharp.gatsbyImageData.images.fallback.src },
-    { src: data.venueTwo.childImageSharp.gatsbyImageData.images.fallback.src },
-    {
-      src: data.venueThree.childImageSharp.gatsbyImageData.images.fallback.src,
-    },
-  ];
+  const immersionAustralia =
+    data.immersionAustralia.childImageSharp.gatsbyImageData;
+
+  // const slides = [
+  //   {
+  //     src: data.immersionAustralia.childImageSharp.gatsbyImageData.images
+  //       .fallback.src,
+  //   },
+  // ];
 
   return (
     <>
@@ -96,27 +80,67 @@ const Immersion: React.FC = () => {
               <h2>What is an Immersion?</h2>
               <p>
                 The Human Design Immersion, as brought by Mary Ann Winiger, is a
-                call to fully live your Design. It’s not about concepts,
-                theories, or mental understanding — it’s about aligning with
-                your Strategy and Authority and allowing your inner GPS to guide
-                you as yourself. It’s a chance to strip away conditioning,
-                resistance, and the need to &quot;figure it out&quot;, so you
-                can discover what happens when you align with your Design.
+                call to fully live your Design. It&apos;s not about concepts,
+                theories, or mental understanding — it&apos;s about aligning
+                with your Strategy and Authority and allowing your inner GPS to
+                guide you as yourself. It&apos;s a chance to strip away
+                conditioning, resistance, and the need to &quot;figure it
+                out&quot;, so you can discover what happens when you align with
+                your Design.
               </p>
               <p>
-                With Mary Ann Winiger’s full support and blessing, I am honored
-                to facilitate this process, creating a space for radical
-                observation, experimentation, and integration. This isn’t a
-                program to fix or teach you something new—it’s a profound
+                With Mary Ann Winiger&apos;s full support and blessing, I am
+                honored to facilitate this process, creating a space for radical
+                observation, experimentation, and integration. This isn&apos;t a
+                program to fix or teach you something new—it&apos;s a profound
                 experience where you can simply be, observe, and learn to trust
                 yourself at a cellular level.
               </p>
               <p>
                 Through shared exploration, practical exercises, and deep
                 support, the Immersion becomes a container for transformation.
-                Here, you’ll explore what it truly means to live in alignment
-                and navigate life through the simplicity of Strategy and
-                Authority.
+                Here, you&apos;ll explore what it truly means to live in
+                alignment and navigate life through the simplicity of Strategy
+                and Authority.
+              </p>
+              <p>
+                This is your invitation to step into the experiment, to
+                experience life as yourself, and to trust your Design.
+              </p>
+              <p> Are you ready?</p>
+            </div>
+          </Parallax>
+          <Parallax translateY={['150px', '50px']}>
+            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
+              <h2>Your Facilitators</h2>
+              <p>
+                Milla Berglund, 6/2 Splenic Manifestor, 13 years experimenting,
+                IHDS Certified Human Design Analyst.
+              </p>
+              <p>
+                Lady Kat, 4/6 Emotional Manifestor, 5 years experimenting, IHDS
+                Certified Living Your Design Guide.
+              </p>
+              <p>
+                Both facilitators are flying in from Europe as speakers for the
+                annual Australian Human Design Conference.
+              </p>
+              <p>
+                This Immersion isn&apos;t a program to fix or teach you
+                something new—it&apos;s a profound experience where you can
+                simply be, observe, and learn to trust yourself at a cellular
+                level.
+              </p>
+              <p>
+                Through shared exploration, practical exercises, and deep
+                support, the Immersion becomes a container for transformation.
+                Here, you&apos;ll explore what it truly means to live in
+                alignment and navigate life through the simplicity of Strategy
+                and Authority.
+              </p>
+              <p>
+                Our 2 days will run from 11am until 5pm, with a break for lunch
+                (not included).
               </p>
               <p>
                 This is your invitation to step into the experiment, to
@@ -127,55 +151,42 @@ const Immersion: React.FC = () => {
           </Parallax>
           <Parallax translateY={['150px', '75px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
-              <h2>The Inaugural Human Design Immersion on Gran Canaria</h2>
+              <h2>Human Design Immersion in Mullumbimby, Australia</h2>
               <p>
                 Price:
                 <br />
-                Early Bird - <b>€300</b>
+                Two days <b>$250 AUSD</b>
                 <br />
-                After February 1st - <b>€400</b>
+                One day <b>$140 AUSD</b>
               </p>
               <p>
-                Dates: February 21st - 23rd Times:
-                <br />
-                Friday: 14:00 - 17:00
-                <br />
-                Saturday & Sunday: 10:00 - 17:00
+                Dates: <b>May 7 & 8</b> Times: <b>11 am - 5 pm</b>
               </p>
               <p>
-                Venue: Pranapure
+                Venue: Mullumbimby Civic Memorial Hall
                 <br />
-                Address: Av. Touroperador Kuoni, 25
-                <br />
-                35100 Maspalomas
+                Address: 55 Dalley Street Mullumbimby, NSW 2482
               </p>
               <p>
-                The closest place to stay is here{' '}
+                For tickes and registration:{' '}
                 <a
-                  href="https://maspalomaslagocs.com/en/"
+                  href="https://www.eventbrite.com.au/e/human-design-immersion-registration-1299242883439"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  https://maspalomaslagocs.com/en/
-                </a>{' '}
-                (no affiliation).
+                  Human Design Immersion at Eventbrite
+                </a>
+                .
               </p>
-              <p>
-                Register via our <Link to="/contact">contact form.</Link>
-              </p>
-              <p>
-                We need your name and, if you know, your Type and Inner
-                Authority. If you don’t know, you can send your birth data
-                (date, time and location).
-              </p>
-              <p>
-                Payment via PayPal or bank transfer, please state which in your
-                registration email.
-              </p>
+              <GatsbyImage
+                image={immersionAustralia}
+                alt="Immersion information overview"
+                className={aboutStyles.aboutImage}
+              />
             </div>
           </Parallax>
 
-          <Lightbox
+          {/* <Lightbox
             index={index}
             slides={slides}
             plugins={[Inline]}
@@ -200,7 +211,7 @@ const Immersion: React.FC = () => {
             on={{ view: updateIndex }}
             animation={{ fade: 0 }}
             controller={{ closeOnPullDown: true, closeOnBackdropClick: true }}
-          />
+          /> */}
         </div>
       </BackgroundImage>
     </>

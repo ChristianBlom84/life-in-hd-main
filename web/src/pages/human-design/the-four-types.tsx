@@ -41,12 +41,12 @@ const FourTypesPage: React.FC = () => {
         fluid={backgroundHumanDesign}
       >
         <div className={styles.heroOverlay}>
-          <Parallax y={['0px', '50px']}>
+          <Parallax translateY={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>The Four Types</h1>
             </div>
           </Parallax>
-          <Parallax y={['100px', '50px']}>
+          <Parallax translateY={['100px', '50px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h2>Type and Aura</h2>
               <p>
