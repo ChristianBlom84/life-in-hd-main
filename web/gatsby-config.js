@@ -2,7 +2,7 @@ const siteUrl = 'http://localhost:8000';
 module.exports = {
   siteMetadata: {
     title: `Life in HD`,
-    description: `Life in HD provides Human Design readings and Living Your Design classes in Stockholm, Sweden.`,
+    description: `Life in HD provides Human Design readings, courses and immersions in Stockholm, Sweden and worldwide.`,
     author: `Christian Blom`,
     url: `https://lifeinhd.se`,
     siteUrl: `https://lifeinhd.se`,
