@@ -1,8 +1,8 @@
-@import '../variables';
-@import '../utilities';
+@use 'src/variables' as v;
+@use 'src/utilities';
 
 .header {
-  background: $darkgray;
+  background: v.$darkgray;
   color: white;
   display: flex;
   flex-flow: row nowrap;
@@ -10,14 +10,14 @@
   height: 100px;
   padding: 0 1rem;
 
-  @include largeMax {
+  @include v.largeMax {
     justify-content: space-between;
   }
 
   .logo {
     flex: 0 0 200px;
 
-    @include xxlarge {
+    @include v.xxlarge {
       margin-right: -200px;
     }
   }

@@ -1,5 +1,5 @@
-@import '../variables';
-@import '../utilities';
+@use 'src/variables' as v;
+@use 'src/utilities';
 
 .overlay {
   display: block;
@@ -24,7 +24,7 @@
   top: 0;
   right: 0;
   transform: translateX(275px);
-  background: $darkgray;
+  background: v.$darkgray;
   transition: all 0.3s;
   z-index: 2;
   padding: 2rem 1rem;
@@ -73,7 +73,7 @@
   text-transform: uppercase;
   position: relative;
 
-  @include small {
+  @include v.small {
     font-size: 1.4rem;
   }
 }

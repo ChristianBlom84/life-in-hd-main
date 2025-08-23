@@ -1,8 +1,8 @@
-@import '../variables';
-@import '../utilities';
+@use 'src/variables' as v;
+@use 'src/utilities';
 
 html {
-  font-family: $primary-font;
+  font-family: v.$primary-font;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 18px;
@@ -246,7 +246,7 @@ html {
 
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: $primary-font;
+  font-family: v.$primary-font;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -716,7 +716,7 @@ section {
 }
 
 .hero {
-  background: $green;
+  background: v.$green;
   height: 10rem;
   display: flex;
   flex-flow: column nowrap;
@@ -724,7 +724,7 @@ section {
   align-items: center;
   padding: 0.5rem;
 
-  @include small {
+  @include v.small {
     padding: 1rem;
   }
 

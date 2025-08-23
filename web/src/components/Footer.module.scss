@@ -1,9 +1,9 @@
-@import '../variables';
-@import '../utilities';
+@use 'src/variables' as v;
+@use 'src/utilities';
 
 .footer {
   min-height: 150px;
-  background: $darkgray;
+  background: v.$darkgray;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -11,7 +11,7 @@
   color: white;
   position: relative;
 
-  @include small {
+  @include v.small {
     justify-content: center;
   }
 

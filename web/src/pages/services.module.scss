@@ -1,5 +1,5 @@
-@import '../variables';
-@import '../utilities';
+@use 'src/variables' as v;
+@use 'src/utilities';
 
 .section {
   padding: 0;
@@ -45,7 +45,7 @@
 }
 
 .heroImage {
-  @include small {
+  @include v.small {
     flex: 0 0 200px;
   }
 }
@@ -94,15 +94,15 @@
   margin: 0;
   padding: 0;
 
-  @include xsmallMax {
+  @include v.xsmallMax {
     height: 520vh;
   }
 
-  @include mediumToLarge {
+  @include v.mediumToLarge {
     height: 400vh;
   }
 
-  @include large {
+  @include v.large {
     height: 370vh;
   }
 
@@ -122,11 +122,11 @@
   max-width: 900px;
   line-height: 150%;
 
-  @include smallMax {
+  @include v.smallMax {
     width: 95%;
   }
 
-  @include xlarge {
+  @include v.xlarge {
     width: 65%;
   }
 }
@@ -144,14 +144,14 @@
   padding: 1rem;
   max-width: 900px;
   margin: auto;
-  background: $darkgray;
+  background: v.$darkgray;
   color: white;
 
   a {
     color: white;
 
     :visited {
-      color: $lightgreen;
+      color: v.$lightgreen;
     }
   }
 
@@ -163,7 +163,7 @@
 .contentRight {
   margin: 0 1rem 0 auto;
 
-  @include large {
+  @include v.large {
     margin: 0 250px 0 auto;
   }
 }
@@ -171,7 +171,7 @@
 .contentLeft {
   margin: 0 auto 0 1rem;
 
-  @include large {
+  @include v.large {
     margin: 0 auto 0 250px;
   }
 }

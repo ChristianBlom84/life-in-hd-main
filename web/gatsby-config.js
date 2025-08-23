@@ -39,7 +39,7 @@ module.exports = {
       resolve: `gatsby-plugin-sass`,
       options: {
         // eslint-disable-next-line @typescript-eslint/no-require-imports
-        implementation: require('node-sass'),
+        implementation: require('sass'),
       },
     },
     `gatsby-plugin-sitemap`,

@@ -1,5 +1,5 @@
-@import '../variables';
-@import '../utilities';
+@use 'src/variables' as v;
+@use 'src/utilities';
 
 .section {
   padding: 0;
@@ -45,7 +45,7 @@
 }
 
 .heroImage {
-  @include small {
+  @include v.small {
     flex: 0 0 200px;
   }
 }
@@ -94,15 +94,15 @@
   margin: 0;
   padding: 0;
 
-  @include xsmallMax {
+  @include v.xsmallMax {
     height: 100vh;
   }
 
-  @include mediumToLarge {
+  @include v.mediumToLarge {
     height: 110vh;
   }
 
-  @include large {
+  @include v.large {
     height: 115vh;
   }
 
@@ -127,14 +127,14 @@
   padding: 1rem;
   max-width: 900px;
   margin: auto;
-  background: $darkgray;
+  background: v.$darkgray;
   color: white;
 
   a {
     color: white;
 
     :visited {
-      color: $lightgreen;
+      color: v.$lightgreen;
     }
   }
 
@@ -146,7 +146,7 @@
 .contentRight {
   margin: 0 1rem 0 auto;
 
-  @include large {
+  @include v.large {
     margin: 0 250px 0 auto;
   }
 }
@@ -154,7 +154,7 @@
 .contentLeft {
   margin: 0 auto 0 1rem;
 
-  @include large {
+  @include v.large {
     margin: 0 auto 0 250px;
   }
 }
@@ -170,11 +170,11 @@
   max-width: 900px;
   line-height: 150%;
 
-  @include smallMax {
+  @include v.smallMax {
     width: 95%;
   }
 
-  @include xlarge {
+  @include v.xlarge {
     width: 65%;
   }
 }
@@ -190,12 +190,12 @@
   max-width: 95%;
   line-height: 150%;
 
-  @include mediumMax {
+  @include v.mediumMax {
     width: 100%;
     padding: 2rem 1rem;
   }
 
-  @include small {
+  @include v.small {
     width: 400px;
   }
 
@@ -213,7 +213,7 @@
     height: 7rem;
   }
 
-  @include mediumMax {
+  @include v.mediumMax {
     label {
       margin-top: 0.5rem;
     }
@@ -234,7 +234,7 @@
 .button {
   border-radius: 5px;
   height: 40px;
-  background-color: $darkgray;
+  background-color: v.$darkgray;
   color: white;
   transition: 0.3s;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -248,7 +248,7 @@
     background-color: black;
   }
 
-  @include medium {
+  @include v.medium {
     align-self: flex-start;
     padding: 0 1rem;
   }
