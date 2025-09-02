@@ -90,20 +90,20 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 380vh;
+  height: 530vh;
   margin: 0;
   padding: 0;
 
   @include v.xsmallMax {
-    height: 410vh;
+    height: 510vh;
   }
 
   @include v.mediumToLarge {
-    height: 350vh;
+    height: 500vh;
   }
 
   @include v.large {
-    height: 320vh;
+    height: 500vh;
   }
 
   &::before,
@@ -176,11 +176,13 @@
   }
 }
 
-.aboutImage {
+.immersionImage {
   max-width: 500px;
-  max-height: 500px;
+  width: 100%;
+  display: block;
   margin: 0 auto 1.45rem;
 }
+
 
 .imageParagraph {
   display: flex;
@@ -192,34 +194,29 @@
   }
 }
 
-.bodygraphContainer {
-  width: 100%;
+.mapBlock {
   display: flex;
-  flex-flow: column nowrap;
+  flex: 0 0 auto;
+  flex-flow: row wrap;
+  align-items: start;
   justify-content: center;
-  align-items: center;
+  margin-bottom: 1rem;
 
-  @include v.medium {
-    width: 47%;
+  @include v.large {
+    div {
+      width: 45%;
+    }
   }
 }
 
-.bodygraphImage {
+.mallorcaMap {
+  max-width: 295px;
+  aspect-ratio: 4 / 5;
+  display: inline-block;
+  margin: 0 1rem 1rem;
   width: 100%;
-  max-width: 500px;
-}
 
-:global(.yarl__root) {
-  width: 80%;
-  max-width: 640px;
-  aspect-ratio: 4 / 3;
-  margin: 150px auto;
-
-  @include v.smallMax {
-    width: 95%;
-  }
-
-  @include v.xlarge {
-    width: 65%;
+  @include v.large {
+    margin: 0 1rem;
   }
 }

@@ -2,14 +2,13 @@
 import React, { useState } from 'react';
 import BackgroundImage from 'gatsby-background-image';
 import { convertToBgImage } from 'gbimage-bridge';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { Parallax } from 'react-scroll-parallax';
 import Lightbox from 'yet-another-react-lightbox';
 import Inline from 'yet-another-react-lightbox/plugins/inline';
 import 'yet-another-react-lightbox/styles.css';
 import SEO from '../components/Seo';
 import * as styles from './immersion.module.scss';
-import * as aboutStyles from './about.module.scss';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Immersion: React.FC = () => {
@@ -33,13 +32,47 @@ const Immersion: React.FC = () => {
           )
         }
       }
-      immersionAustralia: file(
-        relativePath: { eq: "immersion-australia.png" }
-      ) {
+      immersionMallorca: file(relativePath: { eq: "immersion-mallorca.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [320, 640, 768]
+            layout: FULL_WIDTH
+          )
+        }
+      }
+      venueOne: file(relativePath: { eq: "Venue1.jpg" }) {
         childImageSharp {
           gatsbyImageData(
             quality: 80
             breakpoints: [320, 640]
+            layout: FULL_WIDTH
+          )
+        }
+      }
+      venueTwo: file(relativePath: { eq: "Venue2.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [320, 640]
+            layout: FULL_WIDTH
+          )
+        }
+      }
+      venueThree: file(relativePath: { eq: "Venue3.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [320, 640]
+            layout: FULL_WIDTH
+          )
+        }
+      }
+      mallorcaMap: file(relativePath: { eq: "mallorca-map.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(
+            quality: 80
+            breakpoints: [150, 295]
             layout: FULL_WIDTH
           )
         }
@@ -50,15 +83,22 @@ const Immersion: React.FC = () => {
   const backgroundImmersion = convertToBgImage(
     data.backgroundImmersion.childImageSharp.gatsbyImageData,
   );
-  const immersionAustralia =
-    data.immersionAustralia.childImageSharp.gatsbyImageData;
+  const immersionMallorca =
+    data.immersionMallorca.childImageSharp.gatsbyImageData;
 
-  // const slides = [
-  //   {
-  //     src: data.immersionAustralia.childImageSharp.gatsbyImageData.images
-  //       .fallback.src,
-  //   },
-  // ];
+  const slides = [
+    {
+      src: data.venueOne.childImageSharp.gatsbyImageData.images.fallback.src,
+    },
+    {
+      src: data.venueTwo.childImageSharp.gatsbyImageData.images.fallback.src,
+    },
+    {
+      src: data.venueThree.childImageSharp.gatsbyImageData.images.fallback.src,
+    },
+  ];
+
+  const mallorcaMap = data.mallorcaMap.childImageSharp.gatsbyImageData;
 
   return (
     <>
@@ -73,6 +113,46 @@ const Immersion: React.FC = () => {
           <Parallax translateY={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>Human Design Immersions</h1>
+            </div>
+          </Parallax>
+          <Parallax translateY={['150px', '50px']}>
+            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
+              <h2>Human Design Immersion in Palma de Mallorca, Spain</h2>
+              <p>
+                Price:
+                <br />
+                Previous attendees of Mill or Hunt&apos;s immersions:{' '}
+                <b>€450</b>
+                <br />
+                Early bird, before October 12: <b>€500</b>
+                <br />
+                Regular price after October 12: <b>€600</b>
+              </p>
+              <p>
+                Dates: <b>November 12 - 16</b>
+                <br />
+                Times: <b>10 am - 1 pm (10:00 - 13:00)</b>
+              </p>
+              <p>
+                Venue: Gran Via Asima, 20, 2nd floor, Office 17, 07009 Palma de
+                Mallorca, Spain.
+              </p>
+              <p>
+                For tickes and registration:{' '}
+                <a
+                  href="https://www.cognitoforms.com/Hunthollidayhdcom/RegistrationFormForImmersions"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Registration Form
+                </a>
+                .
+              </p>
+              <GatsbyImage
+                image={immersionMallorca}
+                alt="Immersion information overview"
+                className={styles.immersionImage}
+              />
             </div>
           </Parallax>
           <Parallax translateY={['150px', '50px']}>
@@ -118,12 +198,19 @@ const Immersion: React.FC = () => {
                 IHDS Certified Human Design Analyst.
               </p>
               <p>
-                Lady Kat, 4/6 Emotional Manifestor, 5 years experimenting, IHDS
-                Certified Living Your Design Guide.
+                I met Hunt at the very first immersion I went to with Mary Ann
+                Winiger. Our interaction - or lack thereof - gave me hope that
+                there really was something to this Human Design system. It took
+                me a while to initiate anything with Hunt, and that in itself
+                said a lot for me. For the first time, I sensed space moving
+                toward someone who was living their response.
               </p>
               <p>
-                Both facilitators are flying in from Europe as speakers for the
-                annual Australian Human Design Conference.
+                Over the years, through Mary Ann&apos;s Immersions and our
+                ongoing connection, Hunt has become an ally - someone who waits,
+                doesn&apos;t push, and allows me to move in my own timing. He is
+                one of the ones I trust to hold a clean space in this
+                experiment.
               </p>
               <p>
                 This Immersion isn&apos;t a program to fix or teach you
@@ -139,69 +226,64 @@ const Immersion: React.FC = () => {
                 and Authority.
               </p>
               <p>
-                Our 2 days will run from 11am until 5pm, with a break for lunch
-                (not included).
-              </p>
-              <p>
                 This is your invitation to step into the experiment, to
                 experience life as yourself, and to trust your Design.
               </p>
               <p> Are you ready?</p>
             </div>
           </Parallax>
-          <Parallax translateY={['150px', '75px']}>
+          <Parallax translateY={['150px', '50px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
-              <h2>Human Design Immersion in Mullumbimby, Australia</h2>
-              <p>
-                Price:
-                <br />
-                Two days <b>$250 AUSD</b>
-                <br />
-                One day <b>$140 AUSD</b>
-              </p>
-              <p>
-                Dates: <b>May 7 & 8</b> Times: <b>11 am - 5 pm</b>
-              </p>
-              <p>
-                Venue: Mullumbimby Civic Memorial Hall
-                <br />
-                Address: 55 Dalley Street Mullumbimby, NSW 2482
-              </p>
-              <p>
-                For tickes and registration:{' '}
-                <a
-                  href="https://www.eventbrite.com.au/e/human-design-immersion-registration-1299242883439"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Human Design Immersion at Eventbrite
-                </a>
-                .
-              </p>
-              <GatsbyImage
-                image={immersionAustralia}
-                alt="Immersion information overview"
-                className={aboutStyles.aboutImage}
+              <h2>Venue</h2>
+              <div className={styles.mapBlock}>
+                <GatsbyImage
+                  image={mallorcaMap}
+                  alt="Map of venue location"
+                  className={styles.mallorcaMap}
+                />
+                <div>
+                  <p>
+                    The Venue is 5 kilometers from La Palma old town city
+                    center.
+                  </p>
+                  <p>
+                    It is easily accessible on the M1 metro, which stops a few
+                    minutes walk from the venue.
+                  </p>
+                  <p>
+                    You can get a T10 multi trip pass that&apos;s valid for 100
+                    days. The price is €15 for 10 trips.
+                  </p>
+                  <p>
+                    Both Uber and taxis are available, though Uber might be the
+                    more expensive option in Mallorca.
+                  </p>
+                </div>
+              </div>
+              <Lightbox
+                index={index}
+                slides={slides}
+                plugins={[Inline]}
+                on={{
+                  view: updateIndex,
+                  click: toggleOpen(true),
+                }}
+                carousel={{
+                  padding: 0,
+                  spacing: 0,
+                  imageFit: 'cover',
+                }}
+                inline={{
+                  style: {
+                    width: '100%',
+                    maxWidth: '640px',
+                    aspectRatio: '3 / 2',
+                    margin: '0 auto',
+                  },
+                }}
               />
             </div>
           </Parallax>
-
-          {/* <Lightbox
-            index={index}
-            slides={slides}
-            plugins={[Inline]}
-            on={{
-              view: updateIndex,
-              click: toggleOpen(true),
-            }}
-            carousel={{
-              padding: 0,
-              spacing: 0,
-              imageFit: 'cover',
-            }}
-            inline={{}}
-            className={styles.yarl__root}
-          />
 
           <Lightbox
             open={open}
@@ -211,7 +293,7 @@ const Immersion: React.FC = () => {
             on={{ view: updateIndex }}
             animation={{ fade: 0 }}
             controller={{ closeOnPullDown: true, closeOnBackdropClick: true }}
-          /> */}
+          />
         </div>
       </BackgroundImage>
     </>
