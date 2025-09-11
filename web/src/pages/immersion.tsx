@@ -121,7 +121,7 @@ const Immersion: React.FC = () => {
               <p>
                 Price:
                 <br />
-                Previous attendees of Mill or Hunt&apos;s immersions:{' '}
+                Previous attendees of Milla or Hunt&apos;s immersions:{' '}
                 <b>€450</b>
                 <br />
                 Early bird, before October 12: <b>€500</b>
@@ -194,36 +194,48 @@ const Immersion: React.FC = () => {
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
               <h2>Your Facilitators</h2>
               <p>
-                Milla Berglund, 6/2 Splenic Manifestor, 13 years experimenting,
-                IHDS Certified Human Design Analyst.
+                Milla Berglund, Splenic Manifestor 6/2. Experimenting since
+                2012, in what only could be described as a radical fashion, even
+                down to not even answering texts that she didn&apos;t initiate.
+                (Her phone has been on silent since the &apos;90s so not
+                answering phone calls was already a given). Initiated a husband,
+                two kids, selling/buying a house, did her LYD-guide in 2015 and
+                eventually became an IHDS certified Analyst in 2024.
               </p>
               <p>
-                I met Hunt at the very first immersion I went to with Mary Ann
-                Winiger. Our interaction - or lack thereof - gave me hope that
-                there really was something to this Human Design system. It took
-                me a while to initiate anything with Hunt, and that in itself
-                said a lot for me. For the first time, I sensed space moving
-                toward someone who was living their response.
+                The first 30 years (3rd line phase) was intense. It&apos;s a
+                little surprising she&apos;s alive today because over the years,
+                there were some close calls. Once life shifted again (the roof
+                phase at around 30) and is now moving to coming off the roof. To
+                her surprise, she&apos;s enjoying coming off the roof to find
+                how life will unfold.
+              </p>
+              <p>Here&apos;s what she says about Hunt.</p>
+              <p>
+                &quot;I met Hunt at the very first immersion I went to with Mary
+                Ann Winiger. Our interaction - or lack thereof - gave me hope
+                that there really was something to this Human Design system. It
+                took me a while to initiate anything with Hunt, and that in
+                itself said a lot for me. For the first time, I sensed space
+                moving toward someone who was living their Design and being ok
+                with me to make the first move.
               </p>
               <p>
                 Over the years, through Mary Ann&apos;s Immersions and our
                 ongoing connection, Hunt has become an ally - someone who waits,
                 doesn&apos;t push, and allows me to move in my own timing. He is
                 one of the ones I trust to hold a clean space in this
-                experiment.
+                experiment.&quot;
               </p>
               <p>
-                This Immersion isn&apos;t a program to fix or teach you
-                something new—it&apos;s a profound experience where you can
-                simply be, observe, and learn to trust yourself at a cellular
-                level.
-              </p>
-              <p>
-                Through shared exploration, practical exercises, and deep
-                support, the Immersion becomes a container for transformation.
-                Here, you&apos;ll explore what it truly means to live in
-                alignment and navigate life through the simplicity of Strategy
-                and Authority.
+                More curious about Hunt? You can{' '}
+                <a
+                  href="https://hunthollidayhd.com/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  read more here.
+                </a>
               </p>
               <p>
                 This is your invitation to step into the experiment, to
