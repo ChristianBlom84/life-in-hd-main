@@ -90,16 +90,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 760vh;
+  height: 820vh;
   margin: 0;
   padding: 0;
 
   @include v.xsmallMax {
-    height: 760vh;
+    height: 820vh;
   }
 
   @include v.mediumToLarge {
-    height: 630vh;
+    height: 640vh;
   }
 
   @include v.large {
