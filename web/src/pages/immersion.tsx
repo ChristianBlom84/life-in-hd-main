@@ -222,10 +222,10 @@ const Immersion: React.FC = () => {
               </p>
               <p>
                 Over the years, through Mary Ann&apos;s Immersions and our
-                ongoing connection, Hunt has become apmn ally - someone who
-                waits, doesn&apos;t push, and allows me to move in my own
-                timing. He is one of the ones I trust to hold a clean space in
-                this experiment.&quot;
+                ongoing connection, Hunt has become an ally - someone who waits,
+                doesn&apos;t push, and allows me to move in my own timing. He is
+                one of the ones I trust to hold a clean space in this
+                experiment.&quot;
               </p>
               <p>
                 More curious about Hunt? You can{' '}
