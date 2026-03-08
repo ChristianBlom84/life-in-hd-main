@@ -83,6 +83,22 @@ const Immersion: React.FC = () => {
   const backgroundImmersion = convertToBgImage(
     data.backgroundImmersion.childImageSharp.gatsbyImageData,
   );
+  const immersionMallorca =
+    data.immersionMallorca.childImageSharp.gatsbyImageData;
+
+  const slides = [
+    {
+      src: data.venueOne.childImageSharp.gatsbyImageData.images.fallback.src,
+    },
+    {
+      src: data.venueTwo.childImageSharp.gatsbyImageData.images.fallback.src,
+    },
+    {
+      src: data.venueThree.childImageSharp.gatsbyImageData.images.fallback.src,
+    },
+  ];
+
+  const mallorcaMap = data.mallorcaMap.childImageSharp.gatsbyImageData;
 
   return (
     <>
@@ -97,6 +113,46 @@ const Immersion: React.FC = () => {
           <Parallax translateY={['0px', '50px']}>
             <div className={styles.heroText}>
               <h1 className={styles.heroHeading}>Human Design Immersions</h1>
+            </div>
+          </Parallax>
+          <Parallax translateY={['150px', '50px']}>
+            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
+              <h2>Human Design Immersion in Palma de Mallorca, Spain</h2>
+              <p>
+                Price:
+                <br />
+                Previous attendees of Milla or Hunt&apos;s immersions:{' '}
+                <b>€450</b>
+                <br />
+                Early bird, before October 12: <b>€500</b>
+                <br />
+                Regular price after October 12: <b>€600</b>
+              </p>
+              <p>
+                Dates: <b>November 12 - 16</b>
+                <br />
+                Times: <b>10 am - 1 pm (10:00 - 13:00)</b>
+              </p>
+              <p>
+                Venue: Gran Via Asima, 20, 2nd floor, Office 17, 07009 Palma de
+                Mallorca, Spain.
+              </p>
+              <p>
+                For tickes and registration:{' '}
+                <a
+                  href="https://www.cognitoforms.com/Hunthollidayhdcom/RegistrationFormForImmersions"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Registration Form
+                </a>
+                .
+              </p>
+              <GatsbyImage
+                image={immersionMallorca}
+                alt="Immersion information overview"
+                className={styles.immersionImage}
+              />
             </div>
           </Parallax>
           <Parallax translateY={['150px', '50px']}>
@@ -136,7 +192,7 @@ const Immersion: React.FC = () => {
           </Parallax>
           <Parallax translateY={['150px', '50px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
-              <h2>Your Facilitator</h2>
+              <h2>Your Facilitators</h2>
               <p>
                 Milla Berglund, Splenic Manifestor 6/2. Experimenting since
                 2012, in what only could be described as a radical fashion, even
@@ -154,8 +210,102 @@ const Immersion: React.FC = () => {
                 her surprise, she&apos;s enjoying coming off the roof to find
                 how life will unfold.
               </p>
+              <p>Here&apos;s what she says about Hunt.</p>
+              <p>
+                &quot;I met Hunt at the very first immersion I went to with Mary
+                Ann Winiger. Our interaction - or lack thereof - gave me hope
+                that there really was something to this Human Design system. It
+                took me a while to initiate anything with Hunt, and that in
+                itself said a lot for me. For the first time, I sensed space
+                moving toward someone who was living their Design and being ok
+                with me to make the first move.
+              </p>
+              <p>
+                Over the years, through Mary Ann&apos;s Immersions and our
+                ongoing connection, Hunt has become apmn ally - someone who
+                waits, doesn&apos;t push, and allows me to move in my own
+                timing. He is one of the ones I trust to hold a clean space in
+                this experiment.&quot;
+              </p>
+              <p>
+                More curious about Hunt? You can{' '}
+                <a
+                  href="https://hunthollidayhd.com/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  read more here.
+                </a>
+              </p>
+              <p>
+                This is your invitation to step into the experiment, to
+                experience life as yourself, and to trust your Design.
+              </p>
+              <p> Are you ready?</p>
             </div>
           </Parallax>
+          <Parallax translateY={['150px', '50px']}>
+            <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
+              <h2>Venue</h2>
+              <div className={styles.mapBlock}>
+                <GatsbyImage
+                  image={mallorcaMap}
+                  alt="Map of venue location"
+                  className={styles.mallorcaMap}
+                />
+                <div>
+                  <p>
+                    The Venue is 5 kilometers from La Palma old town city
+                    center.
+                  </p>
+                  <p>
+                    It is easily accessible on the M1 metro, which stops a few
+                    minutes walk from the venue.
+                  </p>
+                  <p>
+                    You can get a T10 multi trip pass that&apos;s valid for 100
+                    days. The price is €15 for 10 trips.
+                  </p>
+                  <p>
+                    Both Uber and taxis are available, though Uber might be the
+                    more expensive option in Mallorca.
+                  </p>
+                </div>
+              </div>
+              <Lightbox
+                index={index}
+                slides={slides}
+                plugins={[Inline]}
+                on={{
+                  view: updateIndex,
+                  click: toggleOpen(true),
+                }}
+                carousel={{
+                  padding: 0,
+                  spacing: 0,
+                  imageFit: 'cover',
+                }}
+                inline={{
+                  style: {
+                    width: '100%',
+                    maxWidth: '640px',
+                    aspectRatio: '3 / 2',
+                    margin: '0 auto',
+                  },
+                }}
+              />
+            </div>
+          </Parallax>
+
+          <Lightbox
+            open={open}
+            close={toggleOpen(false)}
+            index={index}
+            slides={slides}
+            on={{ view: updateIndex }}
+            animation={{ fade: 0 }}
+            controller={{ closeOnPullDown: true, closeOnBackdropClick: true }}
+          />
         </div>
       </BackgroundImage>
     </>
