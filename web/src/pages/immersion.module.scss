@@ -202,6 +202,11 @@
   justify-content: center;
   margin-bottom: 1rem;
 
+  .parking {
+    width: 90%;
+  }
+
+
   @include v.large {
     div {
       width: 45%;
@@ -209,7 +214,7 @@
   }
 }
 
-.mallorcaMap {
+.romeMap {
   max-width: 295px;
   aspect-ratio: 4 / 5;
   display: inline-block;
@@ -217,6 +222,6 @@
   width: 100%;
 
   @include v.large {
-    margin: 0 1rem;
+    margin: 0 1rem 0 0;
   }
 }

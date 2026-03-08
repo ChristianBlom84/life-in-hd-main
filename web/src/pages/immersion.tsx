@@ -32,7 +32,7 @@ const Immersion: React.FC = () => {
           )
         }
       }
-      immersionMallorca: file(relativePath: { eq: "immersion-mallorca.jpg" }) {
+      immersionRome: file(relativePath: { eq: "immersion-rome.jpg" }) {
         childImageSharp {
           gatsbyImageData(
             quality: 80
@@ -68,7 +68,7 @@ const Immersion: React.FC = () => {
           )
         }
       }
-      mallorcaMap: file(relativePath: { eq: "mallorca-map.jpg" }) {
+      romeMap: file(relativePath: { eq: "rome-map.jpg" }) {
         childImageSharp {
           gatsbyImageData(
             quality: 80
@@ -83,8 +83,7 @@ const Immersion: React.FC = () => {
   const backgroundImmersion = convertToBgImage(
     data.backgroundImmersion.childImageSharp.gatsbyImageData,
   );
-  const immersionMallorca =
-    data.immersionMallorca.childImageSharp.gatsbyImageData;
+  const immersionRome = data.immersionRome.childImageSharp.gatsbyImageData;
 
   const slides = [
     {
@@ -98,7 +97,7 @@ const Immersion: React.FC = () => {
     },
   ];
 
-  const mallorcaMap = data.mallorcaMap.childImageSharp.gatsbyImageData;
+  const romeMap = data.romeMap.childImageSharp.gatsbyImageData;
 
   return (
     <>
@@ -117,25 +116,26 @@ const Immersion: React.FC = () => {
           </Parallax>
           <Parallax translateY={['150px', '50px']}>
             <div className={`${styles.contentOverlay} ${styles.mAuto}`}>
-              <h2>Human Design Immersion in Palma de Mallorca, Spain</h2>
+              <h2>Human Design Immersion in Rome, Italy</h2>
               <p>
                 Price:
                 <br />
                 Previous attendees of Milla or Hunt&apos;s immersions:{' '}
-                <b>€450</b>
+                <b>€400</b>
                 <br />
-                Early bird, before October 12: <b>€500</b>
+                Early bird, before April 20: <b>€450</b>
                 <br />
-                Regular price after October 12: <b>€600</b>
+                Regular price after April 20: <b>€550</b>
               </p>
               <p>
-                Dates: <b>November 12 - 16</b>
+                Dates: <b>May 6 - 10, 2026</b>
                 <br />
-                Times: <b>10 am - 1 pm (10:00 - 13:00)</b>
+                Times: <b>2:30 pm - 5:30 pm each day (14:30 - 17:30)</b>
               </p>
               <p>
-                Venue: Gran Via Asima, 20, 2nd floor, Office 17, 07009 Palma de
-                Mallorca, Spain.
+                Venue: Aura Sacred Space
+                <br />
+                Via degli Ombrellari, 44, 00193 Roma RM, Italy
               </p>
               <p>
                 For tickes and registration:{' '}
@@ -149,7 +149,7 @@ const Immersion: React.FC = () => {
                 .
               </p>
               <GatsbyImage
-                image={immersionMallorca}
+                image={immersionRome}
                 alt="Immersion information overview"
                 className={styles.immersionImage}
               />
@@ -249,26 +249,31 @@ const Immersion: React.FC = () => {
               <h2>Venue</h2>
               <div className={styles.mapBlock}>
                 <GatsbyImage
-                  image={mallorcaMap}
+                  image={romeMap}
                   alt="Map of venue location"
-                  className={styles.mallorcaMap}
+                  className={styles.romeMap}
                 />
                 <div>
+                  <h3>Metro</h3>
+                  <p>The Venue is a 10 minute walk from Ottaviano.</p>
+                  <h3>Bus</h3>
                   <p>
-                    The Venue is 5 kilometers from La Palma old town city
-                    center.
+                    The bus routes with the closest stops are Vitelleschi, 23
+                    and Crescenzio/Risorgimento, 49.
                   </p>
+                  <h3>Train</h3>
+                  <p>The Venue is a 20 minute walk from Roma San Pietro.</p>
+                </div>
+                <div className={styles.parking}>
+                  <h3>Parking Garage</h3>
                   <p>
-                    It is easily accessible on the M1 metro, which stops a few
-                    minutes walk from the venue.
+                    Terminal Gianicolo Via Urbano VIII, 16, 00193 Roma RM Front
+                    driving entrance hours: open everyday from 06:30 to 01:30
                   </p>
+                  <p>Gate hours 06:30 to 20:30</p>
                   <p>
-                    You can get a T10 multi trip pass that&apos;s valid for 100
-                    days. The price is €15 for 10 trips.
-                  </p>
-                  <p>
-                    Both Uber and taxis are available, though Uber might be the
-                    more expensive option in Mallorca.
+                    Take elevator to the bottom floor and follow the escalators
+                    through Tunnel Conciliazione to St. Peter&apos;s Square
                   </p>
                 </div>
               </div>
