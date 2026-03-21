@@ -42,10 +42,10 @@ const Menu: React.FC = () => {
         </li>
         <li className={styles.menuItem}>
           <Link
-            to="/services"
-            aria-label="Read more about our Human Design services."
+            to="/human-design-readings"
+            aria-label="Read more about our Human Design readings."
           >
-            Services
+            Human Design Readings
           </Link>
         </li>
         <li className={styles.menuItem}>

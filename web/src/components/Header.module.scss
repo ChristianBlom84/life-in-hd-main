@@ -10,7 +10,7 @@
   height: 100px;
   padding: 0 1rem;
 
-  @include v.largeMax {
+  @include v.xlargeMax {
     justify-content: space-between;
   }
 

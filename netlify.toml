@@ -2,3 +2,8 @@
   # Directory to change to before starting a build.
   # This is where we will look for package.json/.nvmrc/etc.
   base = "web/"
+
+[[redirects]]
+  from = "/services"
+  to = "/human-design-readings"
+  status = 301

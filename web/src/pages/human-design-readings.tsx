@@ -4,7 +4,7 @@ import { convertToBgImage } from 'gbimage-bridge';
 import { Parallax } from 'react-scroll-parallax';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import SEO from '../components/Seo';
-import * as styles from './services.module.scss';
+import * as styles from './human-design-readings.module.scss';
 
 const ServicesPage: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -40,7 +40,7 @@ const ServicesPage: React.FC = () => {
 
   return (
     <>
-      <SEO title="Human Design Services" />
+      <SEO title="Human Design Readings" />
       <BackgroundImage
         Tag={`section`}
         id={`hero`}
@@ -50,7 +50,7 @@ const ServicesPage: React.FC = () => {
         <div className={styles.heroOverlay}>
           <Parallax translateY={['0px', '50px']}>
             <div className={styles.heroText}>
-              <h1 className={styles.heroHeading}>Human Design Services</h1>
+              <h1 className={styles.heroHeading}>Human Design Readings</h1>
             </div>
           </Parallax>
           <Parallax translateY={['150px', '50px']}>

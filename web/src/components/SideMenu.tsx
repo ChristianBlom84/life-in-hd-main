@@ -108,11 +108,11 @@ const Menu: React.FC<Props> = ({
           </li>
           <li className={styles.menuItem}>
             <Link
-              to="/services"
+              to="/human-design-readings"
               onClick={handleClose}
-              aria-label="Read more about our Human Design services."
+              aria-label="Read more about our Human Design readings."
             >
-              Services
+              Human Design Readings
             </Link>
           </li>
           <li className={styles.menuItem}>

@@ -51,7 +51,7 @@ const Header: React.FC = () => {
       <Link className={styles.logo} aria-label="Back to home page" to="/">
         <GatsbyImage image={logo} alt="" />
       </Link>
-      {width > 970 ? (
+      {width > 1130 ? (
         <Menu />
       ) : (
         <button
