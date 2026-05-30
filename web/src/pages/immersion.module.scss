@@ -199,7 +199,7 @@
   flex: 0 0 auto;
   flex-flow: row wrap;
   align-items: start;
-  justify-content: center;
+  justify-content: normal;
   margin-bottom: 1rem;
 
   .parking {
@@ -222,7 +222,7 @@
   width: 100%;
 
   @include v.large {
-    margin: 0 1rem 0 0;
+    margin: 0 2rem 0 0;
   }
 }
 
