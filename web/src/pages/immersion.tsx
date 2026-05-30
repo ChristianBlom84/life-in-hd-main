@@ -28,6 +28,7 @@ const Immersion: React.FC = () => {
   const [birthTime, setBirthTime] = useState('');
   const [birthPlace, setBirthPlace] = useState('');
   const [birthImage, setBirthImage] = useState<File | null>(null);
+  const [otherInfo, setOtherInfo] = useState('');
   const [sendingForm, setSendingForm] = useState(false);
   const [formErrored, setFormErrored] = useState(false);
   const [formSentMessageVisible, setFormSentMessageVisible] = useState(false);
@@ -54,6 +55,7 @@ const Immersion: React.FC = () => {
     formData.append('birth-date', birthDate);
     formData.append('birth-time', birthTime);
     formData.append('birth-place', birthPlace);
+    formData.append('other-info', otherInfo);
     if (birthImage) {
       formData.append('birth-image', birthImage);
     }
@@ -78,6 +80,7 @@ const Immersion: React.FC = () => {
         setBirthDate('');
         setBirthTime('');
         setBirthPlace('');
+        setOtherInfo('');
         setBirthImage(null);
       } else {
         setFormErrored(true);
@@ -397,6 +400,18 @@ const Immersion: React.FC = () => {
                       setBirthImage(
                         e.currentTarget.files ? e.currentTarget.files[0] : null,
                       )
+                    }
+                  />
+                </div>
+                <div className={`${styles.inputGroup} ${styles.fullwidth}`}>
+                  <label htmlFor="other-info">Other information</label>
+                  <textarea
+                    id="other-info"
+                    name="other-info"
+                    rows={5}
+                    value={otherInfo}
+                    onChange={(e: React.FormEvent<HTMLTextAreaElement>): void =>
+                      setOtherInfo(e.currentTarget.value)
                     }
                   />
                 </div>
