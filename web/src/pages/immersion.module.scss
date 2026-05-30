@@ -99,11 +99,11 @@
   }
 
   @include v.mediumToLarge {
-    height: 680vh;
+    height: 740vh;
   }
 
   @include v.large {
-    height: 600vh;
+    height: 660vh;
   }
 
   &::before,
