@@ -427,6 +427,22 @@ const Immersion: React.FC = () => {
                   )}
                 </button>
               </form>
+              <h3>Payment</h3>
+              <p>
+                Payment can be made in cash on the first day of the Immersion,
+                via WISE or Paypal (Paypal fees will be added to the price). If
+                you need an invoice for your payment 25% VAT will be added. If
+                you have any questions, please let us know in the form. For US
+                payment options like Venmo you can{' '}
+                <a
+                  href="https://www.cognitoforms.com/Hunthollidayhdcom/ContactForm"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  contact Hunt
+                </a>
+                .
+              </p>
             </div>
           </Parallax>
           <Parallax translateY={['150px', '50px']}>
