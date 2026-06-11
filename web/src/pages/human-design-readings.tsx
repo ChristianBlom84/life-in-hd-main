@@ -95,7 +95,6 @@ const ServicesPage: React.FC = () => {
                 The reading is online via Zoom. Included in the price is a
                 follow up session / checking in on your experiment.
               </p>
-              <p className={styles.mb0}>Price: $250</p>
             </div>
             <div
               className={`${styles.contentOverlay} ${styles.mt4} ${styles.mhAuto}`}
@@ -114,7 +113,6 @@ const ServicesPage: React.FC = () => {
                 Please note: this is ONLY available after a foundation reading
                 from a certified IHDS Analyst.
               </p>
-              <p>Price: $80</p>
               <h3>
                 Manifestor sessions: Manifestor to
                 Projector/Generator/Manifesting Generator
@@ -132,7 +130,6 @@ const ServicesPage: React.FC = () => {
                 I’m providing a space where you can ask questions and get an
                 inside perspective from a mechanical point of view.
               </p>
-              <p>Price: $80</p>
               <p className={styles.mb0}>
                 I cordially invite you to get in touch and book a session if you
                 have questions you’d like to ask a Manifestor! Reach out on
